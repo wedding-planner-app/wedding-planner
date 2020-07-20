@@ -11,7 +11,8 @@
 - [Concept](#concept)
   - [Design](#design)
   - [MVP](#mvp)
-- [Tech Stack](#tech-stack)
+- [Technology](#technology)
+- [Future Development](#future-development)
 - [Team Members](#team-members)
 - [Project Board](https://github.com/wedding-planner-app/wedding-planner/projects/1)
 - [Github Link](https://github.com/wedding-planner-app/wedding-planner)
@@ -42,7 +43,7 @@ SO THAT I can better plan an awesome wedding
 
 ## Concept
 
-This platform will leverage a full stack web application that will allow planning and management of a client’s wedding. Weddings are significant events in people's lives and as such, couples are often willing to spend considerable amount of money to ensure that their weddings are well-organized. Wedding Planner allows you to keep all of your guests, invitations, and more in one place.
+This platform will leverage a full stack web application that will allow `planning` and `management` of a client’s wedding. Weddings are significant events in people's lives and as such, couples are often willing to spend considerable amount of money to ensure that their weddings are well-organized. Wedding Planner allows you to keep all of your guests, invitations, and more in one place.
 
 #### Design
 
@@ -79,6 +80,15 @@ Phase one design features basic functionality and style for multiple features.
 - NPM passport package to manage the access to the plataform based on _admin_, _user_ and the _wedding planner_.
 
 ---
+
+## Future Development
+
+If time `allows`, we would like to incorporate the feature `enhancements` to our web application:
+
+- Add actual wedding data such as picture and video.
+- Generate guests friendly interface with memories of the event.
+- Allow capability to order memorabilia items based on data of the event.
+- Develop corresponding mobile app.
 
 ## Team Members
 
