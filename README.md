@@ -86,6 +86,7 @@ Phase one design features basic functionality and style for multiple features.
 - [Stephen Guzman](https://github.com/steveo9219)
 - [Vanessa Taylor](https://github.com/vantaylo)
 - [Krystal Duran](https://github.com/KEDuran)
+- [Frazer Hughes]
 
 ---
 
