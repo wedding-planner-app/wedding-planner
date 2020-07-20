@@ -63,7 +63,7 @@ Phase one design features basic functionality and style for multiple features.
 
 #### MVP
 
-- Allow user to save, edit, and compare multiple the wedding times.
+- Allow user to save, edit, and compare multiple wedding times.
 - Allow user to create guest list.
 - Allow user to send invitations.
 - Allow guests to RSVP from a link they get by email.
@@ -78,9 +78,9 @@ Phase one design features basic functionality and style for multiple features.
 - Node and Express server.
 - Handlebars.js as the template engine or React.js.
 - MySQL database with a Sequelize ORM.
-- AJAX POST-request and AJAX GET-request for retrieving and adding new data
+- AJAX POST-request and AJAX GET-request for retrieving and adding new data.
 - Deploy web app using Heroku (with data).
-- NPM passport package to manage the access to the plataform based on _admin_, _user_ and the _wedding planner_.
+- NPM passport package to manage the access to the plataform based on _admin_, _user_ and _wedding planner_.
 
 ---
 
@@ -93,13 +93,12 @@ If time `allows`, we would like to incorporate the feature `enhancements` to our
 - Allow capability to order memorabilia items based on data of the event.
 - Develop corresponding mobile app.
 
-## Team Members
+## Team Memberss
 
 - [Yadira Tamarit](https://github.com/ystamaritq)
 - [Stephen Guzman](https://github.com/steveo9219)
 - [Vanessa Taylor](https://github.com/vantaylo)
 - [Krystal Duran](https://github.com/KEDuran)
-- [Frazer Hughes]
 
 ---
 
