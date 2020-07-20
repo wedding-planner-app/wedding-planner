@@ -5,8 +5,7 @@
   <img src="assets\imgs\readme\logo.png" alt="wedding planner logo" width="250">
   </div>
 
-> all-in-one wedding planner
-> <br>
+<br>
 
 ### Table of Contents
 
