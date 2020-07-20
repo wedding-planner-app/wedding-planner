@@ -1,8 +1,12 @@
+# Wedding Planner
+
   <div align="center">
   <br>
   <img src="assets\imgs\readme\logo.png" alt="wedding planner logo" width="250">
-  <br>
   </div>
+
+> all-in-one wedding planner
+> <br>
 
 ### Table of Contents
 
