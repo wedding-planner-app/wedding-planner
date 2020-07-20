@@ -12,6 +12,7 @@
 - [Value Proposal](#value-proposal)
 - [User Stories](#user-stories)
 - [Concept](#concept)
+  - [UML Diagram](#uml-diagram)
   - [Design](#design)
   - [MVP](#mvp)
 - [Technology](#technology)
@@ -48,14 +49,23 @@ SO THAT I can better plan an awesome wedding
 
 This platform will leverage a full stack web application that will allow `planning` and `management` of a client’s wedding. Weddings are significant events in people's lives and as such, couples are often willing to spend considerable amount of money to ensure that their weddings are well-organized. Wedding Planner allows you to keep all of your guests, invitations, and more in one place.
 
+#### UML Diagram
+
+- The user needs to get registered by entering all the details in the registration form.
+- The user can get login by entering unique username and password.
+- The user can add events like the type of event, decoration, guests, invitations, budget and more.
+- The user can manage the events (update or delete).
+- The user can logout.
+
+<img src="assets\imgs\readme\uml.png" width = "600px">
+
 #### Design
 
 Phase one design features basic functionality and style for multiple features.
 
-<details>
-<summary>Phase One: whiteboard and wireframe </summary>
-<img src="assets\imgs\readme\wireframe1.png">
-</details>
+**Phase One:** Wireframes.
+
+<img src="assets\imgs\readme\wireframe1.png" width = "600px">
 
 ---
 
@@ -63,7 +73,7 @@ Phase one design features basic functionality and style for multiple features.
 
 #### MVP
 
-- Allow user to save, edit, and compare multiple the wedding times.
+- Allow user to save, edit, and compare multiple wedding times.
 - Allow user to create guest list.
 - Allow user to send invitations.
 - Allow guests to RSVP from a link they get by email.
@@ -78,9 +88,9 @@ Phase one design features basic functionality and style for multiple features.
 - Node and Express server.
 - Handlebars.js as the template engine or React.js.
 - MySQL database with a Sequelize ORM.
-- AJAX POST-request and AJAX GET-request for retrieving and adding new data
+- AJAX POST-request and AJAX GET-request for retrieving and adding new data.
 - Deploy web app using Heroku (with data).
-- NPM passport package to manage the access to the plataform based on _admin_, _user_ and the _wedding planner_.
+- NPM passport package to manage the access to the plataform based on _admin_, _user_ and _wedding planner_.
 
 ---
 
@@ -93,13 +103,12 @@ If time `allows`, we would like to incorporate the feature `enhancements` to our
 - Allow capability to order memorabilia items based on data of the event.
 - Develop corresponding mobile app.
 
-## Team Members
+## Team Memberss
 
 - [Yadira Tamarit](https://github.com/ystamaritq)
 - [Stephen Guzman](https://github.com/steveo9219)
 - [Vanessa Taylor](https://github.com/vantaylo)
 - [Krystal Duran](https://github.com/KEDuran)
-- [Frazer Hughes]
 
 ---
 
