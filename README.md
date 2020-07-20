@@ -12,6 +12,7 @@
 - [Value Proposal](#value-proposal)
 - [User Stories](#user-stories)
 - [Concept](#concept)
+  - [UML Diagram](#uml-diagram)
   - [Design](#design)
   - [MVP](#mvp)
 - [Technology](#technology)
@@ -48,14 +49,23 @@ SO THAT I can better plan an awesome wedding
 
 This platform will leverage a full stack web application that will allow `planning` and `management` of a client’s wedding. Weddings are significant events in people's lives and as such, couples are often willing to spend considerable amount of money to ensure that their weddings are well-organized. Wedding Planner allows you to keep all of your guests, invitations, and more in one place.
 
+#### UML Diagram
+
+- The user needs to get registered by entering all the details in the registration form.
+- The user can get login by entering unique username and password.
+- The user can add events like the type of event, decoration, guests, invitations, budget and more.
+- The user can manage the events (update or delete).
+- The user can logout.
+
+<img src="assets\imgs\readme\uml.png" width = "600px">
+
 #### Design
 
 Phase one design features basic functionality and style for multiple features.
 
-<details>
-<summary>Phase One: whiteboard and wireframe </summary>
-<img src="assets\imgs\readme\wireframe1.png">
-</details>
+**Phase One:** Wireframes.
+
+<img src="assets\imgs\readme\wireframe1.png" width = "600px">
 
 ---
 
