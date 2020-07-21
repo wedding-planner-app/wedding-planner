@@ -12,8 +12,11 @@
 - [Value Proposal](#value-proposal)
 - [User Stories](#user-stories)
 - [Concept](#concept)
-  - [UML Diagram](#uml-diagram)
+  - [Actions Diagram](#actions-diagram)
   - [Design](#design)
+    - [Whiteboards](#whiteboards)
+    - [Wireframes](#wireframes)
+    - [ER Diagram](#er-diagram)
   - [MVP](#mvp)
 - [Technology](#technology)
 - [Future Development](#future-development)
@@ -32,12 +35,6 @@
 ## User Stories
 
 ```
-AS someone having my wedding soon
-I WANT to be able to have a platform to plan my event end to end
-SO THAT I can plan and organize guests, venue, and other related items
-```
-
-```
 AS a wedding planner
 I WANT to be able to use an online web application
 SO THAT I can better plan an awesome wedding
@@ -49,23 +46,27 @@ SO THAT I can better plan an awesome wedding
 
 This platform will leverage a full stack web application that will allow `planning` and `management` of a client’s wedding. Weddings are significant events in people's lives and as such, couples are often willing to spend considerable amount of money to ensure that their weddings are well-organized. Wedding Planner allows you to keep all of your guests, invitations, and more in one place.
 
-#### UML Diagram
-
-- The user needs to get registered by entering all the details in the registration form.
-- The user can get login by entering unique username and password.
-- The user can add events like the type of event, decoration, guests, invitations, budget and more.
-- The user can manage the events (update or delete).
-- The user can logout.
+#### Actions Diagram
 
 <img src="assets\imgs\readme\uml.png" width = "600px">
 
 #### Design
 
-Phase one design features basic functionality and style for multiple features.
+Design features basic functionality and style for multiple features.
 
-**Phase One:** Wireframes.
+##### Whiteboards
+
+<img src="assets\imgs\readme\wb1.png" width = "600px">
+
+<img src="assets\imgs\readme\wb2.png" width = "600px">
+
+##### Wireframes
 
 <img src="assets\imgs\readme\wireframe1.png" width = "600px">
+
+##### ER Diagram
+
+<img src="assets\imgs\readme\schema.png" width = "600px">
 
 ---
 
@@ -73,12 +74,13 @@ Phase one design features basic functionality and style for multiple features.
 
 #### MVP
 
-- Allow user to save, edit, and compare multiple wedding times.
-- Allow user to create guest list.
-- Allow user to send invitations.
-- Allow guests to RSVP from a link they get by email.
-- Allow user to see venue address and map.
-- Displays high quality images associated with the event location.
+- The user needs to get registered by entering all the details in the registration form.
+- The user can get login by entering unique username and password.
+- The user can create and manage weddings.
+- The user can add venue, guests, media.
+- The user can send email invitations.
+- The guests can RSVP.
+- The user can logout.
 
 ---
 
@@ -86,11 +88,11 @@ Phase one design features basic functionality and style for multiple features.
 
 - Model-View-Controller (**MVC**) framework as an architectural pattern.
 - Node and Express server.
-- Handlebars.js as the template engine or React.js.
+- React.js.
 - MySQL database with a Sequelize ORM.
 - AJAX POST-request and AJAX GET-request for retrieving and adding new data.
 - Deploy web app using Heroku (with data).
-- NPM passport package to manage the access to the plataform based on _admin_, _user_ and _wedding planner_.
+- NPM passport package to manage the access to the plataform.
 
 ---
 
@@ -103,12 +105,13 @@ If time `allows`, we would like to incorporate the feature `enhancements` to our
 - Allow capability to order memorabilia items based on data of the event.
 - Develop corresponding mobile app.
 
-## Team Memberss
+## Team Members
 
-- [Yadira Tamarit](https://github.com/ystamaritq)
+- [Frazer Hughes](https://github.com/Frazerhughes)
+- [Krystal Duran](https://github.com/KEDuran)
 - [Stephen Guzman](https://github.com/steveo9219)
 - [Vanessa Taylor](https://github.com/vantaylo)
-- [Krystal Duran](https://github.com/KEDuran)
+- [Yadira Tamarit](https://github.com/ystamaritq)
 
 ---
 
