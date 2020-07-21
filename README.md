@@ -16,6 +16,7 @@
   - [Design](#design)
     - [Whiteboards](#whiteboards)
     - [Wireframes](#wireframes)
+    - [ER Diagram](#er-diagram)
   - [MVP](#mvp)
 - [Technology](#technology)
 - [Future Development](#future-development)
@@ -62,6 +63,10 @@ Design features basic functionality and style for multiple features.
 ##### Wireframes
 
 <img src="assets\imgs\readme\wireframe1.png" width = "600px">
+
+##### ER Diagram
+
+<img src="assets\imgs\readme\schema.png" width = "600px">
 
 ---
 
