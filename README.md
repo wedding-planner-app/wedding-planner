@@ -63,13 +63,13 @@ Design features basic functionality and style for multiple features.
 ##### Wireframes
 <details>
   <summary>Click to expand!</summary>
-  Homepage webpage wireframe
+  <p>Homepage webpage wireframe</p>
   <img src="assets\imgs\readme\wireframe1-homepage.png" width = "600px">
 
-  Login webpage wireframe
+  <p>Login webpage wireframe</p>
   <img src="assets\imgs\readme\wireframe2-login.png" width = "600px">
-  
-  Signup webpage wireframe
+
+  <p>Signup webpage wireframe</p>
   <img src="assets\imgs\readme\wireframe3-signup.png" sidth = "600px">
 </details>
 
