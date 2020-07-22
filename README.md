@@ -70,7 +70,7 @@ Design features basic functionality and style for multiple features.
   <img src="assets\imgs\readme\wireframe2-login.png" width = "600px">
 
   <p>Signup webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe3-signup.png" sidth = "600px">
+  <img src="assets\imgs\readme\wireframe3-signup.png" width = "500px" height = "500px>
 </details>
 
 ##### ER Diagram
