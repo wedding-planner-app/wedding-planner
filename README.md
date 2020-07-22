@@ -62,8 +62,8 @@ Design features basic functionality and style for multiple features.
 
 ##### Wireframes
 <details>
-  <summary>Click to expand and see all wireframes!</summary>
-  
+<summary>Click to expand!</summary>
+
   <img src="assets\imgs\readme\wireframe1-homepage.png" width = "600px">
   <img src="assets\imgs\readme\wireframe2-login.png" width = "600px">
 </details>
