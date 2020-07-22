@@ -61,9 +61,12 @@ Design features basic functionality and style for multiple features.
 <img src="assets\imgs\readme\wb2.png" width = "600px">
 
 ##### Wireframes
-
-<img src="assets\imgs\readme\wireframe1-homepage.png" width = "600px">
-<img src="assets\imgs\readme\wireframe2-login.png" width = "600px">
+<details>
+  <summary>Click to expand and see all wireframes!</summary>
+  
+  <img src="assets\imgs\readme\wireframe1-homepage.png" width = "600px">
+  <img src="assets\imgs\readme\wireframe2-login.png" width = "600px">
+</details>
 
 ##### ER Diagram
 
