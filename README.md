@@ -64,13 +64,17 @@ Design features basic functionality and style for multiple features.
 <details>
   <summary>Click to expand!</summary>
   <p>Homepage webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe1-homepage.png" width = "600px">
+  <img src="assets\imgs\readme\wireframe1-homepage.png" width = "500px" height = "500px">
 
   <p>Login webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe2-login.png" width = "600px">
+  <img src="assets\imgs\readme\wireframe2-login.png" width = "500px" height = "500px">
 
   <p>Signup webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe3-signup.png" width = "500px" height = "500px>
+  <img src="assets\imgs\readme\wireframe3-signup.png" width = "500px" height = "500px">
+  <p>Guest list wireframe</p>
+  <p>Date reservation wireframe</p>
+  <p>Invitation wireframe</p>
+  <p>Venues wireframe</p>
 </details>
 
 ##### ER Diagram
