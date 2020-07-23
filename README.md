@@ -58,8 +58,9 @@ Design features basic functionality and style for multiple features.
 
 <details>
   <summary>Click to expand!</summary>
+  <p>Image 1</p>
   <img src="assets\imgs\readme\wb1.png" width = "600px">
-
+  <p>Image 2</p>
   <img src="assets\imgs\readme\wb2.png" width = "600px">
 </details>
 
