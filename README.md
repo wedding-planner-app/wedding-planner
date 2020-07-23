@@ -93,7 +93,10 @@ Design features basic functionality and style for multiple features.
 
 ##### ER Diagram
 
+<details>
+<summary>Click to expand!</summary>
 <img src="assets\imgs\readme\schema.png" width = "600px">
+<details>
 
 ---
 
