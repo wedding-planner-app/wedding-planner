@@ -56,18 +56,47 @@ Design features basic functionality and style for multiple features.
 
 ##### Whiteboards
 
-<img src="assets\imgs\readme\wb1.png" width = "600px">
-
-<img src="assets\imgs\readme\wb2.png" width = "600px">
+<details>
+  <summary>Click to expand!</summary>
+  <p>Image 1</p>
+  <img src="assets\imgs\readme\wb1.png" width = "600px">
+  <p>Image 2</p>
+  <img src="assets\imgs\readme\wb2.png" width = "600px">
+</details>
 
 ##### Wireframes
 
-<img src="assets\imgs\readme\wireframe1-homepage.png" width = "600px">
-<img src="assets\imgs\readme\wireframe2-login.png" width = "600px">
+<details>
+  <summary>Click to expand!</summary>
+  <p>Homepage webpage wireframe</p>
+  <img src="assets\imgs\readme\wireframe-homepage.png" width = "600px">
+
+  <p>Login webpage wireframe</p>
+  <img src="assets\imgs\readme\wireframe-login.png" width = "600px">
+
+  <p>Signup webpage wireframe</p>
+  <img src="assets\imgs\readme\wireframe-signup.png" width = "600px">
+
+  <p>Date reservation wireframe</p>
+  <img src="assets\imgs\readme\wireframe-reservation.png" width = "600px">
+
+  <p>Venues wireframe</p>
+  <img src="assets\imgs\readme\wireframe-venues.png" width = "600px">
+
+  <p>Guest list webpage wireframe</p>
+  <img src="assets\imgs\readme\wireframe-guestlist.png" width = "600px">
+
+  <p>Invitation wireframe</p>
+  <img src="assets\imgs\readme\wireframe-invitations.png" width = "600px">
+  
+</details>
 
 ##### ER Diagram
 
+<details>
+<summary>Click to expand!</summary>
 <img src="assets\imgs\readme\schema.png" width = "600px">
+</details>
 
 ---
 
