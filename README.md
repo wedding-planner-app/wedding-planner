@@ -56,9 +56,12 @@ Design features basic functionality and style for multiple features.
 
 ##### Whiteboards
 
-<img src="assets\imgs\readme\wb1.png" width = "600px">
+<details>
+  <summary>Click to expand!</summary>
+  <img src="assets\imgs\readme\wb1.png" width = "600px">
 
-<img src="assets\imgs\readme\wb2.png" width = "600px">
+  <img src="assets\imgs\readme\wb2.png" width = "600px">
+</details>
 
 ##### Wireframes
 
