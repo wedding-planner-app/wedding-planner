@@ -82,6 +82,7 @@ Design features basic functionality and style for multiple features.
   <img src="assets\imgs\readme\wireframe-guestlist.png" width = "600px">
 
   <p>Invitation wireframe</p>
+  <img src="assets\imgs\readme\wireframe-invitations.png" width = "600px">
   
 </details>
 
