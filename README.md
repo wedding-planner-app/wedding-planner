@@ -61,6 +61,7 @@ Design features basic functionality and style for multiple features.
 <img src="assets\imgs\readme\wb2.png" width = "600px">
 
 ##### Wireframes
+
 <details>
   <summary>Click to expand!</summary>
   <p>Homepage webpage wireframe</p>
@@ -76,6 +77,8 @@ Design features basic functionality and style for multiple features.
   <img src="assets\imgs\readme\wireframe4-guestlist.png" width = "600px">
 
   <p>Date reservation wireframe</p>
+  <img src="assets\imgs\readme\wireframe5-reservation.png" width = "600px">
+
   <p>Invitation wireframe</p>
   <p>Venues wireframe</p>
 </details>
