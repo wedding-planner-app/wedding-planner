@@ -65,21 +65,21 @@ Design features basic functionality and style for multiple features.
 <details>
   <summary>Click to expand!</summary>
   <p>Homepage webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe1-homepage.png" width = "600px">
+  <img src="assets\imgs\readme\wireframe-homepage.png" width = "600px">
 
   <p>Login webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe2-login.png" width = "600px">
+  <img src="assets\imgs\readme\wireframe-login.png" width = "600px">
 
   <p>Signup webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe3-signup.png" width = "600px">
+  <img src="assets\imgs\readme\wireframe-signup.png" width = "600px">
 
   <p>Date reservation wireframe</p>
-  <img src="assets\imgs\readme\wireframe5-reservation.png" width = "600px">
+  <img src="assets\imgs\readme\wireframe-reservation.png" width = "600px">
 
   <p>Venues wireframe</p>
 
   <p>Guest list webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe4-guestlist.png" width = "600px">
+  <img src="assets\imgs\readme\wireframe-guestlist.png" width = "600px">
 
   <p>Invitation wireframe</p>
   
