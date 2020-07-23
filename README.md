@@ -77,6 +77,7 @@ Design features basic functionality and style for multiple features.
   <img src="assets\imgs\readme\wireframe-reservation.png" width = "600px">
 
   <p>Venues wireframe</p>
+  <img src="assets\imgs\readme\wireframe-venues.png" width = "600px">
 
   <p>Guest list webpage wireframe</p>
   <img src="assets\imgs\readme\wireframe-guestlist.png" width = "600px">
