@@ -2,7 +2,7 @@
 
   <div align="center">
   <br>
-  <img src="assets\imgs\readme\logo.png" alt="wedding planner logo" width="250">
+  <img src="readme\imgs\logo.png" alt="wedding planner logo" width="250">
   </div>
 
 <br>
@@ -48,7 +48,7 @@ This platform will leverage a full stack web application that will allow `planni
 
 #### Actions Diagram
 
-<img src="assets\imgs\readme\uml.png" width = "600px">
+<img src="readme\imgs\uml.png" width = "600px">
 
 #### Design
 
@@ -59,9 +59,9 @@ Design features basic functionality and style for multiple features.
 <details>
   <summary>Click to expand!</summary>
   <p>Image 1</p>
-  <img src="assets\imgs\readme\wb1.png" width = "600px">
+  <img src="readme\imgs\wb1.png" width = "600px">
   <p>Image 2</p>
-  <img src="assets\imgs\readme\wb2.png" width = "600px">
+  <img src="readme\imgs\wb2.png" width = "600px">
 </details>
 
 ##### Wireframes
@@ -69,25 +69,25 @@ Design features basic functionality and style for multiple features.
 <details>
   <summary>Click to expand!</summary>
   <p>Homepage webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe-homepage.png" width = "600px">
+  <img src="readme\imgs\wireframe-homepage.png" width = "600px">
 
   <p>Login webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe-login.png" width = "600px">
+  <img src="readme\imgs\wireframe-login.png" width = "600px">
 
   <p>Signup webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe-signup.png" width = "600px">
+  <img src="readme\imgs\wireframe-signup.png" width = "600px">
 
   <p>Date reservation wireframe</p>
-  <img src="assets\imgs\readme\wireframe-reservation.png" width = "600px">
+  <img src="readme\imgs\ireframe-reservation.png" width = "600px">
 
   <p>Venues wireframe</p>
-  <img src="assets\imgs\readme\wireframe-venues.png" width = "600px">
+  <img src="readme\imgs\wireframe-venues.png" width = "600px">
 
   <p>Guest list webpage wireframe</p>
-  <img src="assets\imgs\readme\wireframe-guestlist.png" width = "600px">
+  <img src="readme\imgs\wireframe-guestlist.png" width = "600px">
 
   <p>Invitation wireframe</p>
-  <img src="assets\imgs\readme\wireframe-invitations.png" width = "600px">
+  <img src="readme\imgs\wireframe-invitations.png" width = "600px">
   
 </details>
 
@@ -95,7 +95,7 @@ Design features basic functionality and style for multiple features.
 
 <details>
 <summary>Click to expand!</summary>
-<img src="assets\imgs\readme\schema.png" width = "600px">
+<img src="readme\imgs\schema.png" width = "600px">
 </details>
 
 ---
