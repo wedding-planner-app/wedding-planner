@@ -1,0 +1,14 @@
+.custom-img {
+  height: 80px;
+}
+
+.logo-color {
+  color: darkblue;
+  border-style: solid 3px;
+}
+
+.color-link > a {
+  color: #236184 !important;
+  font-size: 20px;
+  font-weight: bold;
+}
