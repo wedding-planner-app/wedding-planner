@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import NavigationBar from './components/NavigationBar';
 import EventsPage from './pages/Events';
 import LoginPage from './pages/Login';
+import ProfilePage from './pages/Profile';
 import LogoutPage from './pages/Logout';
 import SignUp from './pages/SignUp';
 
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/events" component={EventsPage} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/profile" component={ProfilePage} />
         <Route exact path="/logout" component={LogoutPage} />
       </Container>
     </Router>
