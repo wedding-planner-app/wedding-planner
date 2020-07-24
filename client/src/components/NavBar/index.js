@@ -7,7 +7,7 @@ import './style.css';
  *  Description:
  */
 function Navbar() {
-  return null;
+  return <h1>I'm working</h1>;
 }
 
 export default Navbar;
