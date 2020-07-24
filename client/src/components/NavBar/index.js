@@ -7,7 +7,20 @@ import './style.css';
  *  Description:
  */
 function Navbar() {
-  return <h1>I'm working</h1>;
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <Link className="navbar-brand" to="/">
+        Wedding Planner
+      </Link>
+      <div>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link to="/login">Log In</Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
