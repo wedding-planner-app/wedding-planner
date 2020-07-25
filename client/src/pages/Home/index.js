@@ -4,7 +4,7 @@ import CarouselPage from '../../components/Carousel';
 
 const HomePage = () => {
   return (
-    <Container>
+    <Container className="mt-5">
       <CarouselPage />
     </Container>
   );
