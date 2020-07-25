@@ -9,6 +9,8 @@ import {
   MDBContainer,
 } from 'mdbreact';
 
+import carousel1 from './carousel1.jpg';
+
 const CarouselPage = () => {
   return (
     <MDBContainer>
@@ -24,8 +26,8 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-                alt="First slide"
+                src={carousel1}
+                alt="first image"
               />
               <MDBMask overlay="black-light" />
             </MDBView>
