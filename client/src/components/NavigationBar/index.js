@@ -9,7 +9,7 @@ import logo from './logo.png';
 function NavigationBar() {
   return (
     <Navbar bg="light" shadow="lg" expand="lg">
-      <Navbar.Brand href="/events">
+      <Navbar.Brand href="/">
         <Image src={logo} className="custom-img" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
