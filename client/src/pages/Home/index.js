@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import CarouselPage from '../../components/Carousel';
 import Message from '../../components/Message';
 
 const HomePage = () => {
   return (
-    <Container className="mt-5 mb-5">
+    <Container fluid className="p-0">
       <CarouselPage />
       <Message />
     </Container>
