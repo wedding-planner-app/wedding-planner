@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.css';
-import favicon from './favicon.ico';
 
 function Footer() {
   return (

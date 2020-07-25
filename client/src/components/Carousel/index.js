@@ -9,9 +9,9 @@ import {
   MDBContainer,
 } from 'mdbreact';
 
-import weddings from './weddings.jpg';
-import venues from './venues.jpg';
-import heart from './heart.jpg';
+import weddings from './imgs/weddings.jpg';
+import bride from './imgs/bride.jpg';
+import heart from './imgs/heart.jpg';
 
 const CarouselPage = () => {
   return (
@@ -42,17 +42,11 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src={venues}
+                src={bride}
                 alt="second image"
               />
               <MDBMask overlay="black-strong" />
             </MDBView>
-            <MDBCarouselCaption>
-              <h3 className="h3-responsive text-primary">Venues</h3>
-              <p className="text-primary text-bold">
-                Your dreams comes true
-              </p>
-            </MDBCarouselCaption>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="3">
             <MDBView>
