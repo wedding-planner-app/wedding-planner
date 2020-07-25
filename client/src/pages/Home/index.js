@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <Container className="mt-5 mb-5">
       <CarouselPage />
-      <Message />
+      <Message className=" mb-5" />
     </Container>
   );
 };
