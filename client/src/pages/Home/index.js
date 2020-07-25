@@ -3,6 +3,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 import CarouselPage from '../../components/Carousel';
 import Message from '../../components/Message';
 import InfoCard from '../../components/InfoCard';
+import venues from './imgs/venues.jpg';
+import guests from './imgs/guests-modified.png';
+import media from './imgs/media.png';
+import invitations from './imgs/invitations.png';
 import './style.css';
 
 const HomePage = () => {
@@ -20,13 +24,35 @@ const HomePage = () => {
       </Row>
       <Row>
         <Col>
-          <div className="wraper mb-5">
-            <InfoCard />
-          </div>
+          <InfoCard
+            title="Venues"
+            summary="Summary here"
+            img={venues}
+          />
         </Col>
-        <Col>2 of 3</Col>
-        <Col>3 of 3</Col>
-        <Col>3 of 4</Col>
+        <Col>
+          {' '}
+          <InfoCard
+            title="Invitations"
+            summary="Summary here"
+            img={invitations}
+          />
+        </Col>
+        <Col>
+          <InfoCard
+            title="Media"
+            summary="Summary here"
+            img={media}
+          />
+        </Col>
+        <Col>
+          {' '}
+          <InfoCard
+            title="Guests"
+            summary="Summary here"
+            img={guests}
+          />
+        </Col>
       </Row>
     </Container>
   );
