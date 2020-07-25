@@ -1,0 +1,23 @@
+.cards-component-title {
+  color: #334752;
+  text-align: center;
+  font-size: 30px;
+}
+
+.cards-component-text {
+  color: #334752;
+  text-align: center;
+  font-size: 18px;
+  font-family: cursive;
+}
+
+.card-hover-style:hover {
+  transition: 0.3s;
+  opacity: 80%;
+  box-shadow: 0 17px 18px 0 rgba(0, 0, 0, 0.2),
+    0 9px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.wraper {
+  padding-bottom: 100px;
+}
