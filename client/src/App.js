@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
 import EventsPage from './pages/Events';
 import LoginPage from './pages/Login';
 import ProfilePage from './pages/Profile';
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/profile" component={ProfilePage} />
         <Route exact path="/logout" component={LogoutPage} />
       </Container>
+      <Footer />
     </Router>
   );
 }
