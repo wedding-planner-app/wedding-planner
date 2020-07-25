@@ -1,7 +1,8 @@
 import React from 'react';
+import Email from '../../components/Email';
 
 const LoginPage = () => {
-  return <h1>Login page</h1>;
+  return <Email />;
 };
 
 export default LoginPage;
