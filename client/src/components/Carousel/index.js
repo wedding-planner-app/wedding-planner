@@ -6,7 +6,6 @@ import {
   MDBCarouselItem,
   MDBView,
   MDBMask,
-  MDBContainer,
 } from 'mdbreact';
 
 import weddings from './imgs/weddings-modified.jpg';
