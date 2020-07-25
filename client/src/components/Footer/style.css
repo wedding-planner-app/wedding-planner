@@ -10,6 +10,7 @@
   display: flex;
 }
 
-.custom-color {
+.custom-style {
   color: #236184 !important;
+  font-weight: bold;
 }
