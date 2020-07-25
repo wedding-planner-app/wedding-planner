@@ -1,7 +1,13 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import CarouselPage from '../../components/Carousel';
 
 const HomePage = () => {
-  return <h1>Home Page Here</h1>;
+  return (
+    <Container>
+      <CarouselPage />
+    </Container>
+  );
 };
 
 export default HomePage;
