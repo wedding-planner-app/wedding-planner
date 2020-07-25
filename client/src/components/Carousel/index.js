@@ -9,7 +9,9 @@ import {
   MDBContainer,
 } from 'mdbreact';
 
-import carousel1 from './carousel1.jpg';
+import weddings from './weddings.jpg';
+import venues from './venues.jpg';
+import heart from './heart.jpg';
 
 const CarouselPage = () => {
   return (
@@ -26,42 +28,46 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src={carousel1}
+                src={weddings}
                 alt="first image"
               />
               <MDBMask overlay="black-light" />
             </MDBView>
             <MDBCarouselCaption>
-              <h3 className="h3-responsive">Light mask</h3>
-              <p>First text</p>
+              <h3 className="h3-responsive">Weddings</h3>
+              <p>All in one place</p>
             </MDBCarouselCaption>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="2">
             <MDBView>
               <img
                 className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
-                alt="Second slide"
+                src={venues}
+                alt="second image"
               />
               <MDBMask overlay="black-strong" />
             </MDBView>
             <MDBCarouselCaption>
-              <h3 className="h3-responsive">Strong mask</h3>
-              <p>Second text</p>
+              <h3 className="h3-responsive text-primary">Venues</h3>
+              <p className="text-primary text-bold">
+                Your dreams comes true
+              </p>
             </MDBCarouselCaption>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="3">
             <MDBView>
               <img
                 className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
-                alt="Third slide"
+                src={heart}
+                alt="thrid image"
               />
               <MDBMask overlay="black-slight" />
             </MDBView>
             <MDBCarouselCaption>
-              <h3 className="h3-responsive">Slight Mast</h3>
-              <p>Third text</p>
+              <h3 className="h3-responsive text-dark">
+                Wedding Planner
+              </h3>
+              <p className="text-dark">Plan your dream wedding</p>
             </MDBCarouselCaption>
           </MDBCarouselItem>
         </MDBCarouselInner>
