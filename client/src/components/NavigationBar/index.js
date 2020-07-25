@@ -9,12 +9,13 @@ import logo from './logo.png';
 function NavigationBar() {
   return (
     <Navbar bg="light" shadow="lg" expand="lg">
-      <Navbar.Brand href="/events">
+      <Navbar.Brand href="/">
         <Image src={logo} className="custom-img" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse>
         <Nav className="ml-auto color-link">
+          <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/login">Login</Nav.Link>
           <Nav.Link href="/signup">Sign up</Nav.Link>
           <Nav.Link href="/events">Events</Nav.Link>

@@ -9,6 +9,8 @@
   justify-content: center;
   display: flex;
 }
-.img-padding {
-  padding: 5px;
+
+.custom-style {
+  color: #236184 !important;
+  font-weight: bold;
 }
