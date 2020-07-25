@@ -15,7 +15,7 @@ import heart from './imgs/heart.jpg';
 
 const CarouselPage = () => {
   return (
-    <MDBContainer className="mb-5 pb-5">
+    <MDBContainer className="mb-5 pb-5 container-style">
       <MDBCarousel
         activeItem={1}
         length={3}
