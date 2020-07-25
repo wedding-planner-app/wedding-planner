@@ -8,13 +8,14 @@ import LoginPage from './pages/Login';
 import ProfilePage from './pages/Profile';
 import LogoutPage from './pages/Logout';
 import SignUp from './pages/SignUp';
+import HomePage from './pages/Home';
 
 function App() {
   return (
     <Router>
       <NavigationBar />
       <Container>
-        <Route exact path="/" component={EventsPage} />
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/events" component={EventsPage} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={LoginPage} />
