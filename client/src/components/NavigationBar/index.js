@@ -15,6 +15,7 @@ function NavigationBar() {
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse>
         <Nav className="ml-auto color-link">
+          <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/login">Login</Nav.Link>
           <Nav.Link href="/signup">Sign up</Nav.Link>
           <Nav.Link href="/events">Events</Nav.Link>
