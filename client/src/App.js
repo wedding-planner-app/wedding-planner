@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
 import EventsPage from './pages/Events';
@@ -14,14 +13,12 @@ function App() {
   return (
     <Router>
       <NavigationBar />
-      <Container>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/events" component={EventsPage} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/profile" component={ProfilePage} />
-        <Route exact path="/logout" component={LogoutPage} />
-      </Container>
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/events" component={EventsPage} />
+      <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/login" component={LoginPage} />
+      <Route exact path="/profile" component={ProfilePage} />
+      <Route exact path="/logout" component={LogoutPage} />
       <Footer />
     </Router>
   );
