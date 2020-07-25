@@ -1,17 +1,26 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Email() {
   return (
-    <Form>
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-    </Form>
+    <Container fluid className="pt-5">
+      <Row>
+        <Col className="col-3"></Col>
+        <Col className="col-6">
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
+          </Form>
+        </Col>
+        <Col className="col-3"></Col>
+      </Row>
+    </Container>
   );
 }
 
