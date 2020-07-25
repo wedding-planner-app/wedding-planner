@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import './style.css';
 
 function BtnComponent() {
   return (
@@ -7,7 +8,13 @@ function BtnComponent() {
       <Row>
         <Col className="col-3"></Col>
         <Col className="col-6">
-          <Button variant="primary" type="submit">
+          <Button
+            type="submit"
+            variant="outline-light"
+            className="btnColor"
+            size="md"
+            block
+          >
             Submit
           </Button>
         </Col>
