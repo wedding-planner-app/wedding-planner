@@ -77,8 +77,11 @@ Design features basic functionality and style for multiple features.
   <p>Signup webpage wireframe</p>
   <img src="readme\imgs\wireframe-signup.png" width = "600px">
 
-  <p>User profile wireframe to show existing events</p>
+  <p>User profile wireframe</p>
   <img src="readme\imgs\wireframe-profile.png" width = "600px">
+
+  <p>Existing events wireframe</p>
+  <img src="readme\imgs\wireframe-existingReservations.png" width = "600px">
 
   <p>Create event reservation wireframe</p>
   <img src="readme\imgs\wireframe-newReservation.png" width = "600px">
