@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function Email() {
   return (
-    <Container fluid className="pt-5">
+    <Container fluid className="pt-3">
       <Row>
         <Col className="col-3"></Col>
         <Col className="col-6">
