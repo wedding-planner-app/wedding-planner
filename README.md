@@ -81,7 +81,7 @@ Design features basic functionality and style for multiple features.
   <img src="readme\imgs\wireframe-profile.png" width = "600px">
 
   <p>Create event reservation wireframe</p>
-  <img src="readme\imgs\ireframe-newReservation.png" width = "600px">
+  <img src="readme\imgs\wireframe-newReservation.png" width = "600px">
 
   <p>Venues wireframe</p>
   <img src="readme\imgs\wireframe-venues.png" width = "600px">
