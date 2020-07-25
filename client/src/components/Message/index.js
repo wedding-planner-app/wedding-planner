@@ -1,10 +1,11 @@
 import React from 'react';
+import './style.css';
 
 const Message = () => {
   return (
-    <h6 className="mb-5 pb-5 message-style">
+    <div className="p-5 center message-component-style">
       We make your special day the best it can be
-    </h6>
+    </div>
   );
 };
 
