@@ -1,0 +1,14 @@
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(243, 246, 247);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+.img-padding {
+  padding: 5px;
+}
