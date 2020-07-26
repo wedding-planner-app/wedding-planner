@@ -10,15 +10,15 @@ const ProfilePage = () => {
       <Row>
         <Col className="col-3"></Col>
         <Col className="col-6">
-          <Card className="bgLoginComponent custom-style-login bg-light">
+          <Card className="bgProfileComponent custom-style-profile bg-light">
             <Card.Header className="text-center">
-              <Card.Title className="login-title-style">
+              <Card.Title className="profile-title-style">
                 <h3>Profile</h3>
               </Card.Title>
             </Card.Header>
             <Col className="custom pt-3">
               <Card.Img
-                className="login-img-style"
+                className="profile-img-style"
                 variant="top"
                 src={user}
               />
