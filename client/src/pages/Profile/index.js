@@ -1,8 +1,10 @@
 import React from 'react';
 import FirstName from '../../components/FirstName';
-import Email from '../../components/Email'
+import LastName from '../../components/LastName';
+import Email from '../../components/Email';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import user from './user.png';
+import LastName from '../../components/LastName';
 
 const ProfilePage = () => {
   return (
@@ -24,6 +26,7 @@ const ProfilePage = () => {
               />
             </Col>
             <FirstName />
+            <LastName />
             <Email />
           </Card>
         </Col>
