@@ -1,0 +1,25 @@
+.bgLoginComponent {
+    background-color: #f6f6f6;
+    box-shadow: 0 17px 18px 0 rgba(0, 0, 0, 0.2),
+      0 9px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .custom-style-login {
+    border-radius: 25px;
+  }
+  
+  .login-title-style {
+    color: #236184;
+  }
+  
+  .login-img-style {
+    width: 20%;
+    border-radius: 60%;
+    border: solid #236184;
+  }
+  
+  .custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
