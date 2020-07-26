@@ -2,9 +2,9 @@ import React from 'react';
 import FirstName from '../../components/FirstName';
 import LastName from '../../components/LastName';
 import Email from '../../components/Email';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 import user from './user.png';
-import LastName from '../../components/LastName';
+import './style.css';
 
 const ProfilePage = () => {
   return (

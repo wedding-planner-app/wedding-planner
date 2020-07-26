@@ -10,7 +10,7 @@ function FirstName() {
         <Col className="col-3"></Col>
         <Col className="col-6">
           <Form>
-            <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Group controlId="formGridEmail">
               <Form.Label className="text-style">
                 First Name
               </Form.Label>
