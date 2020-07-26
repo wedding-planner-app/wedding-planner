@@ -18,16 +18,22 @@ const ProfilePage = () => {
                 <h3>Profile</h3>
               </Card.Title>
             </Card.Header>
-            <Col className="custom pt-3">
-              <Card.Img
-                className="profile-img-style"
-                variant="top"
-                src={user}
-              />
-            </Col>
-            <FirstName />
-            <LastName />
-            <Email />
+            <Card.Body className="custom">
+              <Col className="custom pt-3">
+                <Card.Img
+                  className="profile-img-style"
+                  variant="top"
+                  src={user}
+                />
+              </Col>
+              <FirstName />
+              <LastName />
+              <Email />
+              <Button className="btnColor">
+                <i class="fa fa-plus p-1" aria-hidden="true"></i>
+                Create New Reservation
+              </Button>
+            </Card.Body>
           </Card>
         </Col>
         <Col className="col-3"></Col>

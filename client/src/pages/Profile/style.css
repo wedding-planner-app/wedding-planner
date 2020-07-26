@@ -23,3 +23,7 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .btnColor {
+    background-color: #236184;
+  }
