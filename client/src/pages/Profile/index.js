@@ -5,6 +5,8 @@ import Email from '../../components/Email';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 import user from './user.png';
 import './style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const ProfilePage = () => {
   return (
@@ -30,7 +32,7 @@ const ProfilePage = () => {
               <LastName />
               <Email />
               <Button className="btnColor">
-                <i class="fa fa-plus p-1" aria-hidden="true"></i>
+                <FontAwesomeIcon icon={faPlus} />
                 Create New Reservation
               </Button>
             </Card.Body>
