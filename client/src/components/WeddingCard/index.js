@@ -1,5 +1,6 @@
 import React from 'react';
-import { CardDeck, Card, Button } from 'react-bootstrap';
+import { Card, Row } from 'react-bootstrap';
+import './style.css';
 
 const WeddingCard = (props) => {
   return (
@@ -8,7 +9,21 @@ const WeddingCard = (props) => {
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>{props.data}</Card.Text>
-        <Button />
+        <Row className="d-flex flex-row justify-content-center">
+          <button
+            className="btn btn-light mr-3 border-style"
+            type="button"
+          >
+            Edit Event
+          </button>
+
+          <button
+            className="btn btn-light border-style"
+            type="button"
+          >
+            Delete Event
+          </button>
+        </Row>
       </Card.Body>
       <Card.Footer>
         <small className="text-muted">
