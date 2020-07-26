@@ -5,25 +5,27 @@ import './style.css';
 import BtnComponent from '../../components/Button';
 import Email from '../../components/Email';
 import Password from '../../components/Password';
+import TextComponent from '../../components/Text';
 
 const SignUp = () => {
   return (
     <Container fluid className="pt-5">
       <Row>
         <Col className="col-6">
-          <Card className="bgLoginComponent custom-style-login bg-light">
+          <Card className="bgSignUpComponent  bg-light">
             <Card.Header className="text-center">
-              <Card.Title className="login-title-style">
+              <Card.Title className="signup-title-style">
                 <h3>SignUp</h3>
               </Card.Title>
             </Card.Header>
             <Col className="custom pt-3">
               <Card.Img
-                className="login-img-style"
+                className="signup-img-style"
                 variant="top"
                 src={user}
               />
             </Col>
+            <TextComponent />
             <Email />
             <Password />
             <BtnComponent />
