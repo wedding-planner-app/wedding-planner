@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import './style.css';
 
-function BtnComponent() {
+function BtnComponent(props) {
   return (
     <Container fluid className="p-3">
       <Row>
@@ -15,7 +15,7 @@ function BtnComponent() {
             size="md"
             block
           >
-            Submit
+            {props.name}
           </Button>
         </Col>
         <Col className="col-3"></Col>
