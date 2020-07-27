@@ -27,7 +27,7 @@ const LoginPage = () => {
             </Col>
             <Email />
             <Password />
-            <BtnComponent />
+            <BtnComponent name="Submit" />
           </Card>
         </Col>
         <Col className="col-3"></Col>
