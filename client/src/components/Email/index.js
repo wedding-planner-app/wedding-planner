@@ -11,13 +11,9 @@ function Email() {
         <Col className="col-6">
           <Form>
             <Form.Group controlId="formBasicEmail">
-<<<<<<< HEAD
               <Form.Label className="text-style">
-                Email address
+                Email Address
               </Form.Label>
-=======
-              <Form.Label className="text-style">Email Address</Form.Label>
->>>>>>> 0874c3c8d99f278c074e8a7ae4a7c9541dabfb35
               <Form.Control type="email" placeholder="Enter email" />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
