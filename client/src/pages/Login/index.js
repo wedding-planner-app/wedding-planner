@@ -12,7 +12,7 @@ const LoginPage = () => {
       <Row>
         <Col className="col-3"></Col>
         <Col className="col-6">
-          <Card className="bgLoginComponent custom-style-login bg-light">
+          <Card className="bgLoginComponent custom-style-login bg-light pb-4">
             <Card.Header className="text-center">
               <Card.Title className="login-title-style">
                 <h3>Login</h3>
