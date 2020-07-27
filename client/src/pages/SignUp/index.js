@@ -67,7 +67,7 @@ export default class SignUp extends Component {
                   />
                 </div>
                 <div className="d-flex flex-column align-items-center">
-                  <BtnComponent name="Signup" />
+                  <BtnComponent name="Create Account" />
                   <p className="forgot-password text-right mt-4">
                     Already registered <a href="/login">sign in?</a>
                   </p>
@@ -80,35 +80,3 @@ export default class SignUp extends Component {
     );
   }
 }
-
-// const SignUp = () => {
-//   return (
-//     <Container fluid className="pt-5">
-//       <Row>
-//         <Col className="col-6">
-//           <Card className="bgSignUpComponent  bg-light">
-//             <Card.Header className="text-center">
-//               <Card.Title className="signup-title-style">
-//                 <h3>SignUp</h3>
-//               </Card.Title>
-//             </Card.Header>
-//             <Col className="custom pt-3">
-//               <Card.Img
-//                 className="signup-img-style"
-//                 variant="top"
-//                 src={user}
-//               />
-//             </Col>
-//             <TextComponent />
-//             <Email />
-//             <Password />
-//             <BtnComponent />
-//           </Card>
-//         </Col>
-//         <Col className="col-3"></Col>
-//       </Row>
-//     </Container>
-//   );
-// };
-
-// export default SignUp;
