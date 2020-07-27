@@ -1,20 +1,16 @@
 // import React from 'react';
+import React, { Component } from 'react';
 import { Card, Container, Col, Row } from 'react-bootstrap';
 import user from './user.png';
 import './style.css';
-// import BtnComponent from '../../components/Button';
-// import Email from '../../components/Email';
-// import Password from '../../components/Password';
-// import TextComponent from '../../components/Text';
-
-import React, { Component } from 'react';
+import BtnComponent from '../../components/Button';
 
 export default class SignUp extends Component {
   render() {
     return (
       <Container fluid className="pt-5">
         <Row>
-          <Col className="col-6 m-auto">
+          <Col className="col-5 m-auto">
             <Card className="bgSignUpComponent">
               <Card.Header className="text-center">
                 <Card.Title className="signup-title-style">
@@ -70,16 +66,12 @@ export default class SignUp extends Component {
                     placeholder="Enter password"
                   />
                 </div>
-
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-block"
-                >
-                  Sign Up
-                </button>
-                <p className="forgot-password text-right">
-                  Already registered <a href="#">sign in?</a>
-                </p>
+                <div className="d-flex flex-column align-items-center">
+                  <BtnComponent name="Signup" />
+                  <p className="forgot-password text-right mt-4">
+                    Already registered <a href="/login">sign in?</a>
+                  </p>
+                </div>
               </form>
             </Card>
           </Col>
