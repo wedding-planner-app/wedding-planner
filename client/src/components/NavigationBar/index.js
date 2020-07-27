@@ -2,6 +2,8 @@ import React from 'react';
 import { Nav, Navbar, Image } from 'react-bootstrap';
 import './style.css';
 import logo from './logo.png';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  *  Navbar Component using {Link}
