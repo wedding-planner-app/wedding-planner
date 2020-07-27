@@ -14,7 +14,7 @@ export default class SignUp extends Component {
     return (
       <Container fluid className="pt-5">
         <Row>
-          <Col className="col-6">
+          <Col className="col-6 m-auto">
             <Card className="bgSignUpComponent">
               <Card.Header className="text-center">
                 <Card.Title className="signup-title-style">
@@ -28,10 +28,11 @@ export default class SignUp extends Component {
                   src={user}
                 />
               </Col>
-              <form>
-                <h3>Sign Up</h3>
+              <form className="mx-5">
                 <div className="form-group">
-                  <label>First name</label>
+                  <label className="signup-title-style ">
+                    First name
+                  </label>
                   <input
                     type="text"
                     className="form-control"
@@ -39,7 +40,9 @@ export default class SignUp extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Last name</label>
+                  <label className="signup-title-style ">
+                    Last name
+                  </label>
                   <input
                     type="text"
                     className="form-control"
@@ -47,7 +50,9 @@ export default class SignUp extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Email address</label>
+                  <label className="signup-title-style ">
+                    Email address
+                  </label>
                   <input
                     type="email"
                     className="form-control"
@@ -56,7 +61,9 @@ export default class SignUp extends Component {
                 </div>
 
                 <div className="form-group">
-                  <label>Password</label>
+                  <label className="signup-title-style">
+                    Password
+                  </label>
                   <input
                     type="password"
                     className="form-control"
