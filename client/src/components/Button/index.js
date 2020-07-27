@@ -1,26 +1,17 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import './style.css';
 
-function BtnComponent() {
+function BtnComponent(props) {
   return (
-    <Container fluid className="p-3">
-      <Row>
-        <Col className="col-3"></Col>
-        <Col className="col-6">
-          <Button
-            type="submit"
-            variant="outline-light"
-            className="btnColor"
-            size="md"
-            block
-          >
-            Submit
-          </Button>
-        </Col>
-        <Col className="col-3"></Col>
-      </Row>
-    </Container>
+    <Button
+      type="submit"
+      variant="light"
+      className="btnColor btn-md m-auto px-5 mb-5 text-white mt-3"
+      size="md"
+    >
+      {props.name}
+    </Button>
   );
 }
 

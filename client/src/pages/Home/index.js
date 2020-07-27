@@ -4,8 +4,8 @@ import CarouselPage from '../../components/Carousel';
 import Message from '../../components/Message';
 import InfoCard from '../../components/InfoCard';
 import venues from './imgs/venues.jpg';
-import guests from './imgs/guests-modified.png';
-import media from './imgs/media.png';
+import guest from './imgs/guest.png';
+import media from './imgs/media.jpeg';
 import invitations from './imgs/invitations.png';
 import './style.css';
 
@@ -23,14 +23,14 @@ const HomePage = () => {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col className="col-3">
           <InfoCard
             title="Venues"
             summary="Summary here"
             img={venues}
           />
         </Col>
-        <Col>
+        <Col className="col-3">
           {' '}
           <InfoCard
             title="Invitations"
@@ -38,19 +38,20 @@ const HomePage = () => {
             img={invitations}
           />
         </Col>
-        <Col>
+        <Col className="col-3">
+          {' '}
           <InfoCard
             title="Media"
             summary="Summary here"
             img={media}
           />
         </Col>
-        <Col>
+        <Col className="col-3">
           {' '}
           <InfoCard
             title="Guests"
             summary="Summary here"
-            img={guests}
+            img={guest}
           />
         </Col>
       </Row>
