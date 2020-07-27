@@ -23,6 +23,7 @@
 - [Team Members](#team-members)
 - [Project Board](https://github.com/wedding-planner-app/wedding-planner/projects/1)
 - [Github Link](https://github.com/wedding-planner-app/wedding-planner)
+- [Hosted App Url](https://wedding-planner-platform.herokuapp.com/)
 
 ---
 
