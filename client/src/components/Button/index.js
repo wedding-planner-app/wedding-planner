@@ -7,7 +7,7 @@ function BtnComponent(props) {
     <Button
       type="submit"
       variant="light"
-      className="btnColor btn-md m-auto px-5 mb-5 text-white"
+      className="btnColor btn-md m-auto px-5 mb-5 text-white mt-3"
       size="md"
     >
       {props.name}
