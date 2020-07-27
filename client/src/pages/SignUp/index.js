@@ -69,7 +69,10 @@ export default class SignUp extends Component {
                 <div className="d-flex flex-column align-items-center">
                   <BtnComponent name="Create Account" />
                   <p className="forgot-password text-right mt-4">
-                    Already registered <a href="/login">sign in?</a>
+                    Already registered{' '}
+                    <a className="color-link" href="/login">
+                      sign in?
+                    </a>
                   </p>
                 </div>
               </form>
