@@ -16,7 +16,10 @@ module.exports = function (sequelize, Datatypes) {
       type: Datatypes.DATE,
       allowNull: false,
     },
-    time: {},
+    time: {
+      type: Datatypes.TIME,
+      allowNull: false,
+    },
   });
 
   return Wedding;
