@@ -34,7 +34,7 @@ module.exports = function (sequelize, Datatypes) {
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Must to enter the time",
+          msg: 'Must to enter the time',
         },
       },
     },
@@ -48,6 +48,16 @@ module.exports = function (sequelize, Datatypes) {
     });
 
     models.Venue.belongsTo(Wedding);
+  };
+
+  Wedding.associate = function (models) {
+    // Associating Wedding with Media
+    // When an Wedding is deleted, also delete any associated Media
+    Wedding.hasMany(models.Media, {
+      onDelete: 'cascade',
+    });
+
+    models.Media.belongsTo(Wedding);
   };
 
   return Wedding;

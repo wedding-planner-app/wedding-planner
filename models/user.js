@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
-  const User = sequelize.define('user', {
+  const User = sequelize.define('User', {
     email: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
@@ -18,17 +18,24 @@ module.exports = function (sequelize, DataTypes) {
       },
     },
     password: {
-      type: DataTypes.STRING(64),
-      // added validation to password (must match this RegExp)
-      validate: {
-        is: /^[0-9a-f]{64}$/i,
-      },
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
   });
+
+  User.associate = function (models) {
+    // Associating User with Wedding
+    // When an User is deleted, also delete any associated Wedding
+    User.hasMany(models.Wedding, {
+      onDelete: 'cascade',
+    });
+
+    models.Wedding.belongsTo(User);
+  };
 
   return User;
 };
