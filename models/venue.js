@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
     },
-    // // Added CITY data type
+    // Added CITY data type
     city: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -42,6 +42,7 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
     },
+    // Added ZIPCODE data type
     zipCode: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -50,7 +51,6 @@ module.exports = function (sequelize, DataTypes) {
           msg: 'Must enter zipcode',
         },
       },
-    },
     },
   });
   // Venues model
