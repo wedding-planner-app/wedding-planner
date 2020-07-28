@@ -18,6 +18,6 @@
     0 9px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.wraper {
-  padding-bottom: 100px;
+.custom-margin {
+  margin-bottom: 70px !important;
 }
