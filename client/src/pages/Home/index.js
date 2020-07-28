@@ -22,15 +22,15 @@ const HomePage = () => {
           <Message className="col-12" />
         </Col>
       </Row>
-      <Row className="d-flex flex-wrap">
-        <Col className="col-lg-3 col-xs-12 col-md-6">
+      <Row className="d-flex flex-wrap mb-5 pb-5">
+        <Col className="col-lg-3 col-xs-12 col-md-6 col-12">
           <InfoCard
             title="Venues"
             summary="Summary here"
             img={venues}
           />
         </Col>
-        <Col className="col-lg-3 col-xs-12 col-md-6">
+        <Col className="col-lg-3 col-xs-12 col-md-6 col-12">
           {' '}
           <InfoCard
             title="Invitations"
@@ -38,7 +38,7 @@ const HomePage = () => {
             img={invitations}
           />
         </Col>
-        <Col className="col-lg-3 col-xs-12 col-md-6">
+        <Col className="col-lg-3 col-xs-12 col-md-6 col-12">
           {' '}
           <InfoCard
             title="Media"
@@ -46,7 +46,7 @@ const HomePage = () => {
             img={media}
           />
         </Col>
-        <Col className="col-lg-3 col-xs-12 col-md-6">
+        <Col className="col-lg-3 col-xs-12 col-md-6 col-12">
           {' '}
           <InfoCard
             title="Guests"
