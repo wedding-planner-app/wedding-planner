@@ -30,5 +30,15 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
+  User.associate = function (models) {
+    // Associating User with Wedding
+    // When an User is deleted, also delete any associated Wedding
+    User.hasMany(models.Wedding, {
+      onDelete: 'cascade',
+    });
+
+    models.Wedding.belongsTo(User);
+  };
+
   return User;
 };
