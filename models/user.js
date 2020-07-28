@@ -5,6 +5,11 @@ module.exports = function (sequelize, DataTypes) {
     email: {
       type: DataTypes.TEXT,
       allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Must to enter an username',
+        },
+      },
       unique: true,
       validate: {
         // checks for email format (yst@gmail.com)
