@@ -6,6 +6,11 @@ module.exports = function (sequelize, Datatypes) {
       // title type STRING (Default length 255)
       type: Datatypes.STRING,
       allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Must to enter a wedding title',
+        },
+      },
     },
     description: {
       // added TEXT datatypes because is a long text (An unlimited length text column)
@@ -16,11 +21,22 @@ module.exports = function (sequelize, Datatypes) {
       // added DATE datatype
       type: Datatypes.DATE,
       allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Must to enter an Date',
+        },
+        isDate: true,
+      },
     },
     time: {
       // added TIME datatype
       type: Datatypes.TIME,
       allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Must to enter the time",
+        },
+      },
     },
   });
 
