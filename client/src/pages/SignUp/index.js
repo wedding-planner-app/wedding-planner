@@ -8,9 +8,9 @@ import BtnComponent from '../../components/Button';
 export default class SignUp extends Component {
   render() {
     return (
-      <Container fluid className="pt-5">
+      <Container fluid className="pt-5 custom-margin">
         <Row>
-          <Col className="col-5 m-auto">
+          <Col className="col-lg-6 col-sm-12 m-auto">
             <Card className="bgSignUpComponent">
               <Card.Header className="text-center">
                 <Card.Title className="signup-title-style">
@@ -24,58 +24,60 @@ export default class SignUp extends Component {
                   src={user}
                 />
               </Col>
-              <form className="mx-5">
-                <div className="form-group">
-                  <label className="signup-title-style ">
-                    First name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="First name"
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="signup-title-style ">
-                    Last name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Last name"
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="signup-title-style ">
-                    Email address
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Enter email"
-                  />
-                </div>
+              <Col className="col-lg-12 ">
+                <form className="mx-5">
+                  <div className="form-group">
+                    <label className="signup-title-style ">
+                      First name
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="First name"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label className="signup-title-style ">
+                      Last name
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Last name"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label className="signup-title-style ">
+                      Email address
+                    </label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="Enter email"
+                    />
+                  </div>
 
-                <div className="form-group">
-                  <label className="signup-title-style">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Enter password"
-                  />
-                </div>
-                <div className="d-flex flex-column align-items-center">
-                  <BtnComponent name="Create Account" />
-                  <p className="forgot-password text-right mt-4">
-                    Already registered{' '}
-                    <a className="color-link" href="/login">
-                      sign in?
-                    </a>
-                  </p>
-                </div>
-              </form>
+                  <div className="form-group">
+                    <label className="signup-title-style">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      placeholder="Enter password"
+                    />
+                  </div>
+                  <div className="d-flex flex-column align-items-center">
+                    <BtnComponent name="Create Account" />
+                    <p className="forgot-password text-right mt-4">
+                      Already registered{' '}
+                      <a className="color-link" href="/login">
+                        sign in?
+                      </a>
+                    </p>
+                  </div>
+                </form>
+              </Col>
             </Card>
           </Col>
         </Row>
