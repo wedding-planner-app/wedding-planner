@@ -1,13 +1,13 @@
-// User model placeholde
+// User model placeholder
 
 module.exports = function (sequelize, DataTypes) {
-  var Venues = sequelize.define('Venues', {
+  var Venue = sequelize.define('Venue', {
     name: DataTypes.STRING,
     street: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
-    zipcode: DataTypes.STRING,
+    zipCode: DataTypes.STRING,
   });
   // Venues model
-  return Venues;
+  return Venue;
 };
