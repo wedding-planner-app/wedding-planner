@@ -2,7 +2,7 @@
 module.exports = function (sequelize, DataTypes) {
   var Venue = sequelize.define('Venue', {
     // Creating columns to store the required data in the venue table
-    // Code to create name column in Venue table
+    // Added NAME data type
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
     },
-    // Code to create street column in Venue table
+    // Added STREET data type
     street: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
     },
-    // Code to create city column in Venue table
+    // // Added CITY data type
     city: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,8 +32,26 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
     },
-    state: DataTypes.STRING,
-    zipCode: DataTypes.STRING,
+    // Added STATE data type
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Must enter state name',
+        },
+      },
+    },
+    zipCode: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Must enter zipcode',
+        },
+      },
+    },
+    },
   });
   // Venues model
   return Venue;
