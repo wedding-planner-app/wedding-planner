@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
-import Table from 'react-bootstrap/Table';
-import { Card, Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 const RSVPInfoCard = (props) => {
   return (
