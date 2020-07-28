@@ -51,8 +51,19 @@ module.exports = function (sequelize, DataTypes) {
           msg: 'Must enter zipcode',
         },
       },
-    },
-  });
+    }
+  }),
+
+    Venue.associate = function (models) {
+      // Associating Venue with Weddings
+      // When an Wedding is deleted, also delete any entry for associated Venue
+      Venue.hasMany(models.Wedding, {
+        onDelete: 'cascade',
+      });
+  
+      models.Wedding.belongsTo(Wedding);
+    };
+
   // Venues model
   return Venue;
 };
