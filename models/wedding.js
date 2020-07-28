@@ -24,5 +24,15 @@ module.exports = function (sequelize, Datatypes) {
     },
   });
 
+  Wedding.associate = function (models) {
+    // Associating Wedding with Venue
+    // When an Wedding is deleted, also delete any associated Venue
+    Wedding.hasOne(models.Venue, {
+      onDelete: 'cascade',
+    });
+
+    models.Venue.belongsTo(Wedding);
+  };
+
   return Wedding;
 };
