@@ -13,24 +13,24 @@ const HomePage = () => {
   return (
     <Container fluid className="p-0">
       <Row>
-        <Col>
+        <Col className="col-12">
           <CarouselPage />
         </Col>
       </Row>
       <Row>
         <Col>
-          <Message />
+          <Message className="col-12" />
         </Col>
       </Row>
-      <Row>
-        <Col className="col-3">
+      <Row className="d-flex flex-wrap">
+        <Col className="col-lg-3 col-xs-12 col-md-6">
           <InfoCard
             title="Venues"
             summary="Summary here"
             img={venues}
           />
         </Col>
-        <Col className="col-3">
+        <Col className="col-lg-3 col-xs-12 col-md-6">
           {' '}
           <InfoCard
             title="Invitations"
@@ -38,7 +38,7 @@ const HomePage = () => {
             img={invitations}
           />
         </Col>
-        <Col className="col-3">
+        <Col className="col-lg-3 col-xs-12 col-md-6">
           {' '}
           <InfoCard
             title="Media"
@@ -46,7 +46,7 @@ const HomePage = () => {
             img={media}
           />
         </Col>
-        <Col className="col-3">
+        <Col className="col-lg-3 col-xs-12 col-md-6">
           {' '}
           <InfoCard
             title="Guests"
