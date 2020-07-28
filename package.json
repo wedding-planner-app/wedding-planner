@@ -20,8 +20,8 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7",
-    "mysql2": "^1.6.5"
+    "mysql2": "^1.7.0",
+    "nodemon": "^1.18.7"
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
