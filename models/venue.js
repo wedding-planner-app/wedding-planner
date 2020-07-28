@@ -18,11 +18,20 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Must enter a street for the venue',
+          msg: 'Must enter physical street address',
         },
       },
     },
-    city: DataTypes.STRING,
+    // Code to create city column in Venue table
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Must enter city name',
+        },
+      },
+    },
     state: DataTypes.STRING,
     zipCode: DataTypes.STRING,
   });
