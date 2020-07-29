@@ -8,8 +8,10 @@ import ProfilePage from './pages/Profile';
 import LogoutPage from './pages/Logout';
 import SignUp from './pages/SignUp';
 import HomePage from './pages/Home';
+import VenuesPage from './pages/Venue';
 import RSVPPage from './pages/Invitation-RSVP';
 import GuestsPage from './pages/Guests';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/profile" component={ProfilePage} />
       <Route exact path="/logout" component={LogoutPage} />
+      <Route exact path="/venues" component={VenuesPage} />
       <Route exact path="/RSVP" component={RSVPPage} />
       <Route exact path="/guests" component={GuestsPage} />
       <Footer />
