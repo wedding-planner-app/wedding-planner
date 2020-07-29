@@ -21,6 +21,8 @@ function NavigationBar() {
           <Nav.Link href="/events">Events</Nav.Link>
           <Nav.Link href="/profile">Profile</Nav.Link>
           <Nav.Link href="/logout">Logout</Nav.Link>
+          <Nav.Link href="/venues">Venues</Nav.Link>
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>
