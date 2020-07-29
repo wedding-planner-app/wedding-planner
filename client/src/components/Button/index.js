@@ -9,6 +9,7 @@ function BtnComponent(props) {
       variant="light"
       className="btnColor btn-md m-auto px-5 mb-5 text-white mt-3"
       size="md"
+      onClick={props.onClick}
     >
       {props.name}
     </Button>
