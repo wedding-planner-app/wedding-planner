@@ -1,7 +1,7 @@
-module.exports = function (sequelize, Datatypes) {
+module.exports = function (sequelize, DataTypes) {
   const Media = sequelize.define('Media', {
     mediaType: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
@@ -10,7 +10,7 @@ module.exports = function (sequelize, Datatypes) {
       },
     },
     url: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isUrl: {
