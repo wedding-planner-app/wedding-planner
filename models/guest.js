@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  // When an Wedding is deleted, also delete any associated Venue
+  // When an Wedding is deleted, delete quest from associated weeding
   Guest.hasOne(models.Wedding, {
     onDelete: 'cascade',
   });
