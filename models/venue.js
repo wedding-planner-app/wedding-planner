@@ -51,7 +51,7 @@ module.exports = function (sequelize, DataTypes) {
           msg: 'Must enter zipcode',
         },
       },
-    }
+    },
   });
 
   // Venues model

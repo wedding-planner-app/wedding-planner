@@ -60,5 +60,15 @@ module.exports = function (sequelize, Datatypes) {
     models.Media.belongsTo(Wedding);
   };
 
+ Wedding.associate = function (models) {
+    // Associating Guest with Wedding
+    // When an wedding is deleted, all the guests will be deleted
+    Wedding.hasMany(models.Guest, {
+      onDelete: 'cascade',
+    });
+
+    models.Guest.belongsTo(Wedding);
+  };
+
   return Wedding;
 };
