@@ -35,10 +35,25 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  // When an Wedding is deleted, delete quest from associated weeding
-  Guest.hasOne(models.Wedding, {
-    onDelete: 'cascade',
-  });
+  Guest.associate = function (models) {
+    // Associating Guest with Wedding
+    // When an Guest is deleted,they are also deleted from the wedding table
+    Guest.hasOne(models.Wedding, {
+      onDelete: 'cascade',
+    });
+
+    models.Guest.belongsTo(Wedding);
+  };
+
+  Guest.associate = function (models) {
+    // Associating Guest with Invitation
+    // When an Guest is deleted,they are also deleted from the invitation table
+    Guest.hasOne(models.Invitation, {
+      onDelete: 'cascade',
+    });
+
+    models.Guest.belongsTo(Invitation);
+  };
 
   return Guest;
 };
