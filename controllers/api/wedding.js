@@ -1,10 +1,11 @@
 const router = require('express').Router();
-var db = require('../../models/wedding');
-var Sequelize = require('sequelize');
+var db = require('../../models');
 
-// get wedding ''
+// getting *all* weddings from the API
 router.get('/', function (req, res) {
-  console.log('Welcome to Wedding API. You are connected to the DB');
+  db.Wedding.findAll({}).then(function (dbAllWedding) {
+    res.json(dbAllWedding);
+  });
 });
 
 module.exports = router;
