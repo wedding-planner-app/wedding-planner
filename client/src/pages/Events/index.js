@@ -39,10 +39,8 @@ const EventsPage = () => {
           />
         </Col>
       </Row>
-      <Row>
-        <Col className="m-auto">
-          <Btn name="Create Event" />
-        </Col>
+      <Row className="custom-margin">
+        <Btn name="Create Event" />
       </Row>
     </Container>
   );
