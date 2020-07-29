@@ -4,21 +4,21 @@ import './style.css';
 
 const WeddingCard = (props) => {
   return (
-    <Card style={{ height: '30erm' }}>
+    <Card style={{ height: '30erm' }} className="mb-4 m-auto">
       <Card.Img variant="top" src={props.img} />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>{props.data}</Card.Text>
-        <Row className="d-flex flex-row justify-content-center">
+        <Row className="d-flex flex-wrap">
           <button
-            className="btn btn-light mr-3 border-style"
+            className="btn btn-light mr-3 border-style mb-2 m-auto"
             type="button"
           >
             Edit Event
           </button>
 
           <button
-            className="btn btn-light border-style"
+            className="btn btn-light border-style mb-2 m-auto"
             type="button"
           >
             Delete Event

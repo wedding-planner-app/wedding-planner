@@ -6,15 +6,15 @@ import logo from './logo.png';
 const EventsPage = () => {
   return (
     <Container className="pt-5 mb-5">
-      <Row>
-        <Col className="col-6 mb-3">
+      <Row className="d-flex flex-wrap">
+        <Col className="col-sm-12 col-lg-6 mb-3">
           <WeddingCard
             img={logo}
             title="Event"
             username="@ wedding_team"
           />
         </Col>
-        <Col className="col-6 mb-3">
+        <Col className="col-sm-12 col-lg-6 mb-3">
           <WeddingCard
             img={logo}
             title="Event"
@@ -23,14 +23,14 @@ const EventsPage = () => {
         </Col>
       </Row>
       <Row>
-        <Col className="col-6 mb-3">
+        <Col className="col-sm-12 col-lg-6 mb-3">
           <WeddingCard
             img={logo}
             title="Event"
             username="@ wedding_team"
           />
         </Col>
-        <Col className="col-6 mb-3">
+        <Col className="col-sm-12 col-lg-6 mb-3">
           <WeddingCard
             img={logo}
             title="Event"
