@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import WeddingCard from '../../components/WeddingCard';
 import logo from './logo.png';
+import Btn from '../../components/Button';
 
 const EventsPage = () => {
   return (
@@ -37,6 +38,9 @@ const EventsPage = () => {
             username="@ wedding_team"
           />
         </Col>
+      </Row>
+      <Row className="custom-margin">
+        <Btn name="Create Event" />
       </Row>
     </Container>
   );
