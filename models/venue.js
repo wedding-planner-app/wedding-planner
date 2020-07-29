@@ -52,7 +52,7 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
     }
-  }),
+  });
 
   // Venues model
   return Venue;
