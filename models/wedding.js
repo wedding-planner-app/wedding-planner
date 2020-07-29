@@ -40,31 +40,24 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
+  Wedding.associate = function (models) {};
+
   Wedding.associate = function (models) {
-    // Associating Wedding with Media
-    // When an Wedding is deleted, also delete any associated Media
     Wedding.hasMany(models.Media, {
       onDelete: 'cascade',
     });
 
-    models.Media.belongsTo(Wedding);
-  };
-
-  Wedding.associate = function (models) {
     // Associating Guest with Wedding
-    // When an wedding is deleted, all the guests will be deleted
     Wedding.hasMany(models.Guest, {
       onDelete: 'cascade',
     });
 
-    models.Guest.belongsTo(Wedding);
-  };
-
-  Wedding.associate = function (models) {
     Wedding.hasOne(models.Venue, {
       onDelete: 'cascade',
     });
 
+    models.Media.belongsTo(Wedding);
+    models.Guest.belongsTo(Wedding);
     models.Venue.belongsTo(Wedding);
   };
 
