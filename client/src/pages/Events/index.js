@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import WeddingCard from '../../components/WeddingCard';
 import logo from './logo.png';
+import Btn from '../../components/Button';
 
 const EventsPage = () => {
   return (
@@ -36,6 +37,11 @@ const EventsPage = () => {
             title="Event"
             username="@ wedding_team"
           />
+        </Col>
+      </Row>
+      <Row>
+        <Col className="m-auto">
+          <Btn name="Create Event" />
         </Col>
       </Row>
     </Container>
