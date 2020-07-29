@@ -1,10 +1,10 @@
-module.exports = function (sequelize, Datatypes) {
+module.exports = function (sequelize, DataTypes) {
   // creating table wedding
   var Wedding = sequelize.define('Wedding', {
     // added validation allowNull => false
     title: {
       // title type STRING (Default length 255)
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
@@ -14,12 +14,12 @@ module.exports = function (sequelize, Datatypes) {
     },
     description: {
       // added TEXT datatypes because is a long text (An unlimited length text column)
-      type: Datatypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     date: {
       // added DATE datatype
-      type: Datatypes.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
       validate: {
         notNull: {
@@ -30,7 +30,7 @@ module.exports = function (sequelize, Datatypes) {
     },
     time: {
       // added TIME datatype
-      type: Datatypes.TIME,
+      type: DataTypes.TIME,
       allowNull: false,
       validate: {
         notNull: {
@@ -40,24 +40,25 @@ module.exports = function (sequelize, Datatypes) {
     },
   });
 
-  Wedding.associate = function (models) {
-    // Associating Wedding with Venue
-    // When an Wedding is deleted, also delete any associated Venue
-    Wedding.hasOne(models.Venue, {
-      onDelete: 'cascade',
-    });
-
-    models.Venue.belongsTo(Wedding);
-  };
+  Wedding.associate = function (models) {};
 
   Wedding.associate = function (models) {
-    // Associating Wedding with Media
-    // When an Wedding is deleted, also delete any associated Media
     Wedding.hasMany(models.Media, {
       onDelete: 'cascade',
     });
 
+    // Associating Guest with Wedding
+    Wedding.hasMany(models.Guest, {
+      onDelete: 'cascade',
+    });
+
+    Wedding.hasOne(models.Venue, {
+      onDelete: 'cascade',
+    });
+
     models.Media.belongsTo(Wedding);
+    models.Guest.belongsTo(Wedding);
+    models.Venue.belongsTo(Wedding);
   };
 
   return Wedding;
