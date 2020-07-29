@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const userRoutes = require('./user');
+const weddingRoutes = require('./wedding');
 
-// Book routes
+// api routes
 router.use('/user', userRoutes);
 router.use('/wedding', weddingRoutes);
 
