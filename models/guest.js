@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
     // Adds NAME data type
     name: {
       // Name type STRING
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
     // Adds EMAIL data type
     email: {
       // Email type STRING
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
@@ -25,7 +25,7 @@ module.exports = function (sequelize, DataTypes) {
     // Adds phone data type
     phone: {
       // Phone type STRING
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
@@ -35,7 +35,6 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-
   Guest.associate = function (models) {
     // Associating Guest with Invitation
     // When an Guest is deleted,they are also deleted from the invitation table
@@ -43,7 +42,7 @@ module.exports = function (sequelize, DataTypes) {
       onDelete: 'cascade',
     });
 
-    models.Guest.belongsTo(Invitation);
+    models.Invitation.belongsTo(Guest);
   };
 
   return Guest;
