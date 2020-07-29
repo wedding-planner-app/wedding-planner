@@ -40,15 +40,7 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  Wedding.associate = function (models) {
-    // Associating Wedding with Venue
-    // When an Wedding is deleted, also delete any associated Venue
-    Wedding.hasOne(models.Venue, {
-      onDelete: 'cascade',
-    });
 
-    models.Venue.belongsTo(Wedding);
-  };
 
   Wedding.associate = function (models) {
     // Associating Wedding with Media
@@ -69,6 +61,16 @@ module.exports = function (sequelize, DataTypes) {
 
     models.Guest.belongsTo(Wedding);
   };
+
+  Wedding.associate = function (models) {
+    Wedding.hasOne(models.Venue, {
+      onDelete: 'cascade',
+    });
+
+    models.Venue.belongsTo(Wedding);
+  };
+
+ 
 
   return Wedding;
 };
