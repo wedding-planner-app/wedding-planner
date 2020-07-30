@@ -86,4 +86,16 @@ router.delete('/:id', function (req, res) {
   });
 });
 
+router.post('/login', function (req, res) {
+  db.User.findOne({
+    where: {
+      email: req.params.email,
+    },
+  }).then(function (dbUserByEmail) {
+    if (dbUserByEmail.password === req.body.password)
+      return res.json({ id: dbUserByEmail.id });
+    else return res.status(401);
+  });
+});
+
 module.exports = router;
