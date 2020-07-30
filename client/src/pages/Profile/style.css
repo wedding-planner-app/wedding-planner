@@ -28,3 +28,8 @@
   flex-direction: column;
 }
 
+.center-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
