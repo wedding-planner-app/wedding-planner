@@ -1,14 +1,14 @@
 const router = require('express').Router();
 var db = require('../../models');
 
-// getting *all* weddings from the API
+// getting *all* weddings from the API, route => ('api/weddings')
 router.get('/', function (req, res) {
   db.Wedding.findAll({}).then(function (dbAllWedding) {
     res.json(dbAllWedding);
   });
 });
 
-// getting a wedding by id
+// getting a wedding by id, route => ('api/weddings/:id')
 router.get('/:id', function (req, res) {
   db.Wedding.findOne({
     where: {
