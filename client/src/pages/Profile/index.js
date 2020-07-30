@@ -17,7 +17,7 @@ const ProfilePage = () => {
         <Col xs="8" md="6" lg="6">
           <Card className="bgProfileComponent custom-style-profile bg-light">
             <Card.Header className="profile-title-style bg-light">
-                <h3>Profile</h3>
+              <h3>Profile</h3>
             </Card.Header>
             <Card.Body>
               <Col className="center-img">
@@ -27,7 +27,7 @@ const ProfilePage = () => {
                   src={user}
                 />
               </Col>
-              <FirstName className="custom" />
+              <FirstName />
               <LastName />
               <Email />
               <Col className="center-btn">
