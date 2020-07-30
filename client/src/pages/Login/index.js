@@ -6,6 +6,7 @@ import { Card, Container, Row, Col } from 'react-bootstrap';
 import user from './user.png';
 import './style.css';
 
+// function component using {useState} Hook
 export default function LoginPage() {
   // added const `state` for email and password
   const [email, setEmail] = useState('');
