@@ -21,7 +21,13 @@ router.get('/:id', function (req, res) {
 
 // get user by email
 router.get('/:email', function (req, res) {
-  //TODOs
+  db.User.findOne({
+    where: {
+      email: req.params.email,
+    },
+  }).then(function (dbAllUserByEmail) {
+    res.json(dbAllUserByEmail);
+  });
 });
 
 // post route
