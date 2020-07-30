@@ -41,9 +41,21 @@ router.post('/', function (req, res) {
   });
 });
 
-// put route
-router.put('/user/update', function (req, res) {
-  //TODOs
+// update user
+router.put('/:id', function (req, res) {
+  db.User.update(
+    {
+      password: req.params.password,
+      active: req.params.active,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    },
+  ).then(function (dbUpdateUser) {
+    res.json(dbUpdateUser);
+  });
 });
 
 module.exports = router;
