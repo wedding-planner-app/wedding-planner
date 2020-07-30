@@ -88,14 +88,15 @@ router.delete('/:id', function (req, res) {
 
 // login route , verify if the user associate with the email exists.
 router.post('/login', function (req, res) {
+  console.log(req.body);
   db.User.findOne({
     where: {
       email: req.body.email,
     },
   }).then(function (dbUserByEmail) {
-    if (dbUserByEmail.password === req.body.password)
+    if (dbUserByEmail && dbUserByEmail.password === req.body.password)
       return res.json({ id: dbUserByEmail.id });
-    else return res.status(401);
+    else return res.status(401).json({});
   });
 });
 
