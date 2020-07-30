@@ -35,7 +35,7 @@ router.post('/', function (req, res) {
   db.User.create({
     email: req.body.email,
     password: req.body.password,
-    active: 'true',
+    active: req.body.active,
   }).then(function (dbCreateUser) {
     res.json(dbCreateUser);
   });
