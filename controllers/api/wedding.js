@@ -61,7 +61,6 @@ router.put('/:id', function (req, res) {
       },
     },
   ).then(function (dbUpdateWedding) {
-    console.log(dbUpdateWedding);
     res.json(dbUpdateWedding);
   });
 });
