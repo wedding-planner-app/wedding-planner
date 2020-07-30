@@ -22,7 +22,7 @@ function NavigationBar() {
           <Nav.Link href="/profile">Profile</Nav.Link>
           <Nav.Link href="/logout">Logout</Nav.Link>
           <Nav.Link href="/venues">Venues</Nav.Link>
-
+          <Nav.Link href="/newreservation">New-Reservation</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
