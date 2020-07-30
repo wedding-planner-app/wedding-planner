@@ -16,6 +16,8 @@
     width: 20%;
     border-radius: 60%;
     border: solid #236184;
+    display: flex;
+    align-items: center;
   }
 
   .btnColor {
