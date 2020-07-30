@@ -8,8 +8,19 @@ router.get('/', function (req, res) {
   });
 });
 
-// get route, edited to match sequelize
-router.get('/user', function (req, res) {
+// get user by id
+router.get('/:id', function (req, res) {
+  db.findOne({
+    where: {
+      id: req.params.id,
+    },
+  }).then(function (dbAllUserById) {
+    res.json(dbAllUserById);
+  });
+});
+
+// get user by email
+router.get('/:email', function (req, res) {
   //TODOs
 });
 
