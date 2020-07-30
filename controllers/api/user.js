@@ -31,7 +31,15 @@ router.get('/email/:email', function (req, res) {
 });
 
 // post a user
-router.post('/', function (req, res) {});
+router.post('/', function (req, res) {
+  db.User.create({
+    email: req.body.email,
+    password: req.body.password,
+    active: 'true',
+  }).then(function (dbCreateUser) {
+    res.json(dbCreateUser);
+  });
+});
 
 // put route
 router.put('/user/update', function (req, res) {
