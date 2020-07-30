@@ -21,7 +21,7 @@ const ProfilePage = () => {
               </Card.Title>
             </Card.Header>
             <Card.Body>
-              <Col className="center">
+              <Col className="center-img">
                 <Card.Img
                   className="profile-img-style"
                   variant="top"
@@ -31,10 +31,10 @@ const ProfilePage = () => {
               <FirstName className="custom" />
               <LastName />
               <Email />
-              <Button className="btnColor">
-                <FontAwesomeIcon icon={faPlus} />
-                Create New Reservation
-              </Button>
+                <Button className="btnColor">
+                  <FontAwesomeIcon icon={faPlus} />
+                  Create New Reservation
+                </Button>
             </Card.Body>
           </Card>
         </Col>

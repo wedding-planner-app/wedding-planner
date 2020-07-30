@@ -1,29 +1,30 @@
 .bgProfileComponent {
-    background-color: #f6f6f6;
-    box-shadow: 0 17px 18px 0 rgba(0, 0, 0, 0.2),
-      0 9px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  .custom-style-profile {
-    border-radius: 25px;
-  }
-  
-  .profile-title-style {
-    color: #236184;
-  }
-  
-  .profile-img-style {
-    width: 20%;
-    border-radius: 60%;
-    border: solid #236184;
-  }
+  background-color: #f6f6f6;
+  box-shadow: 0 17px 18px 0 rgba(0, 0, 0, 0.2),
+    0 9px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-  .btnColor {
-    background-color: #236184;
-  }
+.custom-style-profile {
+  border-radius: 25px;
+}
 
-  .center{
-    display: flex;
-    align-items: center;
-  }
-  
+.profile-title-style {
+  color: #236184;
+}
+
+.profile-img-style {
+  width: 20%;
+  border-radius: 60%;
+  border: solid #236184;
+}
+
+.btnColor {
+  background-color: #236184;
+}
+
+.center-img {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
