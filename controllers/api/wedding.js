@@ -8,6 +8,7 @@ router.get('/', function (req, res) {
   });
 });
 
+// getting a wedding by id
 router.get('/:id', function (req, res) {
   db.Wedding.findOne({
     where: {
@@ -19,6 +20,7 @@ router.get('/:id', function (req, res) {
   });
 });
 
+// getting the wedding by the user active, route => ('api/weddings/user/:userid')
 router.get('/user/:userid', function (req, res) {
   db.Wedding.findAll({
     where: {
@@ -30,6 +32,7 @@ router.get('/user/:userid', function (req, res) {
   });
 });
 
+// post a wedding, route => ( 'api/weddings')
 router.post('/', function (req, res) {
   db.Wedding.create({
     title: req.body.title,
@@ -43,6 +46,7 @@ router.post('/', function (req, res) {
   });
 });
 
+// update a wedding
 router.put('/:id', function (req, res) {
   db.Wedding.update(
     {
