@@ -20,7 +20,6 @@ export default function LoginPage() {
   // prevent default
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(`email: ${email} and password: ${password}`);
   }
 
   return (
