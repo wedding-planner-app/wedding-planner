@@ -1,0 +1,15 @@
+.title-style {
+    color: #236184;
+  }
+
+  .vertical-align{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+  }
+
+  .center-align {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
