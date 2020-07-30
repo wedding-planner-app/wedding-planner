@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Email from '../../components/Email';
 import Password from '../../components/Password';
 import BtnComponent from '../../components/Button';
