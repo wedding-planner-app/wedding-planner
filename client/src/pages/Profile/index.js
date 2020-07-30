@@ -14,19 +14,19 @@ const ProfilePage = () => {
       <Row>
         <Col className="col-3"></Col>
         <Col className="col-6">
-          <Card className="bgProfileComponent custom-style-profile bg-light">
-            <Card.Header className="text-center">
+          <Card className="text-center bgProfileComponent custom-style-profile bg-light">
+            <Card.Header>
               <Card.Title className="profile-title-style">
                 <h3>Profile</h3>
               </Card.Title>
             </Card.Header>
-            <Card.Body className="custom">
+            <Card.Body >
               <Card.Img
                 className="profile-img-style"
                 variant="top"
                 src={user}
               />
-              <FirstName />
+              <FirstName className="custom"/>
               <LastName />
               <Email />
               <Button className="btnColor">

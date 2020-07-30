@@ -17,13 +17,8 @@
     border-radius: 60%;
     border: solid #236184;
   }
-  
-  .custom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
   .btnColor {
     background-color: #236184;
   }
+  
