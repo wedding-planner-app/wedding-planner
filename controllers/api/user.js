@@ -20,7 +20,7 @@ router.get('/:id', function (req, res) {
 });
 
 // get user by email
-router.get('/:email', function (req, res) {
+router.get('/email/:email', function (req, res) {
   db.User.findOne({
     where: {
       email: req.params.email,
