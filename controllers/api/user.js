@@ -1,7 +1,7 @@
 const router = require('express').Router();
 var db = require('../../models');
 
-// get users -> index
+// get all users
 router.get('/', function (req, res) {
   db.User.findAll({}).then(function (dbAllUsers) {
     res.json(dbAllUsers);
