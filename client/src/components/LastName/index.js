@@ -5,7 +5,7 @@ import './style.css';
 function LastName() {
   return (
     <Form>
-      <Form.Group controlId="formGridEmail">
+      <Form.Group controlId="formBasicEmail">
         <Form.Label className="text-style">Last Name</Form.Label>
         <Form.Control
           type="email"
