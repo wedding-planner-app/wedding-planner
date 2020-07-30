@@ -1,24 +1,89 @@
 const router = require('express').Router();
 var db = require('../../models');
 
-// get route -> index
+// get all users , route => ('api/user')
 router.get('/', function (req, res) {
-  //do things here for other routes
+  db.User.findAll({}).then(function (dbAllUsers) {
+    res.json(dbAllUsers);
+  });
 });
 
-// get route, edited to match sequelize
-router.get('/user', function (req, res) {
-  //TODOs
+// get user by id , route => ('api/user/:id')
+router.get('/:id', function (req, res) {
+  db.User.findOne({
+    where: {
+      id: req.params.id,
+    },
+  }).then(function (dbAllUserById) {
+    res.json(dbAllUserById);
+  });
 });
 
-// post route
-router.post('/user/create', function (req, res) {
-  //TODOs
+// get user by email , route => ('api/user/email/:email')
+router.get('/email/:email', function (req, res) {
+  db.User.findOne({
+    where: {
+      email: req.params.email,
+    },
+  }).then(function (dbAllUserByEmail) {
+    res.json(dbAllUserByEmail);
+  });
 });
 
-// put route
-router.put('/user/update', function (req, res) {
-  //TODOs
+// post a user , route => ('api/user')
+router.post('/', function (req, res) {
+  db.User.create({
+    email: req.body.email,
+    password: req.body.password,
+    active: req.body.active,
+  }).then(function (dbCreateUser) {
+    res.json(dbCreateUser);
+  });
+});
+
+// update user by id , route => ('api/user/:id')
+router.put('/:id', function (req, res) {
+  db.User.update(
+    {
+      password: req.body.password,
+      active: req.body.active,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    },
+  ).then(function (dbUpdateUserById) {
+    res.json(dbUpdateUserById);
+  });
+});
+
+// update user by email , route => ('api/user/email/:email')
+router.put('/email/:email', function (req, res) {
+  db.User.update(
+    {
+      password: req.body.password,
+      active: req.body.active,
+    },
+    {
+      where: {
+        email: req.params.email,
+      },
+    },
+  ).then(function (dbUpdateUserByEmail) {
+    res.json(dbUpdateUserByEmail);
+  });
+});
+
+// delete user by id , route => ('api/user/:id')
+router.delete('/:id', function (req, res) {
+  db.User.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then(function (dbUserDelete) {
+    res.json(dbUserDelete);
+  });
 });
 
 module.exports = router;
