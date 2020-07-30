@@ -1,9 +1,11 @@
 const router = require('express').Router();
 var db = require('../../models');
 
-// get route -> index
+// get users -> index
 router.get('/', function (req, res) {
-  //do things here for other routes
+  db.User.findAll({}).then(function (dbAllUsers) {
+    res.json(dbAllUsers);
+  });
 });
 
 // get route, edited to match sequelize
