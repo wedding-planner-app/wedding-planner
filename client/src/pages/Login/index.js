@@ -11,12 +11,15 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // validate email and password is not null
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
 
+  // prevent default
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(`email: ${email} and password: ${password}`);
   }
 
   return (
@@ -35,11 +38,22 @@ export default function LoginPage() {
                   src={user}
                 />
               </Col>
-              <Email />
-              <Password />
-              <Col className="custom">
-                <BtnComponent name="Submit" />
-              </Col>
+              <form onSubmit={handleSubmit}>
+                <Email
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Password
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Col className="custom">
+                  <BtnComponent
+                    name="Submit"
+                    disabled={!validateForm()}
+                  />
+                </Col>
+              </form>
             </Card.Body>
           </Card>
         </Col>
