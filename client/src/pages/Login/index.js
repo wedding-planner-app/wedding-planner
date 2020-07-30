@@ -92,7 +92,11 @@ export default function LoginPage() {
                 </Col>
               </form>
             </Card.Body>
-            <p hidden={!errorMessage}>{errorMessage}</p>
+            <Card.Footer>
+              <small className="text-danger">
+                hidden={!errorMessage} {errorMessage}
+              </small>
+            </Card.Footer>
           </Card>
         </Col>
       </Row>
