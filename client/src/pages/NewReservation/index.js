@@ -45,7 +45,7 @@ const NewReservationPage = () => {
         </InputGroup>
       </Row>
       <Row>
-        <Col className="center-align">
+        <Col className="center">
           <Calendar
             className="calendar"
             onClickDay={(value, event) =>
