@@ -11,15 +11,15 @@ const VenuesPage = () => {
   return (
     <Container className="pt-5 mb-5">
       <h1 className="title-style">Search for Venues</h1>
-      <Row className="vertical-align center">
-        <Col>
-          <InputText style="p5 mb-5" name="City" />
+      <Row className ="d-flex flex-column flex-md-row align-items-center ">
+        <Col className="col-sm-12 col-lg-4 center">
+          <InputText style="p5 mb-5 vertical-align" name="City"/>
         </Col>
-        <Col className="center">
+        <Col  className="col-sm-12 col-lg-4 mb-3 center">
           <DropdownButtonAll className="pt-5 mb-5" />
         </Col>
-        <Col className="center">
-          <InputText style="p5 mb-5" name="Zip Code" />
+        <Col  className=" col-sm-12 col-lg-4 mb-3 center">
+          <InputText style="p5 mb-5 vertical-align" name="Zip Code" />
         </Col>
       </Row>
       <br></br>

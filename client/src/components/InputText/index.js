@@ -4,7 +4,7 @@ import './style.css';
 
 function InputText(props) {
   return (
-    <InputGroup className="vertical-align">
+    <InputGroup className={props.style}>
       <InputGroup.Prepend>
         <InputGroup.Text id={props.id}>
           {props.name}
