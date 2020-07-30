@@ -45,6 +45,7 @@ router.post('/', function (req, res) {
 router.put('/:id', function (req, res) {
   db.User.update(
     {
+      email: req.params.email,
       password: req.params.password,
       active: req.params.active,
     },
