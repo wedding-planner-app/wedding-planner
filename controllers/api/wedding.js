@@ -44,15 +44,19 @@ router.post('/', function (req, res) {
 });
 
 router.put('/:id', function (req, res) {
-  db.Wedding.update({
-    title: req.body.title,
-    description: req.body.description,
-    date: req.body.date,
-    time: req.body.time,
-    where: {
-      id: req.params.id,
+  db.Wedding.update(
+    {
+      title: req.body.title,
+      description: req.body.description,
+      date: req.body.date,
+      time: req.body.time,
     },
-  }).then(function (dbUpdateWedding) {
+    {
+      where: {
+        id: req.params.id,
+      },
+    },
+  ).then(function (dbUpdateWedding) {
     console.log(dbUpdateWedding);
     res.json(dbUpdateWedding);
   });
