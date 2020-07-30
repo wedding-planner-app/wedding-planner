@@ -6,7 +6,7 @@ import { Card, Container, Row, Col } from 'react-bootstrap';
 import user from './user.png';
 import './style.css';
 
-const LoginPage = () => {
+export default function LoginPage() {
   return (
     <Container fluid className="pt-5">
       <Row>
@@ -34,6 +34,4 @@ const LoginPage = () => {
       </Row>
     </Container>
   );
-};
-
-export default LoginPage;
+}
