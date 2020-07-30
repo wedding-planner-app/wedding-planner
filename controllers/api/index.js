@@ -4,6 +4,6 @@ const weddingRoutes = require('./wedding');
 
 // api routes
 router.use('/user', userRoutes);
-router.use('/wedding', weddingRoutes);
+router.use('/weddings', weddingRoutes);
 
 module.exports = router;
