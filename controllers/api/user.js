@@ -45,8 +45,8 @@ router.post('/', function (req, res) {
 router.put('/:id', function (req, res) {
   db.User.update(
     {
-      password: req.params.password,
-      active: req.params.active,
+      password: req.body.password,
+      active: req.body.active,
     },
     {
       where: {
@@ -62,8 +62,8 @@ router.put('/:id', function (req, res) {
 router.put('/email/:email', function (req, res) {
   db.User.update(
     {
-      password: req.params.password,
-      active: req.params.active,
+      password: req.body.password,
+      active: req.body.active,
     },
     {
       where: {
@@ -74,7 +74,5 @@ router.put('/email/:email', function (req, res) {
     res.json(dbUpdateUserByEmail);
   });
 });
-
-//
 
 module.exports = router;
