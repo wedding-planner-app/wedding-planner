@@ -10,8 +10,7 @@ const LoginPage = () => {
   return (
     <Container fluid className="pt-5">
       <Row>
-        <Col xs="2" md="3" lg="3"></Col>
-        <Col xs="8" md="6" lg="6">
+        <Col className="col-lg-6 col-sm-12 m-auto">
           <Card className="bgLoginComponent custom-style-login bg-light pb-4">
             <Card.Header className="text-center bg-light login-title-style">
               <h3>Login</h3>
@@ -32,7 +31,6 @@ const LoginPage = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs="2" md="6" lg="3"></Col>
       </Row>
     </Container>
   );

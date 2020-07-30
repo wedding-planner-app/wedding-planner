@@ -13,8 +13,7 @@ const ProfilePage = () => {
   return (
     <Container fluid className="pt-5">
       <Row>
-        <Col xs="2" md="3" lg="3"></Col>
-        <Col xs="8" md="6" lg="6">
+        <Col className="col-lg-6 col-sm-12 m-auto">
           <Card className="bgProfileComponent custom-style-profile bg-light">
             <Card.Header className="profile-title-style bg-light">
               <h3>Profile</h3>
@@ -39,7 +38,6 @@ const ProfilePage = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs="2" md="6" lg="3"></Col>
       </Row>
     </Container>
   );
