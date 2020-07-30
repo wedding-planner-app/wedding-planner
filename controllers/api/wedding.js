@@ -62,4 +62,14 @@ router.put('/:id', function (req, res) {
   });
 });
 
+router.delete('/:id', function (req, res) {
+  db.Wedding.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then(function (dbWeddingDelete) {
+    res.json(dbWeddingDelete);
+  });
+});
+
 module.exports = router;
