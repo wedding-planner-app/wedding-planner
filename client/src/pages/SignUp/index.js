@@ -12,7 +12,7 @@ export default class SignUp extends Component {
         <Row>
           <Col className="col-lg-6 col-sm-12 m-auto">
             <Card className="bgSignUpComponent">
-              <Card.Header className="text-center">
+              <Card.Header className="text-center bg">
                 <Card.Title className="signup-title-style">
                   <h3>SignUp</h3>
                 </Card.Title>

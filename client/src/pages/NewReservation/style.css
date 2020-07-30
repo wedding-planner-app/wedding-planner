@@ -1,0 +1,8 @@
+.title-style {
+  color: #236184;
+}
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
