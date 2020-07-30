@@ -21,13 +21,13 @@ const ProfilePage = () => {
               </Card.Title>
             </Card.Header>
             <Card.Body>
-              <div>
+              <Col className="center">
                 <Card.Img
                   className="profile-img-style"
                   variant="top"
                   src={user}
                 />
-              </div>
+              </Col>
               <FirstName className="custom" />
               <LastName />
               <Email />

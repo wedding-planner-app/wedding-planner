@@ -16,11 +16,14 @@
     width: 20%;
     border-radius: 60%;
     border: solid #236184;
-    display: flex;
-    align-items: center;
   }
 
   .btnColor {
     background-color: #236184;
+  }
+
+  .center{
+    display: flex;
+    align-items: center;
   }
   
