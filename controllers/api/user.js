@@ -75,4 +75,15 @@ router.put('/email/:email', function (req, res) {
   });
 });
 
+// delete user by id
+router.delete('/:id', function (req, res) {
+  db.User.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then(function (dbUserDelete) {
+    res.json(dbUserDelete);
+  });
+});
+
 module.exports = router;
