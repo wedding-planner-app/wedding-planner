@@ -46,7 +46,7 @@ router.post('/', function (req, res) {
   });
 });
 
-// update a wedding
+// update a wedding by wedding id, route => ('api/weddings/:id')
 router.put('/:id', function (req, res) {
   db.Wedding.update(
     {
@@ -66,6 +66,7 @@ router.put('/:id', function (req, res) {
   });
 });
 
+// delete a wedding by id , route => ('api/weddings/:id')
 router.delete('/:id', function (req, res) {
   db.Wedding.destroy({
     where: {
