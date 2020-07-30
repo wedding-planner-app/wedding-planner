@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
 
 // get user by id
 router.get('/:id', function (req, res) {
-  db.findOne({
+  db.User.findOne({
     where: {
       id: req.params.id,
     },
