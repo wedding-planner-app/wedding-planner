@@ -30,10 +30,8 @@ router.get('/email/:email', function (req, res) {
   });
 });
 
-// post route
-router.post('/user/create', function (req, res) {
-  //TODOs
-});
+// post a user
+router.post('/', function (req, res) {});
 
 // put route
 router.put('/user/update', function (req, res) {
