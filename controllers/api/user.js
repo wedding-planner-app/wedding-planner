@@ -41,11 +41,10 @@ router.post('/', function (req, res) {
   });
 });
 
-// update user
+// update user by id
 router.put('/:id', function (req, res) {
   db.User.update(
     {
-      email: req.params.email,
       password: req.params.password,
       active: req.params.active,
     },
@@ -54,9 +53,28 @@ router.put('/:id', function (req, res) {
         id: req.params.id,
       },
     },
-  ).then(function (dbUpdateUser) {
-    res.json(dbUpdateUser);
+  ).then(function (dbUpdateUserById) {
+    res.json(dbUpdateUserById);
   });
 });
+
+// update user by email
+router.put('/email/:email', function (req, res) {
+  db.User.update(
+    {
+      password: req.params.password,
+      active: req.params.active,
+    },
+    {
+      where: {
+        email: req.params.email,
+      },
+    },
+  ).then(function (dbUpdateUserByEmail) {
+    res.json(dbUpdateUserByEmail);
+  });
+});
+
+//
 
 module.exports = router;
