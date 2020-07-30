@@ -7,6 +7,10 @@ import user from './user.png';
 import './style.css';
 
 export default function LoginPage() {
+  // added const `state` for email and password
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <Container fluid className="pt-5">
       <Row>
