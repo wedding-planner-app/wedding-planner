@@ -3,8 +3,8 @@ var db = require('../../models');
 
 // get all invitation information , route => ('api/invitation')
 router.get('/', function (req, res) {
-  db.Invitation.findAll({}).then(function (dbInvitations) {
-    res.json(dbInvitations);
+  db.Invitation.findAll({}).then(function (dbInvitation) {
+    res.json(dbInvitation);
   });
 });
 
@@ -26,14 +26,14 @@ router.put('/:id', function (req, res) {
   });
 });
 
-// delete user by id , route => ('api/user/:id')
+// delete user by id , route => ('api/invitation/:id')
 router.delete('/:id', function (req, res) {
-  db.User.destroy({
+  db.Invitation.destroy({
     where: {
       id: req.params.id,
     },
-  }).then(function (dbUserDelete) {
-    res.json(dbUserDelete);
+  }).then(function (dbInvitationDelete) {
+    res.json(dbInvitationDelete);
   });
 });
 
