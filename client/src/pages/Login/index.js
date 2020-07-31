@@ -46,7 +46,9 @@ export default function LoginPage() {
       console.log(response.data);
     } catch (e) {
       setPassword('');
-      setErrorMessage('Login failed: Invalid username or password');
+      setErrorMessage(
+        'Login failed: Invalid username or password (Try again)',
+      );
       console.log(e);
     }
   }
