@@ -17,20 +17,12 @@ router.post('/', function (req, res) {
   });
 });
 
-// update user by id , route => ('api/user/:id')
+// update user by id , route => ('api/invitation/:id')
 router.put('/:id', function (req, res) {
-  db.User.update(
-    {
-      password: req.body.password,
-      active: req.body.active,
-    },
-    {
-      where: {
-        id: req.params.id,
-      },
-    },
-  ).then(function (dbUpdateUserById) {
-    res.json(dbUpdateUserById);
+  db.Invitation.update({
+    status: req.body.status,
+  }).then(function (dbUpdateInvitation) {
+    res.json(dbUpdateInvitation);
   });
 });
 
