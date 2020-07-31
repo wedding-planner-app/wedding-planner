@@ -46,7 +46,7 @@ export default function LoginPage() {
       console.log(response.data);
     } catch (e) {
       setPassword('');
-      setErrorMessage('Invalid login');
+      setErrorMessage('Login failed: Invalid username or password');
       console.log(e);
     }
   }
@@ -93,8 +93,8 @@ export default function LoginPage() {
               </form>
             </Card.Body>
             <Card.Footer>
-              <small className="text-danger">
-                hidden={!errorMessage} {errorMessage}
+              <small className="text-danger" hidden={!errorMessage}>
+                {errorMessage}
               </small>
             </Card.Footer>
           </Card>
