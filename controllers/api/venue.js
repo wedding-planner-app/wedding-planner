@@ -30,7 +30,7 @@ router.get('/state/:state', function (req, res) {
   });
 });
 
-// get all venue information by city, route => ('api/venue/city/:city')
+// get all venue information by zipcode, route => ('api/venue/zipCode/:zipCode')
 router.get('/zipCode/:zipCode', function (req, res) {
   db.Venue.findAll({
     where: {
@@ -40,8 +40,6 @@ router.get('/zipCode/:zipCode', function (req, res) {
     res.json(dbVenuesAllbyCity);
   });
 });
-
-// get all by city, state, and zipcode
 
 // post a venue , route => ('api/venue')
 router.post('/', function (req, res) {
