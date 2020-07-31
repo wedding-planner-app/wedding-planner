@@ -25,8 +25,8 @@ router.get('/state/:state', function (req, res) {
     where: {
       city: req.params.city,
     },
-  }).then(function (dbVenuesAllbyCity) {
-    res.json(dbVenuesAllbyCity);
+  }).then(function (dbVenuesAllbyState) {
+    res.json(dbVenuesAllbyState);
   });
 });
 
@@ -36,8 +36,8 @@ router.get('/zipCode/:zipCode', function (req, res) {
     where: {
       zipCode: req.params.zipCode,
     },
-  }).then(function (dbVenuesAllbyCity) {
-    res.json(dbVenuesAllbyCity);
+  }).then(function (dbVenuesAllbyZipCode) {
+    res.json(dbVenuesAllbyZipCode);
   });
 });
 
