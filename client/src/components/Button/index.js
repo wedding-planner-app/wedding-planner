@@ -10,6 +10,7 @@ function BtnComponent(props) {
       className="btnColor btn-md m-auto px-5 mb-5 text-white mt-3"
       size="md"
       onClick={props.onClick}
+      disabled={props.validate}
     >
       {props.name}
     </Button>
