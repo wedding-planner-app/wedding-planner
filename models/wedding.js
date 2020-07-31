@@ -40,8 +40,6 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  Wedding.associate = function (models) {};
-
   Wedding.associate = function (models) {
     Wedding.hasMany(models.Media, {
       onDelete: 'cascade',
