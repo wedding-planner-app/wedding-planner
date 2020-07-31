@@ -8,6 +8,41 @@ router.get('/', function (req, res) {
   });
 });
 
+// get all venue information by city, route => ('api/venue/city/:city')
+router.get('/city/:city', function (req, res) {
+  db.Venue.findAll({
+    where: {
+      city: req.params.city,
+    },
+  }).then(function (dbVenuesAllbyCity) {
+    res.json(dbVenuesAllbyCity);
+  });
+});
+
+// get all venue information by state, route => ('api/venue/state/:state')
+router.get('/state/:state', function (req, res) {
+  db.Venue.findAll({
+    where: {
+      city: req.params.city,
+    },
+  }).then(function (dbVenuesAllbyCity) {
+    res.json(dbVenuesAllbyCity);
+  });
+});
+
+// get all venue information by city, route => ('api/venue/city/:city')
+router.get('/zipCode/:zipCode', function (req, res) {
+  db.Venue.findAll({
+    where: {
+      zipCode: req.params.zipCode,
+    },
+  }).then(function (dbVenuesAllbyCity) {
+    res.json(dbVenuesAllbyCity);
+  });
+});
+
+// get all by city, state, and zipcode
+
 // post a venue , route => ('api/venue')
 router.post('/', function (req, res) {
   db.Venue.create({
