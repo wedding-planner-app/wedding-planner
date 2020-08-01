@@ -10,6 +10,8 @@ import LogoutLink from '../LogoutLink';
  *  Navbar Component using {Link}
  */
 function NavigationBar() {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <Navbar bg="light" shadow="lg" expand="lg">
       <Navbar.Brand href="/">
