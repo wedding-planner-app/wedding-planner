@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import './style.css';
 
 const ModalAlert = (props) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
