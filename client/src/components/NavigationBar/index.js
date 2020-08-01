@@ -23,7 +23,7 @@ function NavigationBar() {
           <SignupLink />
           <Nav.Link href="/events">Events</Nav.Link>
           <Nav.Link href="/profile">Profile</Nav.Link>
-          <Nav.Link href="/logout">Logout</Nav.Link>
+          <LogoutLink />
           <Nav.Link href="/venues">Venues</Nav.Link>
           <Nav.Link href="/newreservation">New-Reservation</Nav.Link>
         </Nav>
