@@ -95,6 +95,9 @@ Design features basic functionality and style for multiple features.
 
   <p>Invitation wireframe</p>
   <img src="readme\imgs\wireframe-invitations.png" width = "600px">
+
+  <p>Media wireframe</p>
+  <img src="readme\imgs\wireframe-media.png" width = "600px">
   
 </details>
 
