@@ -24,6 +24,7 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
