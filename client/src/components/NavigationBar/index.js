@@ -4,6 +4,7 @@ import './style.css';
 import logo from './logo.png';
 import LoginLink from '../LoginLink';
 import SignupLink from './../SignupLink';
+import LogoutLink from '../LogoutLink';
 
 /**
  *  Navbar Component using {Link}
