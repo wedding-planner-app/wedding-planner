@@ -22,6 +22,10 @@
   background-color: #236184;
 }
 
+.text-style {
+  color: #3077a0;
+}
+
 .center {
   display: flex;
   align-items: center;
