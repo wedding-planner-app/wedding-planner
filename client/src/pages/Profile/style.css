@@ -4,7 +4,6 @@
     0 9px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 .custom-style-profile {
   border-radius: 25px;
 }
@@ -23,14 +22,12 @@
   background-color: #236184;
 }
 
-.center-img {
+.text-style {
+  color: #3077a0;
+}
+
+.center {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-.center-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
