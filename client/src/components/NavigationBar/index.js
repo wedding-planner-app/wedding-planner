@@ -3,7 +3,7 @@ import { Nav, Navbar, Image } from 'react-bootstrap';
 import './style.css';
 import logo from './logo.png';
 import LoginButton from './../LoginButton';
-import SignupButton from './../SignupButton';
+import SignupLink from './../SignupLink';
 
 /**
  *  Navbar Component using {Link}
@@ -19,7 +19,7 @@ function NavigationBar() {
         <Nav className="ml-auto color-link">
           <Nav.Link href="/">Home</Nav.Link>
           <LoginButton />
-          <SignupButton />
+          <SignupLink />
           <Nav.Link href="/events">Events</Nav.Link>
           <Nav.Link href="/profile">Profile</Nav.Link>
           <Nav.Link href="/logout">Logout</Nav.Link>
