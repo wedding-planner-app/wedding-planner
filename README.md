@@ -132,7 +132,8 @@ Design features basic functionality and style for multiple features.
 - MySQL database with a Sequelize ORM.
 - AJAX POST-request and AJAX GET-request for retrieving and adding new data.
 - Deploy web app using Heroku (with data).
-- NPM passport package to manage the access to the plataform.
+- NPM passport package to manage the access to the platform.
+- Added user authentication with Auth0 during log-in.
 
 ---
 
