@@ -6,7 +6,10 @@ import Btn from '../../components/Button';
 
 const EventsPage = () => {
   return (
-    <Container className="pt-5 mb-5">
+    <Container className="pt-3 mb-5">
+      <Row>
+        <Btn name="Create Event" />
+      </Row>
       <Row className="d-flex flex-wrap">
         <Col className="col-sm-12 col-lg-6 mb-3">
           <WeddingCard

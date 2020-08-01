@@ -32,7 +32,7 @@ const ProfilePage = () => {
                   />
                 </Col>
               </Row>
-              <Row className="center">
+              <Row className="align-items-center">
                 <Col className="m-auto">
                   <h2>{name}</h2>
                   <p className="lead text-muted">{email}</p>
