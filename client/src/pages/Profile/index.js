@@ -8,8 +8,12 @@ import user from './user.png';
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const ProfilePage = () => {
+  const { user } = useAuth0();
+  const { name, picture, email } = user;
+
   return (
     <Container fluid className="pt-5">
       <Row>
@@ -19,22 +23,21 @@ const ProfilePage = () => {
               <h3>Profile</h3>
             </Card.Header>
             <Card.Body>
-              <Col className="center-img">
-                <Card.Img
-                  className="profile-img-style"
-                  variant="top"
-                  src={user}
-                />
-              </Col>
-              <FirstName />
-              <LastName />
-              <Email />
-              <Col className="center-btn">
-                <Button className="btnColor">
-                  <FontAwesomeIcon icon={faPlus} />
-                  Create New Reservation
-                </Button>
-              </Col>
+              <Row>
+                <Col className="center">
+                  <Card.Img
+                    className="profile-img-style"
+                    variant="top"
+                    src={picture}
+                  />
+                </Col>
+              </Row>
+              <Row className="center">
+                <Col className="m-auto">
+                  <h2>{name}</h2>
+                  <p className="lead text-muted">{email}</p>
+                </Col>
+              </Row>
             </Card.Body>
           </Card>
         </Col>
