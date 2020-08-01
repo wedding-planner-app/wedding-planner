@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Button, Modal } from 'react-bootstrap';
+import { Container, Row, Button} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import SearchTable from '../../components/SearchTable';
 import './style.css';
