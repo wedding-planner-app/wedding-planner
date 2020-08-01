@@ -2,11 +2,17 @@ import React from 'react';
 import { Nav, Navbar, Image } from 'react-bootstrap';
 import './style.css';
 import logo from './logo.png';
+import LoginLink from '../LoginLink';
+import SignupLink from './../SignupLink';
+import LogoutLink from '../LogoutLink';
+import { useAuth0 } from '@auth0/auth0-react';
 
 /**
  *  Navbar Component using {Link}
  */
 function NavigationBar() {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <Navbar bg="light" shadow="lg" expand="lg">
       <Navbar.Brand href="/">
@@ -14,16 +20,19 @@ function NavigationBar() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse>
-        <Nav className="ml-auto color-link">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/login">Login</Nav.Link>
-          <Nav.Link href="/signup">Sign up</Nav.Link>
-          <Nav.Link href="/events">Events</Nav.Link>
-          <Nav.Link href="/profile">Profile</Nav.Link>
-          <Nav.Link href="/logout">Logout</Nav.Link>
-          <Nav.Link href="/venues">Venues</Nav.Link>
-          <Nav.Link href="/newreservation">New-Reservation</Nav.Link>
-        </Nav>
+        {isAuthenticated ? (
+          <Nav className="ml-auto color-link">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/events">Events</Nav.Link>
+            <Nav.Link href="/profile">Profile</Nav.Link>
+            <LogoutLink />
+          </Nav>
+        ) : (
+          <Nav className="ml-auto color-link">
+            <LoginLink />
+            <SignupLink />
+          </Nav>
+        )}
       </Navbar.Collapse>
     </Navbar>
   );

@@ -11,6 +11,7 @@ function BtnComponent(props) {
       size="md"
       onClick={props.onClick}
       disabled={props.validate}
+      href={props.href}
     >
       {props.name}
     </Button>
