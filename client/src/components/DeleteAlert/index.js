@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import './style.css';
 
-function DeleteAlert(props) {
-  const [show, setShow] = useState(true);
+const DeleteAlert = (props) => {
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true);
 
   return (
     <Modal show={show} onHide={handleClose}>
@@ -23,6 +23,6 @@ function DeleteAlert(props) {
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
 export default DeleteAlert;
