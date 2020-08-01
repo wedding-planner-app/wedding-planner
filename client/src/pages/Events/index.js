@@ -8,7 +8,7 @@ const EventsPage = () => {
   return (
     <Container className="pt-3 mb-5">
       <Row>
-        <Btn name="Create Event" />
+        <Btn name="Create Event" href="/events/new" />
       </Row>
       <Row className="d-flex flex-wrap">
         <Col className="col-sm-12 col-lg-6 mb-3">
@@ -43,7 +43,7 @@ const EventsPage = () => {
         </Col>
       </Row>
       <Row className="custom-margin">
-        <Btn name="Create Event" />
+        <Btn name="Create Event" href="/events/new" />
       </Row>
     </Container>
   );

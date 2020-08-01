@@ -30,7 +30,7 @@ const App = () => {
       <Route exact path="/RSVP" component={RSVPPage} />
       <PrivateRoute
         exact
-        path="/NewReservation"
+        path="/events/new"
         component={NewReservationPage}
       />
       <PrivateRoute exact path="/guests" component={GuestsPage} />
