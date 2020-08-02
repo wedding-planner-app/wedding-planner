@@ -5,14 +5,8 @@ import logo from './logo.png';
 import LoginLink from '../LoginLink';
 import SignupLink from './../SignupLink';
 import LogoutLink from '../LogoutLink';
+import ProfileLink from '../ProfileLink';
 import { useAuth0 } from '@auth0/auth0-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHome,
-  faCalendarPlus,
-  faUserCircle,
-  faSignOutAlt,
-} from '@fortawesome/free-solid-svg-icons';
 
 /**
  *  Navbar Component using {Link}
@@ -29,17 +23,16 @@ function NavigationBar() {
       <Navbar.Collapse>
         {isAuthenticated ? (
           <Nav className="ml-auto color-link">
-            <Nav.Link href="/">
-              <FontAwesomeIcon icon={faHome} size="lg" />
-            </Nav.Link>
-            <Nav.Link href="/events">
-              <FontAwesomeIcon icon={faCalendarPlus} size="lg" />
-            </Nav.Link>
-
-            <Nav.Link href="/profile">
-              {' '}
-              <FontAwesomeIcon icon={faUserCircle} size="lg" />
-            </Nav.Link>
+            <NavDropdown title="Events" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/events">
+                Your Events
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/events/new">
+                Create New
+              </NavDropdown.Item>
+            </NavDropdown>
+            <ProfileLink />
             <LogoutLink />
           </Nav>
         ) : (
