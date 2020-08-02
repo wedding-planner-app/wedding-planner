@@ -7,7 +7,11 @@ import SignupLink from './../SignupLink';
 import LogoutLink from '../LogoutLink';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome,
+  faCalendarPlus,
+  faUserCircle,
+} from '@fortawesome/free-solid-svg-icons';
 
 /**
  *  Navbar Component using {Link}
@@ -27,16 +31,14 @@ function NavigationBar() {
             <Nav.Link href="/">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
-            {/* <Nav.Link href="/events">Events</Nav.Link> */}
-            <NavDropdown title="Event" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/events">
-                Events
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/events/new">
-                Create Event
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="/profile">Profile</Nav.Link>
+            <Nav.Link href="/events">
+              <FontAwesomeIcon icon={faCalendarPlus} />
+            </Nav.Link>
+
+            <Nav.Link href="/profile">
+              {' '}
+              <FontAwesomeIcon icon={faUserCircle} />
+            </Nav.Link>
             <LogoutLink />
           </Nav>
         ) : (
