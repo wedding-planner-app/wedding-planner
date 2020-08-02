@@ -4,6 +4,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 var db = require('./models');
 
+require('dotenv').config();
+console.log(process.env);
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

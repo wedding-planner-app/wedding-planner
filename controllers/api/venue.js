@@ -1,6 +1,8 @@
 const router = require('express').Router();
 var db = require('../../models');
 
+
+
 // get all venue information , route => ('api/venue')
 router.get('/', function (req, res) {
   db.Venue.findAll({}).then(function (dbVenuesAll) {
