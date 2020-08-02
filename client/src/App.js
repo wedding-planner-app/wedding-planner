@@ -35,7 +35,7 @@ const App = () => {
         component={NewReservationPage}
       />
       <PrivateRoute exact path="/guests" component={GuestsPage} />
-      <PrivateRoute exact path="/guests" component={MediaPage} />
+      <PrivateRoute exact path="/media" component={MediaPage} />
       <Footer />
     </Router>
   );

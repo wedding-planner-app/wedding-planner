@@ -23,7 +23,7 @@ const MediaTable = () => {
   const columns = [
     {
       dataField: 'mediaID',
-      text: 'Media ID #',
+      text: 'Media ID ',
       filter: textFilter({
         placeholder: 'Search by media ID',
       }),
@@ -34,7 +34,7 @@ const MediaTable = () => {
       sort: true,
     },
     {
-      dataField: 'URL',
+      dataField: 'url',
       text: 'URL Link',
       sort: true,
     },

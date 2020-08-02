@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Button, Modal } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
-import Media from '../../components/MediaTable';
+import MediaTable from '../../components/MediaTable';
 import InputText from '../../components/InputText';
 import './style.css';
 
@@ -41,8 +41,10 @@ const MediaPage = () => {
             <Modal.Title>Add New Media</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+              <h5>The media ID is auto-generated for you. </h5>
             <InputText style="vertical-align" name="File Type" />
             <InputText style="vertical-align" name="URL Link" />
+            <InputText style="vertical-align" name="Wedding ID" />
           </Modal.Body>
           <Modal.Footer>
             <Button
@@ -69,7 +71,7 @@ const MediaPage = () => {
         {/* Modal alert to edit */}
         <Modal show={editShow} onHide={() => setEditShow(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Edit Guest Information</Modal.Title>
+            <Modal.Title>Edit Media Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <InputText

@@ -23,9 +23,9 @@ const SearchTable = () => {
   const columns = [
     {
       dataField: 'guestNameFirst',
-      text: '',
+      text: 'First Name ',
       filter: textFilter({
-        placeholder: 'Search by name',
+        placeholder: 'Search by first name',
       }),
     },
     {
