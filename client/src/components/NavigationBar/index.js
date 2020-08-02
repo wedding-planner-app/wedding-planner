@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, Image } from 'react-bootstrap';
+import { Nav, Navbar, Image, NavDropdown } from 'react-bootstrap';
 import './style.css';
 import logo from './logo.png';
 import LoginLink from '../LoginLink';
@@ -23,7 +23,15 @@ function NavigationBar() {
         {isAuthenticated ? (
           <Nav className="ml-auto color-link">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/events">Events</Nav.Link>
+            {/* <Nav.Link href="/events">Events</Nav.Link> */}
+            <NavDropdown title="Event" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/events">
+                Events
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/events/new">
+                Create Event
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="/profile">Profile</Nav.Link>
             <LogoutLink />
           </Nav>
