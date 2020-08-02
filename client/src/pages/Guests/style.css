@@ -9,3 +9,9 @@ button {
 .row {
   justify-content: flex-end;
 }
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
