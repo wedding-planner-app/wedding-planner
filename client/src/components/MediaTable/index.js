@@ -35,7 +35,7 @@ const MediaTable = () => {
     },
     {
       dataField: 'URL',
-      text: 'URL',
+      text: 'URL Link',
       sort: true,
     },
     {

@@ -10,6 +10,7 @@ import RSVPPage from './pages/Invitation-RSVP';
 import NewReservationPage from './pages/NewReservation';
 import Loading from './components/Loading';
 import GuestsPage from './pages/Guests';
+import MediaPage from './pages/Media';
 import { useAuth0 } from '@auth0/auth0-react';
 import PrivateRoute from './components/PrivateRoute';
 
@@ -34,6 +35,7 @@ const App = () => {
         component={NewReservationPage}
       />
       <PrivateRoute exact path="/guests" component={GuestsPage} />
+      <PrivateRoute exact path="/guests" component={MediaPage} />
       <Footer />
     </Router>
   );
