@@ -8,6 +8,7 @@ import './style.css';
 
 const VenuesPage = () => {
   return (
+    // Components venue search functionalit
     <Container className="pt-5 mb-5">
       <h1 className="title-style">Search for Venues</h1>
       <Row className="d-flex flex-column flex-md-row vertical-align">
@@ -22,7 +23,7 @@ const VenuesPage = () => {
         </Col>
       </Row>
       <br></br>
-
+      {/* Venue card components */}
       <Row>
         <Col className="col-6 mb-3">
           <WeddingCard

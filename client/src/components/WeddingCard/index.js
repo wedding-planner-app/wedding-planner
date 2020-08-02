@@ -14,15 +14,15 @@ const WeddingCard = (props) => {
             className="btn btn-light mr-3 border-style mb-2 m-auto"
             type="button"
           >
-            Edit Event
+           Select Venue for Wedding
           </button>
 
-          <button
+          {/* <button
             className="btn btn-light border-style mb-2 m-auto"
             type="button"
           >
             Delete Event
-          </button>
+          </button> */}
         </Row>
       </Card.Body>
       <Card.Footer>
