@@ -1,13 +1,7 @@
 import React from 'react';
-import FirstName from '../../components/FirstName';
-import LastName from '../../components/LastName';
-import Email from '../../components/Email';
 
-import { Card, Container, Row, Col, Button } from 'react-bootstrap';
-import user from './user.png';
+import { Card, Container, Row, Col } from 'react-bootstrap';
 import './style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const ProfilePage = () => {
@@ -32,14 +26,7 @@ const ProfilePage = () => {
               </Col>
               <Col className="text-style">
                 <h5>{name}</h5>
-                <a
-                  className="head text-muted"
-                  target="_blank"
-                  rel="email"
-                  href="mailto:{email}"
-                >
-                  {email}
-                </a>
+                <p className="head text-muted">{email}</p>
               </Col>
             </Card.Body>
           </Card>
