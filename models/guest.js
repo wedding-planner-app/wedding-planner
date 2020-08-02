@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Must to enter guest name',
+          msg: 'Must  enter guest name',
         },
       },
     },

@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { Container, Row, Button, Modal } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
-import SearchTable from '../../components/SearchTable';
+import MediaTable from '../../components/MediaTable';
 import InputText from '../../components/InputText';
 import './style.css';
 
-const GuestsPage = () => {
+const MediaPage = () => {
   const [addShow, setAddShow] = useState(false);
   const [editShow, setEditShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
 
-  const guestListData = [
+  const mediaListData = [
     {
-      guestNameFirst: 'John',
-      guestNameLast: 'Doe',
-      guestEmail: 'johndoe@gmail.com',
-      guestPhoneNumber: '512-555-5555',
+      mediaID: '1234',
+      type: 'video',
+      url: 'testUrl.com',
+      wedding_id: '101112',
     },
     {
-      guestNameFirst: 'Jane',
-      guestNameLast: 'Doe',
-      guestEmail: 'jandoe@gmail.com',
-      guestPhoneNumber: '512-555-6666',
+      mediaID: '5678',
+      type: 'video2',
+      url: 'testURL.com',
+      wedding_id: '131415',
     },
   ];
 
@@ -38,13 +38,13 @@ const GuestsPage = () => {
         {/* Modal alert to add */}
         <Modal show={addShow} onHide={() => setAddShow(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Add New Guest</Modal.Title>
+            <Modal.Title>Add New Media</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <InputText style="vertical-align" name="First Name" />
-            <InputText style="vertical-align" name="Last Name" />
-            <InputText style="vertical-align" name="Email" />
-            <InputText style="vertical-align" name="Phone Number" />
+              <h5>The media ID is auto-generated for you. </h5>
+            <InputText style="vertical-align" name="File Type" />
+            <InputText style="vertical-align" name="URL Link" />
+            <InputText style="vertical-align" name="Wedding ID" />
           </Modal.Body>
           <Modal.Footer>
             <Button
@@ -71,28 +71,28 @@ const GuestsPage = () => {
         {/* Modal alert to edit */}
         <Modal show={editShow} onHide={() => setEditShow(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Edit Guest Information</Modal.Title>
+            <Modal.Title>Edit Media Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <InputText
               style="vertical-align"
-              placeholder="existing guest info here"
-              name="First Name"
+              placeholder="existing info here"
+              name="Media ID (locked)"
             />
             <InputText
               style="vertical-align"
-              placeholder="existing guest info here"
-              name="Last Name"
+              placeholder="existing info here"
+              name="File Type"
             />
             <InputText
               style="vertical-align"
-              placeholder="existing guest info here"
-              name="Email"
+              placeholder="existing info here"
+              name="URL Link"
             />
             <InputText
               style="vertical-align"
-              placeholder="existing guest info here"
-              name="Phone Number"
+              placeholder="existing info here"
+              name="Wedding ID (locked)"
             />
           </Modal.Body>
           <Modal.Footer>
@@ -143,10 +143,10 @@ const GuestsPage = () => {
       </div>
 
       <div>
-        <SearchTable />
+        <MediaTable />
       </div>
     </Container>
   );
 };
 
-export default GuestsPage;
+export default MediaPage;
