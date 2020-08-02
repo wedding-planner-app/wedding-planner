@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Button, Modal } from 'react-bootstrap';
-import Table from 'react-bootstrap/Table';
+import { Container, Button, Modal } from 'react-bootstrap';
 import SearchTable from '../../components/SearchTable';
 import InputText from '../../components/InputText';
 import './style.css';
@@ -10,20 +9,20 @@ const GuestsPage = () => {
   const [editShow, setEditShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
 
-  const guestListData = [
-    {
-      guestNameFirst: 'John',
-      guestNameLast: 'Doe',
-      guestEmail: 'johndoe@gmail.com',
-      guestPhoneNumber: '512-555-5555',
-    },
-    {
-      guestNameFirst: 'Jane',
-      guestNameLast: 'Doe',
-      guestEmail: 'jandoe@gmail.com',
-      guestPhoneNumber: '512-555-6666',
-    },
-  ];
+  // const guestListData = [
+  //   {
+  //     guestNameFirst: 'John',
+  //     guestNameLast: 'Doe',
+  //     guestEmail: 'johndoe@gmail.com',
+  //     guestPhoneNumber: '512-555-5555',
+  //   },
+  //   {
+  //     guestNameFirst: 'Jane',
+  //     guestNameLast: 'Doe',
+  //     guestEmail: 'jandoe@gmail.com',
+  //     guestPhoneNumber: '512-555-6666',
+  //   },
+  // ];
 
   return (
     <Container>
@@ -41,10 +40,13 @@ const GuestsPage = () => {
             <Modal.Title>Add New Guest</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <InputText style="vertical-align" name="First Name" />
-            <InputText style="vertical-align" name="Last Name" />
-            <InputText style="vertical-align" name="Email" />
-            <InputText style="vertical-align" name="Phone Number" />
+            <InputText style='vertical-align' name='First Name' />
+            <InputText style='vertical-align' name='Last Name' />
+            <InputText style='vertical-align' name='Email' />
+            <InputText
+              style='vertical-align'
+              name='Phone Number'
+            />
           </Modal.Body>
           <Modal.Footer>
             <Button

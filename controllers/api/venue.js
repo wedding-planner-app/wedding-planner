@@ -8,6 +8,7 @@ router.get('/', function (req, res) {
   });
 });
 
+
 // get all venue information by city, route => ('api/venue/city/:city')
 router.get('/city/:city', function (req, res) {
   db.Venue.findAll({
