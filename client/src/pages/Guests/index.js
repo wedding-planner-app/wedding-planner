@@ -1,12 +1,11 @@
 import React from 'react';
-import { Container, Row, Button} from 'react-bootstrap';
+import { Container, Row, Button } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import SearchTable from '../../components/SearchTable';
 import './style.css';
+import ModalAlert from '../../components/ModalAlert';
 
 const GuestsPage = () => {
-
-
   const guestListData = [
     {
       guestNameFirst: 'John',
@@ -28,6 +27,7 @@ const GuestsPage = () => {
         <Button variant="outline-success">ADD</Button>{' '}
         <Button variant="outline-primary">EDIT</Button>{' '}
         <Button variant="outline-danger">REMOVE</Button>{' '}
+        <ModalAlert />
       </div>
 
       <div>
