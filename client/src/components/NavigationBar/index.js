@@ -11,6 +11,7 @@ import {
   faHome,
   faCalendarPlus,
   faUserCircle,
+  faSignOutAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
@@ -29,15 +30,15 @@ function NavigationBar() {
         {isAuthenticated ? (
           <Nav className="ml-auto color-link">
             <Nav.Link href="/">
-              <FontAwesomeIcon icon={faHome} />
+              <FontAwesomeIcon icon={faHome} size="lg" />
             </Nav.Link>
             <Nav.Link href="/events">
-              <FontAwesomeIcon icon={faCalendarPlus} />
+              <FontAwesomeIcon icon={faCalendarPlus} size="lg" />
             </Nav.Link>
 
             <Nav.Link href="/profile">
               {' '}
-              <FontAwesomeIcon icon={faUserCircle} />
+              <FontAwesomeIcon icon={faUserCircle} size="lg" />
             </Nav.Link>
             <LogoutLink />
           </Nav>
