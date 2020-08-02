@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import WeddingCard from '../../components/WeddingCard';
 import Venue from './placeholder_venue.png';
 import InputText from '../../components/InputText';
-import DropdownButtonAll from '../../components/DropdownButton';
 import BtnComponent from '../../components/Button';
 import './style.css';
 
@@ -11,21 +10,18 @@ const VenuesPage = () => {
   return (
     <Container className="pt-5 mb-5">
       <h1 className="title-style">Search for Venues</h1>
-      <Row className ="d-flex flex-column flex-md-row align-items-center ">
-        <Col className="col-sm-12 col-lg-4 center">
-          <InputText style="p5 mb-5 vertical-align" name="City"/>
+      <Row className="d-flex flex-column flex-md-row vertical-align">
+        <Col className="col-sm-12 col-lg-6">
+          <InputText
+            style="p5 mb-3 vertical-align"
+            name="Search by venue name"
+          />
         </Col>
-        <Col  className="col-sm-12 col-lg-4 mb-3 center">
-          <DropdownButtonAll className="pt-5 mb-5" />
-        </Col>
-        <Col  className=" col-sm-12 col-lg-4 mb-3 center">
-          <InputText style="p5 mb-5 vertical-align" name="Zip Code" />
+        <Col className="col-sm-12 col-lg-6 mb-3">
+          <BtnComponent name="Search" />
         </Col>
       </Row>
       <br></br>
-      <Row>
-        <BtnComponent name="Search" />
-      </Row>
 
       <Row>
         <Col className="col-6 mb-3">
