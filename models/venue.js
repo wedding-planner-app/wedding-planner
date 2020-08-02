@@ -8,47 +8,38 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Must entere a venue name',
+          msg: 'Must enter a venue name',
         },
       },
     },
-    // Added STREET data type
-    street: {
+    // Added Venue Photo
+    photo: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Must enter physical street address',
+          msg: 'Must enter photo URL',
         },
       },
     },
-    // Added CITY data type
-    city: {
+
+    // Added Address data type
+    address: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Must enter city name',
+          msg: 'Must enter full address',
         },
       },
     },
-    // Added STATE data type
-    state: {
+    // Added Venue website
+    website: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Must enter state name',
-        },
-      },
-    },
-    // Added ZIPCODE data type
-    zipCode: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: 'Must enter zipcode',
+          msg: "Must enter link to venue's website",
         },
       },
     },
