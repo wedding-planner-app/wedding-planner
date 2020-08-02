@@ -28,14 +28,14 @@ const VenuesPage = () => {
         <Col className="col-6 mb-3">
           <WeddingCard
             img={Venue}
-            title="Venue Name from API"
+            name="Venue Name from API"
             username="@ wedding_team"
           />
         </Col>
         <Col className="col-6 mb-3">
           <WeddingCard
             img={Venue}
-            title="Venue Name from API"
+            name="Venue Name from API"
             username="@ wedding_team"
           />
         </Col>
@@ -44,28 +44,28 @@ const VenuesPage = () => {
         <Col className="col-6 mb-3">
           <WeddingCard
             img={Venue}
-            title="Venue Name from API"
+            name="Venue Name from API"
             username="@ wedding_team"
           />
         </Col>
         <Col className="col-6 mb-3">
           <WeddingCard
             img={Venue}
-            title="Venue Name from API"
+            name="Venue Name from API"
             username="@ wedding_team"
           />
         </Col>
         <Col className="col-6 mb-3">
           <WeddingCard
             img={Venue}
-            title="Venue Name from API"
+            name="Venue Name from API"
             username="@ wedding_team"
           />
         </Col>
         <Col className="col-6 mb-3">
           <WeddingCard
             img={Venue}
-            title="Venue Name from API"
+            name="Venue Name from API"
             username="@ wedding_team"
           />
         </Col>
