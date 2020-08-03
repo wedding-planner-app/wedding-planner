@@ -30,6 +30,7 @@
     "if-env": "^1.0.4",
     "pg": "^8.3.0",
     "react-router-dom": "^5.2.0",
+    "request": "^2.88.2",
     "sequelize": "^5.8.9"
   }
 }

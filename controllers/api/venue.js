@@ -1,7 +1,19 @@
 const router = require('express').Router();
 var db = require('../../models');
+var request = require('request');
 
-
+// get searched venue info from Google places
+router.get('/search', function (req, res) {
+  var options = {
+    method: 'GET',
+    url: '',
+    headers: {},
+  };
+  request(options, function (error, response) {
+    if (error) throw new Error(error);
+    console.log(response.body);
+  });
+});
 
 // get all venue information , route => ('api/venue')
 router.get('/', function (req, res) {
@@ -9,7 +21,6 @@ router.get('/', function (req, res) {
     res.json(dbVenuesAll);
   });
 });
-
 
 // get all venue information by city, route => ('api/venue/city/:city')
 router.get('/city/:city', function (req, res) {
