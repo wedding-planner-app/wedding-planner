@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   Row,
@@ -18,16 +18,22 @@ var qs = require('qs');
 const NewReservationPage = () => {
   const { getAccessTokenSilently } = useAuth0();
 
+  //added useState hook
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+
   const saveNewReservation = async (event) => {
     event.preventDefault();
 
     const token = await getAccessTokenSilently();
 
     var data = qs.stringify({
-      title: 'Dummy wedding',
-      description: 'dummy description text',
-      date: '12/12/2020',
-      time: '13:30',
+      title: title,
+      description: description,
+      date: date,
+      time: time,
     });
     var config = {
       method: 'post',
@@ -57,7 +63,8 @@ const NewReservationPage = () => {
         <InputGroup className="mb-3 vertical-align">
           <FormControl
             placeholder="Title of your Wedding"
-            aria-describedby="basic-addon2"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
           <InputGroup.Append>
             <InputGroup.Text id="TitleOfWedding">
@@ -70,7 +77,8 @@ const NewReservationPage = () => {
         <InputGroup className="mb-3 vertical-align">
           <FormControl
             placeholder="Description of your Wedding"
-            aria-describedby="basic-addon2"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
           <InputGroup.Append>
             <InputGroup.Text id="DescriptionTimeOfWedding">
@@ -83,9 +91,7 @@ const NewReservationPage = () => {
         <Col className="center">
           <Calendar
             className="calendar"
-            onClickDay={(value, event) =>
-              alert('Clicked day: ', value, new Date())
-            }
+            onClickDay={(value, event) => setDate(value)}
           />
         </Col>
       </Row>
@@ -96,24 +102,12 @@ const NewReservationPage = () => {
           <InputGroup className="mb-3 vertical-align">
             <FormControl
               placeholder="Enter start time of the Wedding"
-              aria-describedby="basic-addon2"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
             />
             <InputGroup.Append>
               <InputGroup.Text id="StartTimeOfWedding">
                 Start Time
-              </InputGroup.Text>
-            </InputGroup.Append>
-          </InputGroup>
-        </Col>
-        <Col>
-          <InputGroup className="mb-3 vertical-align">
-            <FormControl
-              placeholder="Enter end time of the Wedding"
-              aria-describedby="basic-addon2"
-            />
-            <InputGroup.Append>
-              <InputGroup.Text id="EndTimeOfWedding">
-                End Time
               </InputGroup.Text>
             </InputGroup.Append>
           </InputGroup>
