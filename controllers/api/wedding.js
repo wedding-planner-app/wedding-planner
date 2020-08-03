@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const jwt_decode = require('jwt-decode');
 var db = require('../../models');
+const jwt_decode = require('jwt-decode');
 
 const getEmail = (token) => {
   decoded = jwt_decode(token);
@@ -12,17 +12,22 @@ const getEmail = (token) => {
 // getting *all* weddings from the API, route => ('api/weddings')
 router.get('/', function (req, res) {
   let email = getEmail(req.headers.authorization);
-  console.log(`API Called by: ${email}`);
-  db.Wedding.findAll({}).then(function (dbAllWedding) {
+  db.Wedding.findAll({
+    where: {
+      user_email: email,
+    },
+  }).then(function (dbAllWedding) {
     res.json(dbAllWedding);
   });
 });
 
 // getting a wedding by id, route => ('api/weddings/:id')
 router.get('/:id', function (req, res) {
+  let email = getEmail(req.headers.authorization);
   db.Wedding.findOne({
     where: {
       id: req.params.id,
+      user_email: email,
     },
   }).then(function (dbAllWeddingById) {
     console.log(dbAllWeddingById);
@@ -47,6 +52,7 @@ router.post('/', function (req, res) {
 
 // update a wedding by wedding id, route => ('api/weddings/:id')
 router.put('/:id', function (req, res) {
+  let email = getEmail(req.headers.authorization);
   db.Wedding.update(
     {
       title: req.body.title,
@@ -57,6 +63,7 @@ router.put('/:id', function (req, res) {
     {
       where: {
         id: req.params.id,
+        user_email: email,
       },
     },
   ).then(function (dbUpdateWedding) {
@@ -66,9 +73,11 @@ router.put('/:id', function (req, res) {
 
 // delete a wedding by id , route => ('api/weddings/:id')
 router.delete('/:id', function (req, res) {
+  let email = getEmail(req.headers.authorization);
   db.Wedding.destroy({
     where: {
       id: req.params.id,
+      user_email: email,
     },
   }).then(function (dbWeddingDelete) {
     res.json(dbWeddingDelete);

@@ -23,8 +23,6 @@ const NewReservationPage = () => {
 
     const token = await getAccessTokenSilently();
 
-    console.log(`token: ${token}`);
-
     var data = qs.stringify({
       title: 'Dummy wedding',
       description: 'dummy description text',
