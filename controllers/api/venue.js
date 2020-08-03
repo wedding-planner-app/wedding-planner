@@ -2,17 +2,54 @@ const router = require('express').Router();
 var db = require('../../models');
 var request = require('request');
 
-// get all venue information , route => ('api/venue')
+// get venue information from Google Place API
 router.get('/search', function (req, res) {
   const searchQuery = req.query.name;
-  var options = {
+  // variable to store all Google Places API data results
+  var resultsData = [];
+  // 1st query to pull initial text search data
+  var options1 = {
     method: 'GET',
     url: `https://maps.googleapis.com/maps/api/place/textsearch/json?key=${process.env.API_KEY}&query=${searchQuery}`,
     headers: {},
   };
-  request(options, function (error, response) {
+  request(options1, function (error, response) {
     if (error) throw new Error(error);
-    res.json(JSON.parse(response.body));
+    // parsing out the response from Google Text search endpoint
+    var responseBodyTextSearch = JSON.parse(response.body);
+    // for loop to interate through the Google Text search response body
+    for (var i = 0; i < responseBodyTextSearch.results.length; i++) {
+      // variable to store Text Search response data from Places API
+      var placeData = {
+        name: responseBodyTextSearch.results[i].name,
+        address: responseBodyTextSearch.results[i].name,
+      };
+      // if statement for results with no photo
+      var photo = responseBodyTextSearch.results[i].photos;
+      if (photo) {
+        placeData.photo = photo[0].photo_reference;
+      } else {
+        placeData.photo = 'Sorry no photo available';
+      }
+
+      // variable to store place_id for queried venues Google Place Details endpoint
+      var placeID = responseBodyTextSearch.results[i].place_id;
+
+      // 2nd query to pull URL based off of place ID
+      var options2 = {
+        method: 'GET',
+        url: `https://maps.googleapis.com/maps/api/place/details/json?key=${process.env.API_KEY}&place_id=${placeID}&fields=url`,
+        headers: {},
+      };
+      request(options2, function (error, response) {
+        if (error) throw new Error(error);
+        var responseBodyDetailUrl = JSON.parse(response.body);
+        placeData.url = responseBodyDetailUrl.result.url;
+        resultsData.push(placeData);
+      });
+    }
+
+    res.json({ data: resultsData });
   });
 });
 
@@ -20,39 +57,6 @@ router.get('/search', function (req, res) {
 router.get('/', function (req, res) {
   db.Venue.findAll({}).then(function (dbVenuesAll) {
     res.json(dbVenuesAll);
-  });
-});
-
-// get all venue information by city, route => ('api/venue/city/:city')
-router.get('/city/:city', function (req, res) {
-  db.Venue.findAll({
-    where: {
-      city: req.params.city,
-    },
-  }).then(function (dbVenuesAllbyCity) {
-    res.json(dbVenuesAllbyCity);
-  });
-});
-
-// get all venue information by state, route => ('api/venue/state/:state')
-router.get('/state/:state', function (req, res) {
-  db.Venue.findAll({
-    where: {
-      city: req.params.city,
-    },
-  }).then(function (dbVenuesAllbyState) {
-    res.json(dbVenuesAllbyState);
-  });
-});
-
-// get all venue information by zipcode, route => ('api/venue/zipCode/:zipCode')
-router.get('/zipCode/:zipCode', function (req, res) {
-  db.Venue.findAll({
-    where: {
-      zipCode: req.params.zipCode,
-    },
-  }).then(function (dbVenuesAllbyZipCode) {
-    res.json(dbVenuesAllbyZipCode);
   });
 });
 
