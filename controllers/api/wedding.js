@@ -1,8 +1,18 @@
 const router = require('express').Router();
+const jwt_decode = require('jwt-decode');
 var db = require('../../models');
+
+const getEmail = (token) => {
+  decoded = jwt_decode(token);
+  return decoded[
+    'https://wedding-planner-platform.herokuapp.com/email'
+  ];
+};
 
 // getting *all* weddings from the API, route => ('api/weddings')
 router.get('/', function (req, res) {
+  let email = getEmail(req.headers.authorization);
+  console.log(`API Called by: ${email}`);
   db.Wedding.findAll({}).then(function (dbAllWedding) {
     res.json(dbAllWedding);
   });
@@ -22,12 +32,13 @@ router.get('/:id', function (req, res) {
 
 // post a wedding, route => ( 'api/weddings')
 router.post('/', function (req, res) {
+  let email = getEmail(req.headers.authorization);
   db.Wedding.create({
     title: req.body.title,
     description: req.body.description,
     date: req.body.date,
     time: req.body.time,
-    user_email: req.body.user_email,
+    user_email: email,
   }).then(function (dbCreateWedding) {
     console.log(dbCreateWedding);
     res.json(dbCreateWedding);
