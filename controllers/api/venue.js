@@ -61,6 +61,9 @@ router.get('/search', function (req, res) {
   });
 });
 
+// get venue image from Google Place API
+router.get('/img', function () {});
+
 // get all venue information , route => ('api/venue')
 router.get('/', function (req, res) {
   db.Venue.findAll({}).then(function (dbVenuesAll) {
