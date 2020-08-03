@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row } from 'react-bootstrap';
+import { Card, Row, Button } from 'react-bootstrap';
 import './style.css';
 
 const WeddingCard = (props) => {
@@ -31,12 +31,13 @@ const WeddingCard = (props) => {
           </Card.Text>
         </div>
         <Row className="d-flex flex-wrap mt-3">
-          <button
+          <Button
             className="btn btn-light mr-3 border-style mb-2 m-auto"
             type="button"
+            href={`/events/${props.id}`}
           >
             Edit Event
-          </button>
+          </Button>
 
           <button
             className="btn btn-light border-style mb-2 m-auto"
