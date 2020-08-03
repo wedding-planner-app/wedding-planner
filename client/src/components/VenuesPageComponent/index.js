@@ -5,13 +5,18 @@ import Venue from './placeholder_venue.png';
 import InputText from '../InputText';
 import BtnComponent from '../Button';
 import './style.css';
-import VenueAPI from "../../utils/VenueAPI";
 
 class VenuesPageComponent extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
 
+  componentDidMount() {
+    // fetch("/api/venues/search?name=convention")
+    //   .then(response => response.json())
+  }
 
-
-    
   render() {
     return (
       // Components venue search functionality
