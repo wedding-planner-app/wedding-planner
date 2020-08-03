@@ -3,9 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const routes = require('./controllers');
 const app = express();
-// const cors = require('cors');
 const morgan = require('morgan');
-// const helmet = require('helmet');
 
 var db = require('./models');
 
@@ -13,8 +11,6 @@ const PORT = process.env.PORT || 3001;
 const appOrigin = process.env.APP_ORIGIN;
 
 app.use(morgan('dev'));
-// app.use(helmet());
-// app.use(cors({ origin: appOrigin }));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
