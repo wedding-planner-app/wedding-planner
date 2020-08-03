@@ -100,10 +100,9 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   db.Venue.create({
     name: req.body.name,
-    street: req.body.street,
-    city: req.body.city,
-    state: req.body.state,
-    zipCode: req.body.zipCode,
+    photo: req.body.photo,
+    address: req.body.formatted_address,
+    url: req.body.url,
   }).then(function (dbCreateVenue) {
     res.json(dbCreateVenue);
   });
@@ -114,10 +113,9 @@ router.put('/:id', function (req, res) {
   db.Venue.update(
     {
       name: req.body.name,
-      street: req.body.street,
-      city: req.body.city,
-      state: req.body.state,
-      zipCode: req.body.zipCode,
+      photo: req.body.photo,
+      address: req.body.formatted_address,
+      url: req.body.url,
     },
     {
       where: {
