@@ -3,8 +3,6 @@ require('dotenv').config();
 const express = require('express');
 const routes = require('./controllers');
 const app = express();
-const jwt = require('express-jwt');
-const jwksRsa = require('jwks-rsa');
 const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -13,27 +11,10 @@ var db = require('./models');
 
 const PORT = process.env.PORT || 3001;
 const appOrigin = process.env.APP_ORIGIN;
-const audience = process.env.AUTH0_AUDIENCE;
-const issuer = process.env.AUTH0_ISSUER;
-
-// setup jwt with auth0
-const jwtCheck = jwt({
-  secret: jwksRsa.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: `${issuer}.well-known/jwks.json`,
-  }),
-  audience: audience,
-  issuer: issuer,
-  algorithms: ['RS256'],
-});
 
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors({ origin: appOrigin }));
-// requires authentication
-app.use(jwtCheck);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -50,6 +31,5 @@ app.use(routes);
 db.sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-    console.log(`Audience: ${audience}`);
   });
 });
