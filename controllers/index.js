@@ -3,6 +3,7 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
+const venueImages = require('./api/venue-images');
 
 const audience = process.env.AUTH0_AUDIENCE;
 const issuer = process.env.AUTH0_ISSUER;
@@ -28,6 +29,9 @@ const jwtCheck = jwt({
 
 // API Routes will start '/api'
 // router.use('/api', jwtCheck, apiRoutes);
+
+// Public Routes for venue Images
+router.use('/images/venue', venueImages);
 
 // If no API routes are hit, send the React app will display the homepage
 router.use(function (req, res) {

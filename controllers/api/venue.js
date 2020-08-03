@@ -38,7 +38,7 @@ router.get('/search', function (req, res) {
       // if statement for results with no photo
       var photo = responseBodyTextSearch.results[i].photos;
       if (photo) {
-        placeData.photo = `/api/venue/image?id=${photo[0].photo_reference}`;
+        placeData.photo = `/images/venue/image?id=${photo[0].photo_reference}`;
       } else {
         placeData.photo = 'Sorry, no photo available';
       }
