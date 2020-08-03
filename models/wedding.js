@@ -1,6 +1,21 @@
 module.exports = function (sequelize, DataTypes) {
   // creating table wedding
   var Wedding = sequelize.define('Wedding', {
+    user_email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Must to enter an email',
+        },
+      },
+      validate: {
+        isEmail: {
+          msg:
+            'Please enter a valid email format: example@gmail.com ',
+        },
+      },
+    },
     // added validation allowNull => false
     title: {
       // title type STRING (Default length 255)

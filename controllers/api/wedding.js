@@ -20,18 +20,6 @@ router.get('/:id', function (req, res) {
   });
 });
 
-// getting the wedding by the user active, route => ('api/weddings/user/:userid')
-router.get('/user/:userid', function (req, res) {
-  db.Wedding.findAll({
-    where: {
-      UserId: req.params.userid,
-    },
-  }).then(function (dbAllWeddingById) {
-    console.log(dbAllWeddingById);
-    res.json(dbAllWeddingById);
-  });
-});
-
 // post a wedding, route => ( 'api/weddings')
 router.post('/', function (req, res) {
   db.Wedding.create({
@@ -39,7 +27,7 @@ router.post('/', function (req, res) {
     description: req.body.description,
     date: req.body.date,
     time: req.body.time,
-    UserId: req.body.userid,
+    user_email: req.body.user_email,
   }).then(function (dbCreateWedding) {
     console.log(dbCreateWedding);
     res.json(dbCreateWedding);
