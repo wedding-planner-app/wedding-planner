@@ -11,8 +11,45 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './style.css';
 // docs for calendar https://github.com/wojtekmaj/react-calendar
+import { useAuth0 } from '@auth0/auth0-react';
+var axios = require('axios');
+var qs = require('qs');
 
 const NewReservationPage = () => {
+  const { getAccessTokenSilently } = useAuth0();
+
+  const saveNewReservation = async (event) => {
+    event.preventDefault();
+
+    const token = await getAccessTokenSilently();
+
+    console.log(`token: ${token}`);
+
+    var data = qs.stringify({
+      title: 'Dummy wedding',
+      description: 'dummy description text',
+      date: '12/12/2020',
+      time: '13:30',
+    });
+    var config = {
+      method: 'post',
+      url: '/api/weddings',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${token}`,
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
     <Container className="pt-5 mb-5">
       <br></br>
@@ -85,7 +122,10 @@ const NewReservationPage = () => {
         </Col>
       </Row>
       <Row>
-        <BtnComponent name="Make Reservation" onClick="" />
+        <BtnComponent
+          name="Make Reservation"
+          onClick={saveNewReservation}
+        />
       </Row>
     </Container>
   );
