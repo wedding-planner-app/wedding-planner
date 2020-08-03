@@ -6,10 +6,10 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
-import WeddingCard from '../WeddingCard';
 import PlaceholderImage from './placeholder_venue.png';
 import BtnComponent from '../Button';
 import './style.css';
+import VenueCard from '../VenueCard';
 
 class VenuesPageComponent extends Component {
   constructor() {
@@ -104,7 +104,7 @@ class VenuesPageComponent extends Component {
           ) : (
             this.state.venueList.map((venue) => (
               <Col className="col-6 mb-3">
-                <WeddingCard
+                <VenueCard
                   img={
                     venue.photo === 'Sorry, no photo available'
                       ? PlaceholderImage
@@ -113,7 +113,7 @@ class VenuesPageComponent extends Component {
                   name={venue.name}
                   address={venue.address}
                   url={venue.url}
-                  username={"wedding team"}
+                  username={'wedding team'}
                 />
               </Col>
             ))
