@@ -27,7 +27,7 @@ const jwtCheck = jwt({
 });
 
 // API Routes will start '/api'
-router.use('/api', jwtCheck, apiRoutes);
+// router.use('/api', jwtCheck, apiRoutes);
 
 // If no API routes are hit, send the React app will display the homepage
 router.use(function (req, res) {
