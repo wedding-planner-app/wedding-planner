@@ -6,10 +6,13 @@ import InputText from '../../components/InputText';
 import BtnComponent from '../../components/Button';
 import './style.css';
 import VenuesPageComponent from '../../components/VenuesPageComponent';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const VenuesPage = () => {
+  const { getAccessTokenSilently } = useAuth0();
+
   return (
-    <VenuesPageComponent />
+    <VenuesPageComponent getAccessToken={getAccessTokenSilently} />
   );
 };
 
