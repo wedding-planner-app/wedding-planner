@@ -13,9 +13,6 @@ const EventsPage = () => {
 
   const loadEventsFromApi = async () => {
     const token = await getAccessTokenSilently();
-
-    console.log('token: ' + token);
-
     var config = {
       method: 'get',
       url: '/api/weddings',
