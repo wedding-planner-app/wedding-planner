@@ -13,8 +13,7 @@ class VenuesPageComponent extends Component {
   }
 
   componentDidMount() {
-    // fetch("/api/venues/search?name=convention")
-    //   .then(response => response.json())
+    // need to incorporate API back-end queries
   }
 
   render() {
