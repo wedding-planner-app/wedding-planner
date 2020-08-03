@@ -45,7 +45,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     time: {
       // added TIME datatype
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
