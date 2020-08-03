@@ -12,11 +12,13 @@ import './style.css';
 import VenueCard from '../VenueCard';
 
 class VenuesPageComponent extends Component {
-  constructor() {
+  constructor(props) {
     super();
 
     // Initialize a reference to the search text input, so we can extract its value later.
     this.searchInput = React.createRef();
+
+    this.getAccessToken = props.getAccessToken;
 
     // State will hold list of venues as they arrive from the search API.
     // isLoading is a bool to show placeholder text while data is being loaded.
@@ -32,7 +34,7 @@ class VenuesPageComponent extends Component {
   }
 
   // Method to call venue search API endpoint
-  searchVenues = (name) => {
+  searchVenues = async (name) => {
     // Do not allow the user to search for a venue if the search text input is empty.
     if (!name) {
       alert('Please enter a venue name to search.');
@@ -42,7 +44,16 @@ class VenuesPageComponent extends Component {
     // Toggle the loading bool to show the placeholder text.
     this.setState({ isLoading: true });
 
-    fetch(window.location.origin + '/api/venue/search?name=' + name)
+    const token = await this.getAccessToken();
+
+    var headers = new Headers();
+    headers.append('Authorization', `Bearer ${token}`);
+    var requestOptions = {
+      method: 'GET',
+      headers: headers,
+    };
+
+    fetch('/api/venue/search?name=' + name, requestOptions)
       .then((res) => res.json())
       .then((res) =>
         this.setState({
@@ -55,7 +66,7 @@ class VenuesPageComponent extends Component {
 
   // When user hits enter while still in text input focus, trigger venue search
   onKeyPress = (event) => {
-    if (event.charCode == 13) {
+    if (event.charCode === 13) {
       this.searchVenues(this.searchInput.current.value);
     }
   };

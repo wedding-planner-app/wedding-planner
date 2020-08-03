@@ -6,6 +6,7 @@ const { restart } = require('nodemon');
 // get venue information from Google Place API
 router.get('/search', function (req, res) {
   const searchQuery = req.query.name;
+  console.log(`Search Query: ${searchQuery}`);
   // variable to store all Google Places API data results
   var resultsData = [];
   // 1st query to pull initial text search data
@@ -66,7 +67,7 @@ router.get('/search', function (req, res) {
 router.get('/image', function (req, res) {
   // photo reference id will be stored in a query param named 'id'.
   var imageId = req.query.id;
-  
+
   var options = {
     method: 'GET',
     url: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${imageId}&key=${process.env.API_KEY}`,
