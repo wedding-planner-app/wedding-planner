@@ -1,49 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import WeddingCard from '../../components/WeddingCard';
 import logo from './logo.png';
 import Btn from '../../components/Button';
+import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const EventsPage = () => {
+  const [events, setEvents] = useState([]);
+
+  const { getAccessTokenSilently } = useAuth0();
+
+  const loadEventsFromApi = async () => {
+    const token = await getAccessTokenSilently();
+    var config = {
+      method: 'get',
+      url: '/api/weddings',
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        setEvents(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    loadEventsFromApi();
+  }, []);
+
   return (
     <Container className="pt-3 mb-5">
-      <Row>
-        <Btn name="Create Event" href="/events/new" />
+      {events.length === 0 && (
+        <Row className="d-flex justify-content-center my-5">
+          <h3>No Events Availables</h3>
+        </Row>
+      )}
+
+      <Row className="d-flex flex-wrap justify-content-start my-3">
+        {events.map((event) => (
+          <Col
+            className="col-sm-12 col-md-6 col-lg-4 mb-3"
+            id={`wedding-${event.id}`}
+          >
+            <WeddingCard
+              img={logo}
+              title={event.title}
+              username={event.user_email}
+              date={new Date(event.date).toDateString()}
+              time={event.time}
+              description={event.description}
+              id={event.id}
+            />
+          </Col>
+        ))}
       </Row>
-      <Row className="d-flex flex-wrap">
-        <Col className="col-sm-12 col-lg-6 mb-3">
-          <WeddingCard
-            img={logo}
-            title="Event"
-            username="@ wedding_team"
-          />
-        </Col>
-        <Col className="col-sm-12 col-lg-6 mb-3">
-          <WeddingCard
-            img={logo}
-            title="Event"
-            username="@ wedding_team"
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col className="col-sm-12 col-lg-6 mb-3">
-          <WeddingCard
-            img={logo}
-            title="Event"
-            username="@ wedding_team"
-          />
-        </Col>
-        <Col className="col-sm-12 col-lg-6 mb-3">
-          <WeddingCard
-            img={logo}
-            title="Event"
-            username="@ wedding_team"
-          />
-        </Col>
-      </Row>
-      <Row className="custom-margin">
-        <Btn name="Create Event" href="/events/new" />
+
+      <Row className="custom-margin my-5">
+        <Btn name="Create New Event" href="/events/new" />
       </Row>
     </Container>
   );
