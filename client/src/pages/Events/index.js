@@ -3,17 +3,23 @@ import { Container, Row, Col } from 'react-bootstrap';
 import WeddingCard from '../../components/WeddingCard';
 import logo from './logo.png';
 import Btn from '../../components/Button';
+import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
 
-  useEffect(() => {
-    var axios = require('axios');
+  const { getAccessTokenSilently } = useAuth0();
+
+  const loadEventsFromApi = async () => {
+    const token = await getAccessTokenSilently();
+
+    console.log('token: ' + token);
 
     var config = {
       method: 'get',
       url: '/api/weddings',
-      headers: {},
+      headers: { Authorization: `Bearer ${token}` },
     };
 
     axios(config)
@@ -24,11 +30,15 @@ const EventsPage = () => {
       .catch(function (error) {
         console.log(error);
       });
+  };
+
+  useEffect(() => {
+    loadEventsFromApi();
   }, []);
 
   return (
     <Container className="pt-3 mb-5">
-      {events.length == 0 && (
+      {events.length === 0 && (
         <Row className="d-flex justify-content-center my-5">
           <h3>No Events Availables</h3>
         </Row>
