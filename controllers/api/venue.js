@@ -2,16 +2,17 @@ const router = require('express').Router();
 var db = require('../../models');
 var request = require('request');
 
-// get searched venue info from Google places
+// get all venue information , route => ('api/venue')
 router.get('/search', function (req, res) {
+  const searchQuery = req.query.name;
   var options = {
     method: 'GET',
-    url: '',
+    url: `https://maps.googleapis.com/maps/api/place/textsearch/json?key=${process.env.API_KEY}&query=${searchQuery}`,
     headers: {},
   };
   request(options, function (error, response) {
     if (error) throw new Error(error);
-    console.log(response.body);
+    res.json(JSON.parse(response.body));
   });
 });
 
