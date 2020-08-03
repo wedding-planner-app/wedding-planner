@@ -3,65 +3,58 @@ import { Container, Row, Col } from 'react-bootstrap';
 import WeddingCard from '../../components/WeddingCard';
 import logo from './logo.png';
 import Btn from '../../components/Button';
-import { useAuth0 } from '@auth0/auth0-react';
 
 const EventsPage = () => {
-  const { user } = useAuth0();
-  const { email } = user;
-
   const [events, setEvents] = useState([]);
 
-  const loadEvents = () => {
-    console.log('Loading Events for user: ' + email);
-    var loadedEvents = [];
-    // TODO: use API call
-    for (var i = 0; i < 4; i++) {
-      loadedEvents.push({
-        id: i,
-        title: 'Sample Event',
-        description: 'my description',
-        date: '2020-12-12T00:00:00.000Z',
-        time: '13:30:00',
-        createdAt: '2020-07-30T00:53:21.000Z',
-        updatedAt: '2020-07-30T01:29:09.000Z',
-        UserId: email,
-      });
-    }
-    setEvents(loadedEvents);
-  };
-
-  // use to load data async from API
   useEffect(() => {
-    loadEvents();
+    var axios = require('axios');
+
+    var config = {
+      method: 'get',
+      url: '/api/weddings',
+      headers: {},
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        setEvents(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }, []);
 
   return (
     <Container className="pt-3 mb-5">
-      <Row>
-        <Btn
-          className="mb-5"
-          name="Create Event"
-          href="/events/new"
-        />
-      </Row>
+      {events.length == 0 && (
+        <Row className="d-flex justify-content-center my-5">
+          <h3>No Events Availables</h3>
+        </Row>
+      )}
 
-      <Row className="d-flex flex-wrap">
+      <Row className="d-flex flex-wrap justify-content-start my-3">
         {events.map((event) => (
           <Col
-            className="col-sm-12 col-lg-6 mb-3"
+            className="col-sm-12 col-md-6 col-lg-4 mb-3"
             id={`wedding-${event.id}`}
           >
             <WeddingCard
               img={logo}
               title={event.title}
-              username={email}
+              username={event.user_email}
+              date={new Date(event.date).toDateString()}
+              time={event.time}
+              description={event.description}
+              id={event.id}
             />
           </Col>
         ))}
       </Row>
 
-      <Row className="custom-margin">
-        <Btn name="Create Event" href="/events/new" />
+      <Row className="custom-margin my-5">
+        <Btn name="Create New Event" href="/events/new" />
       </Row>
     </Container>
   );
