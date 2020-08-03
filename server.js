@@ -1,8 +1,32 @@
 const express = require('express');
 const routes = require('./controllers');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const jwt = require('express-jwt');
+const jwksRsa = require('jwks-rsa');
+
 var db = require('./models');
+
+const PORT = process.env.PORT || 3001;
+const appOrigin = process.env.APP_ORIGIN;
+const audience = process.env.AUTH0_AUDIENCE;
+const issuer = process.env.AUTH0_ISSUER;
+
+// setup jwt with auth0
+const jwtCheck = jwt({
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: `${issuer}.well-known/jwks.json`,
+  }),
+
+  audience: audience,
+  issuer: issuer,
+  algorithms: ['RS256'],
+});
+
+// requires authentication
+// app.use(jwtCheck);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
