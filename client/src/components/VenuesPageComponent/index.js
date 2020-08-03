@@ -1,7 +1,8 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import WeddingCard from '../WeddingCard';
-import Venue from './placeholder_venue.png';
+import PlaceholderImage from './placeholder_venue.png';
 import InputText from '../InputText';
 import BtnComponent from '../Button';
 import './style.css';
@@ -9,11 +10,16 @@ import './style.css';
 class VenuesPageComponent extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      venueList: [],
+    };
   }
 
   componentDidMount() {
-    // need to incorporate API back-end queries
+    fetch(window.location.origin + '/api/venue/search?name=Convention')
+      .then((res) => res.json())
+      .then((res) => this.setState({ venueList: res.data }))
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -35,50 +41,15 @@ class VenuesPageComponent extends Component {
         <br></br>
         {/* Venue card components */}
         <Row>
-          <Col className="col-6 mb-3">
-            <WeddingCard
-              img={Venue}
-              name="Venue Name from API"
-              username="@ wedding_team"
-            />
-          </Col>
-          <Col className="col-6 mb-3">
-            <WeddingCard
-              img={Venue}
-              name="Venue Name from API"
-              username="@ wedding_team"
-            />
-          </Col>
-        </Row>
-        <Row>
-          <Col className="col-6 mb-3">
-            <WeddingCard
-              img={Venue}
-              name="Venue Name from API"
-              username="@ wedding_team"
-            />
-          </Col>
-          <Col className="col-6 mb-3">
-            <WeddingCard
-              img={Venue}
-              name="Venue Name from API"
-              username="@ wedding_team"
-            />
-          </Col>
-          <Col className="col-6 mb-3">
-            <WeddingCard
-              img={Venue}
-              name="Venue Name from API"
-              username="@ wedding_team"
-            />
-          </Col>
-          <Col className="col-6 mb-3">
-            <WeddingCard
-              img={Venue}
-              name="Venue Name from API"
-              username="@ wedding_team"
-            />
-          </Col>
+          {this.state.venueList.map((venue) => (
+            <Col className="col-6 mb-3">
+              <WeddingCard
+                img={(venue.photo === 'Sorry, no photo available') ? PlaceholderImage : venue.photo}
+                name={venue.name}
+                username={venue.address}
+              />
+            </Col>
+          ))}
         </Row>
       </Container>
     );

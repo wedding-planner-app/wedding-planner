@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 // import FirstName from '../../components/FirstName';
 // import LastName from '../../components/LastName';
 // import Email from '../../components/Email';
@@ -9,11 +8,6 @@ import { Card, Container, Row, Col } from 'react-bootstrap';
 import './style.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faPlus } from '@fortawesome/free-solid-svg-icons';
-=======
-
-import { Card, Container, Row, Col } from 'react-bootstrap';
-import './style.css';
->>>>>>> b89b52499f88841493d51fae2cc0bb2e0ed47f15
 import { useAuth0 } from '@auth0/auth0-react';
 
 const ProfilePage = () => {
