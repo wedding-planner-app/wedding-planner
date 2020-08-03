@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row } from 'react-bootstrap';
+import { Card, Row, Button } from 'react-bootstrap';
 import './style.css';
 
 const WeddingCard = (props) => {
@@ -7,15 +7,37 @@ const WeddingCard = (props) => {
     <Card style={{ height: '30erm' }} className="mb-4 m-auto">
       <Card.Img variant="top" src={props.img} />
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.data}</Card.Text>
-        <Row className="d-flex flex-wrap">
-          <button
+        <Card.Title className="data-style text-wrap">
+          {props.title}
+        </Card.Title>
+        <div className="d-flex flex-column align-items-start">
+          <Card.Text>
+            <span className="font-weight-bold data-style">
+              Description:
+            </span>{' '}
+            {props.description}
+          </Card.Text>
+          <Card.Text>
+            <span className="font-weight-bold data-style">
+              Date:{' '}
+            </span>
+            {props.date}
+          </Card.Text>
+          <Card.Text>
+            <span className="font-weight-bold data-style">
+              Time:{' '}
+            </span>
+            {props.time}
+          </Card.Text>
+        </div>
+        <Row className="d-flex flex-wrap mt-3">
+          <Button
             className="btn btn-light mr-3 border-style mb-2 m-auto"
             type="button"
+            href={`/events/${props.id}`}
           >
             Edit Event
-          </button>
+          </Button>
 
           <button
             className="btn btn-light border-style mb-2 m-auto"

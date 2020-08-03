@@ -1,8 +1,16 @@
+require('dotenv').config();
+
 const express = require('express');
 const routes = require('./controllers');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const morgan = require('morgan');
+
 var db = require('./models');
+
+const PORT = process.env.PORT || 3001;
+const appOrigin = process.env.APP_ORIGIN;
+
+app.use(morgan('dev'));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));

@@ -25,8 +25,13 @@
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
     "if-env": "^1.0.4",
+    "jwks-rsa": "^1.8.1",
+    "jwt-decode": "^2.2.0",
+    "morgan": "^1.10.0",
     "pg": "^8.3.0",
     "react-router-dom": "^5.2.0",
     "sequelize": "^5.8.9"
