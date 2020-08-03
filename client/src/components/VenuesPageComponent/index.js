@@ -111,7 +111,9 @@ class VenuesPageComponent extends Component {
                       : venue.photo
                   }
                   name={venue.name}
-                  username={venue.address}
+                  address={venue.address}
+                  url={venue.url}
+                  username={"wedding team"}
                 />
               </Col>
             ))
