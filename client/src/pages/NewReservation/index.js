@@ -55,7 +55,7 @@ const NewReservationPage = () => {
   };
 
   return (
-    <Container className="pt-5 mb-5">
+    <Container className="pt-5 mb-5 fixed-margin">
       <br></br>
       <h1 className="title-style">Reserve A Date for the Wedding</h1>
       <br></br>
