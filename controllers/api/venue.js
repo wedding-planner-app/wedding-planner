@@ -13,7 +13,7 @@ router.get('/search', function (req, res) {
     url: `https://maps.googleapis.com/maps/api/place/textsearch/json?key=${process.env.API_KEY}&query=${searchQuery}`,
     headers: {},
   };
-  request(options1, function (error, response) {
+  request(options1, async function (error, response) {
     if (error) throw new Error(error);
     // parsing out the response from Google Text search endpoint
     var responseBodyTextSearch = JSON.parse(response.body);
@@ -22,33 +22,41 @@ router.get('/search', function (req, res) {
       // variable to store Text Search response data from Places API
       var placeData = {
         name: responseBodyTextSearch.results[i].name,
-        address: responseBodyTextSearch.results[i].name,
+        address: responseBodyTextSearch.results[i].formatted_address,
       };
       // if statement for results with no photo
       var photo = responseBodyTextSearch.results[i].photos;
       if (photo) {
-        placeData.photo = photo[0].photo_reference;
+        placeData.photo = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo[0].photo_reference}&key=${process.env.API_KEY}`;
       } else {
-        placeData.photo = 'Sorry no photo available';
+        placeData.photo = 'Sorry, no photo available';
       }
 
       // variable to store place_id for queried venues Google Place Details endpoint
       var placeID = responseBodyTextSearch.results[i].place_id;
 
-      // 2nd query to pull URL based off of place ID
+      // 2nd query to pull URL based on the place ID pulled from above text search
       var options2 = {
         method: 'GET',
         url: `https://maps.googleapis.com/maps/api/place/details/json?key=${process.env.API_KEY}&place_id=${placeID}&fields=url`,
         headers: {},
       };
-      request(options2, function (error, response) {
-        if (error) throw new Error(error);
-        var responseBodyDetailUrl = JSON.parse(response.body);
-        placeData.url = responseBodyDetailUrl.result.url;
-        resultsData.push(placeData);
-      });
+      // awaiting for place_id data to return
+      var promiseWrapper = function () {
+        return new Promise((resolve) => {
+          request(options2, function (error, response) {
+            if (error) throw new Error(error);
+            var responseBodyDetailUrl = JSON.parse(response.body);
+            placeData.url = responseBodyDetailUrl.result.url;
+            resultsData.push(placeData);
+            resolve('resolved');
+          });
+        }).catch((error) => {
+          console.log('caught', error.message);
+        });
+      };
+      await promiseWrapper();
     }
-
     res.json({ data: resultsData });
   });
 });
