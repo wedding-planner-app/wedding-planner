@@ -1,10 +1,11 @@
 import React from 'react';
-import { Nav, Navbar, Image } from 'react-bootstrap';
+import { Nav, Navbar, Image, NavDropdown } from 'react-bootstrap';
 import './style.css';
 import logo from './logo.png';
 import LoginLink from '../LoginLink';
 import SignupLink from './../SignupLink';
 import LogoutLink from '../LogoutLink';
+import ProfileLink from '../ProfileLink';
 import { useAuth0 } from '@auth0/auth0-react';
 
 /**
@@ -22,9 +23,16 @@ function NavigationBar() {
       <Navbar.Collapse>
         {isAuthenticated ? (
           <Nav className="ml-auto color-link">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/events">Events</Nav.Link>
-            <Nav.Link href="/profile">Profile</Nav.Link>
+            <NavDropdown title="Events" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/events">
+                Your Events
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/events/new">
+                Create New
+              </NavDropdown.Item>
+            </NavDropdown>
+            <ProfileLink />
             <LogoutLink />
           </Nav>
         ) : (
