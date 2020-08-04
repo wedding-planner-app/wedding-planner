@@ -1,9 +1,28 @@
 const router = require('express').Router();
 var db = require('../../models');
+const jwt_decode = require('jwt-decode');
+
+const getEmail = (token) => {
+  decoded = jwt_decode(token);
+  return decoded[
+    'https://wedding-planner-platform.herokuapp.com/email'
+  ];
+};
 
 // get all media information , route => ('api/media')
 router.get('/', function (req, res) {
-  db.Media.findAll({}).then(function (dbMedia) {
+  let email = getEmail(req.headers.authorization);
+  db.Media.findAll({
+    where: {
+      WeddingId: req.query.eventid,
+    },
+    include: [
+      {
+        model: db.WeddingId,
+        where: { user_email: email },
+      },
+    ],
+  }).then(function (dbMedia) {
     res.json(dbMedia);
   });
 });
@@ -28,6 +47,7 @@ router.put('/:id', function (req, res) {
     {
       where: {
         id: req.params.id,
+        WeddingId: req.query.eventid,
       },
     },
   ).then(function (dbUpdateMedia) {
@@ -40,6 +60,7 @@ router.delete('/:id', function (req, res) {
   db.Media.destroy({
     where: {
       id: req.params.id,
+      WeddingId: req.query.eventid,
     },
   }).then(function (dbMediaDelete) {
     res.json(dbMediaDelete);
