@@ -28,7 +28,7 @@ const jwtCheck = jwt({
 });
 
 // API Routes will start '/api'
-router.use('/api', jwtCheck, apiRoutes);
+// router.use('/api', jwtCheck, apiRoutes);
 
 // Public Routes for venue Images
 router.use('/images/venue', venueImages);
