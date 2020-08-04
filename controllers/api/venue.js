@@ -30,7 +30,6 @@ router.get('/', function (req, res) {
 
 // post a venue , route => ('api/venue')
 router.post('/', function (req, res) {
-  let email = getEmail(req.headers.authorization);
   db.Venue.create({
     name: req.body.name,
     street: req.body.street,
@@ -56,7 +55,6 @@ router.put('/:id', function (req, res) {
     {
       where: {
         id: req.params.id,
-        WeddingId: req.query.eventid,
       },
     },
   ).then(function (dbUpdateVenue) {
@@ -69,7 +67,6 @@ router.delete('/:id', function (req, res) {
   db.Venue.destroy({
     where: {
       id: req.params.id,
-      WeddingId: req.query.eventid,
     },
   }).then(function (dbVenueDelete) {
     res.json(dbVenueDelete);
