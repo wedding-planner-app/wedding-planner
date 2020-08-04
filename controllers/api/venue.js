@@ -1,5 +1,14 @@
 const router = require('express').Router();
 var db = require('../../models');
+const jwt_decode = require('jwt-decode');
+
+const getEmail = (token) => {
+  decoded = jwt_decode(token);
+  return decoded[
+    'https://wedding-planner-platform.herokuapp.com/email'
+  ];
+};
+
 var request = require('request');
 const { restart } = require('nodemon');
 
@@ -92,7 +101,19 @@ router.get('/image', function (req, res) {
 
 // get all venue information , route => ('api/venue')
 router.get('/', function (req, res) {
-  db.Venue.findAll({}).then(function (dbVenuesAll) {
+  let email = getEmail(req.headers.authorization);
+
+  db.Venue.findAll({
+    where: {
+      WeddingId: req.query.eventid,
+    },
+    include: [
+      {
+        model: db.WeddingId,
+        where: { user_email: email },
+      },
+    ],
+  }).then(function (dbVenuesAll) {
     res.json(dbVenuesAll);
   });
 });
@@ -104,6 +125,11 @@ router.post('/', function (req, res) {
     photo: req.body.photo,
     address: req.body.formatted_address,
     url: req.body.url,
+    // street: req.body.street,
+    // city: req.body.city,
+    // state: req.body.state,
+    // zipCode: req.body.zipCode,
+    WeddingId: req.query.eventid,
   }).then(function (dbCreateVenue) {
     res.json(dbCreateVenue);
   });
