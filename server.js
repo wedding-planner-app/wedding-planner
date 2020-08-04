@@ -8,7 +8,7 @@ const morgan = require('morgan');
 var db = require('./models');
 
 require('dotenv').config();
-console.log(process.env);
+// console.log(process.env);
 
 const PORT = process.env.PORT || 3001;
 const appOrigin = process.env.APP_ORIGIN;
