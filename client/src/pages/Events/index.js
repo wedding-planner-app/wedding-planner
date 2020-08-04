@@ -21,7 +21,6 @@ const EventsPage = () => {
 
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
         setEvents(response.data);
       })
       .catch(function (error) {
@@ -40,7 +39,7 @@ const EventsPage = () => {
 
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
+        loadEventsFromApi();
       })
       .catch(function (error) {
         console.log(error);
@@ -73,7 +72,9 @@ const EventsPage = () => {
               time={event.time}
               description={event.description}
               id={event.id}
-              onClickDelete={handleDeleteEvent}
+              onClickDelete={() => {
+                handleDeleteEvent(event.id);
+              }}
             />
           </Col>
         ))}
