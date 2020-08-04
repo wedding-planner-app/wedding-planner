@@ -10,6 +10,7 @@ import PlaceholderImage from './placeholder_venue.png';
 import BtnComponent from '../Button';
 import './style.css';
 import VenueCard from '../VenueCard';
+import axios from 'axios';
 
 class VenuesPageComponent extends Component {
   constructor(props) {
@@ -46,22 +47,23 @@ class VenuesPageComponent extends Component {
 
     const token = await this.getAccessToken();
 
-    var headers = new Headers();
-    headers.append('Authorization', `Bearer ${token}`);
-    var requestOptions = {
-      method: 'GET',
-      headers: headers,
+    var config = {
+      method: 'get',
+      url: `/api/venue/search?name=${name}`,
+      headers: { Authorization: `Bearer ${token}` },
     };
 
-    fetch('/api/venue/search?name=' + name, requestOptions)
-      .then((res) => res.json())
-      .then((res) =>
+    axios(config)
+      .then(function (res) {
+        console.log(res.data);
         this.setState({
           venueList: res.data,
           isLoading: false,
-        }),
-      )
-      .catch((err) => console.log(err));
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   // When user hits enter while still in text input focus, trigger venue search

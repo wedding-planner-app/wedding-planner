@@ -1,37 +1,9 @@
 const path = require('path');
 const router = require('express').Router();
 const apiRoutes = require('./api');
-const jwt = require('express-jwt');
-const jwksRsa = require('jwks-rsa');
-const venueImages = require('./api/venue-images');
-
-const audience = process.env.AUTH0_AUDIENCE;
-const issuer = process.env.AUTH0_ISSUER;
-
-if (!issuer || !audience) {
-  throw new Error(
-    'Please make sure that .env is in place and populated',
-  );
-}
-
-// setup jwt with auth0
-const jwtCheck = jwt({
-  secret: jwksRsa.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: `${issuer}.well-known/jwks.json`,
-  }),
-  audience: audience,
-  issuer: issuer,
-  algorithms: ['RS256'],
-});
 
 // API Routes will start '/api'
-// router.use('/api', jwtCheck, apiRoutes);
-
-// Public Routes for venue Images
-router.use('/images/venue', venueImages);
+router.use('/api', apiRoutes);
 
 // If no API routes are hit, send the React app will display the homepage
 router.use(function (req, res) {
