@@ -55,7 +55,7 @@ router.post('/', function (req, res) {
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
-    WeddingId: req.query.eventid,
+    WeddingId: req.body.eventid,
   }).then(function (dbCreateGuest) {
     res.json(dbCreateGuest);
   });
