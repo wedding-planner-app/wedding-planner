@@ -72,7 +72,6 @@ router.put('/:id', function (req, res) {
     {
       where: {
         id: req.params.id,
-        WeddingId: req.query.eventid,
       },
     },
   ).then(function (dbUpdateGuestById) {
@@ -85,7 +84,6 @@ router.delete('/:id', function (req, res) {
   db.Guest.destroy({
     where: {
       id: req.params.id,
-      WeddingId: req.query.eventid,
     },
   }).then(function (dbGuestDelete) {
     res.json(dbGuestDelete);
