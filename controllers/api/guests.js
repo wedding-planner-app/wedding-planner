@@ -50,6 +50,7 @@ router.get('/:id', function (req, res) {
 
 // post a guest **
 router.post('/', function (req, res) {
+  //TODOs Validate
   db.Guest.create({
     name: req.body.name,
     email: req.body.email,
