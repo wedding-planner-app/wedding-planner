@@ -32,6 +32,7 @@ router.post('/', function (req, res) {
   db.Media.create({
     mediaType: req.body.mediaType,
     url: req.body.url,
+    WeddingId: req.body.eventid,
   }).then(function (dbCreateMedia) {
     res.json(dbCreateMedia);
   });
@@ -47,7 +48,6 @@ router.put('/:id', function (req, res) {
     {
       where: {
         id: req.params.id,
-        WeddingId: req.query.eventid,
       },
     },
   ).then(function (dbUpdateMedia) {
@@ -60,7 +60,6 @@ router.delete('/:id', function (req, res) {
   db.Media.destroy({
     where: {
       id: req.params.id,
-      WeddingId: req.query.eventid,
     },
   }).then(function (dbMediaDelete) {
     res.json(dbMediaDelete);
