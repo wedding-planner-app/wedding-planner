@@ -1,43 +1,30 @@
 const router = require('express').Router();
 var db = require('../../models');
+const jwt_decode = require('jwt-decode');
+
+const getEmail = (token) => {
+  decoded = jwt_decode(token);
+  return decoded[
+    'https://wedding-planner-platform.herokuapp.com/email'
+  ];
+};
 
 // get all venue information , route => ('api/venue')
 router.get('/', function (req, res) {
-  db.Venue.findAll({}).then(function (dbVenuesAll) {
+  let email = getEmail(req.headers.authorization);
+
+  db.Venue.findAll({
+    where: {
+      WeddingId: req.query.eventid,
+    },
+    include: [
+      {
+        model: db.WeddingId,
+        where: { user_email: email },
+      },
+    ],
+  }).then(function (dbVenuesAll) {
     res.json(dbVenuesAll);
-  });
-});
-
-// get all venue information by city, route => ('api/venue/city/:city')
-router.get('/city/:city', function (req, res) {
-  db.Venue.findAll({
-    where: {
-      city: req.params.city,
-    },
-  }).then(function (dbVenuesAllbyCity) {
-    res.json(dbVenuesAllbyCity);
-  });
-});
-
-// get all venue information by state, route => ('api/venue/state/:state')
-router.get('/state/:state', function (req, res) {
-  db.Venue.findAll({
-    where: {
-      city: req.params.city,
-    },
-  }).then(function (dbVenuesAllbyState) {
-    res.json(dbVenuesAllbyState);
-  });
-});
-
-// get all venue information by zipcode, route => ('api/venue/zipCode/:zipCode')
-router.get('/zipCode/:zipCode', function (req, res) {
-  db.Venue.findAll({
-    where: {
-      zipCode: req.params.zipCode,
-    },
-  }).then(function (dbVenuesAllbyZipCode) {
-    res.json(dbVenuesAllbyZipCode);
   });
 });
 
@@ -49,6 +36,7 @@ router.post('/', function (req, res) {
     city: req.body.city,
     state: req.body.state,
     zipCode: req.body.zipCode,
+    WeddingId: req.query.eventid,
   }).then(function (dbCreateVenue) {
     res.json(dbCreateVenue);
   });
