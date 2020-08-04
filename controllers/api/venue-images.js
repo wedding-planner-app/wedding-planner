@@ -2,7 +2,7 @@ const router = require('express').Router();
 var db = require('../../models');
 
 // get venue image from Google Place API
-router.get('/:id', function (req, res) {
+router.get('/venue/:id', function (req, res) {
   // console/log() to test the image route
   console.log('hit the image route');
   // photo reference id will be stored in a query param named 'id'.

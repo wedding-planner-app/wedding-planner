@@ -38,6 +38,6 @@ router.use('/invitation', jwtCheck, invitationRoutes);
 router.use('/media', jwtCheck, mediaRoutes);
 router.use('/venue', jwtCheck, venueRoutes);
 // unauthenticated apis
-router.use('/public/venue/images', venueImages);
+router.use('/images', venueImages);
 
 module.exports = router;

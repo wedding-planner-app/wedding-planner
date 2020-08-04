@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import {
   InputGroup,
   FormControl,
@@ -12,129 +12,109 @@ import './style.css';
 import VenueCard from '../VenueCard';
 import axios from 'axios';
 
-class VenuesPageComponent extends Component {
-  constructor(props) {
-    super();
-
-    // Initialize a reference to the search text input, so we can extract its value later.
-    this.searchInput = React.createRef();
-
-    this.getAccessToken = props.getAccessToken;
-
-    // State will hold list of venues as they arrive from the search API.
-    // isLoading is a bool to show placeholder text while data is being loaded.
-    this.state = {
-      venueList: [],
-      isLoading: false,
-    };
-  }
-
-  // When the component starts up, pre-populate venue data matching 'convention' search.
-  componentDidMount() {
-    this.searchVenues('Convention');
-  }
-
-  // Method to call venue search API endpoint
-  searchVenues = async (name) => {
-    // Do not allow the user to search for a venue if the search text input is empty.
-    if (!name) {
-      alert('Please enter a venue name to search.');
-      return;
-    }
-
-    // Toggle the loading bool to show the placeholder text.
-    this.setState({ isLoading: true });
-
-    const token = await this.getAccessToken();
-
-    var config = {
-      method: 'get',
-      url: `/api/venue/search?name=${name}`,
-      headers: { Authorization: `Bearer ${token}` },
-    };
-
-    axios(config)
-      .then(function (res) {
-        console.log(res.data);
-        this.setState({
-          venueList: res.data,
-          isLoading: false,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+const VenuesPageComponent = (props) => {
+  const getAccessToken = props.getAccessToken;
+  const [venues, setVenues] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState('Convention');
 
   // When user hits enter while still in text input focus, trigger venue search
-  onKeyPress = (event) => {
+  const onKeyPress = (event) => {
     if (event.charCode === 13) {
-      this.searchVenues(this.searchInput.current.value);
+      searchVenues();
     }
   };
 
   // When user clicks search button, trigger venue search
-  handleFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    this.searchVenues(this.searchInput.current.value);
+    searchVenues();
   };
 
-  render() {
-    return (
-      // Components venue search functionality
-      <Container className="pt-5 mb-5">
-        <h1 className="title-style">Search for Venues</h1>
-        <Row className="d-flex flex-column flex-md-row vertical-align">
-          <Col className="col-sm-12 col-lg-6">
-            <InputGroup className="p5 mb-3 vertical-align">
-              <InputGroup.Prepend>
-                <InputGroup.Text>
-                  Search by venue name
-                </InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                ref={this.searchInput}
-                onKeyPress={this.onKeyPress}
-              />
-            </InputGroup>
-          </Col>
-          <Col className="col-sm-12 col-lg-6 mb-3">
-            <BtnComponent
-              name="Search"
-              onClick={this.handleFormSubmit}
+  // Method to call venue search API endpoint
+  const searchVenues = async () => {
+    // Do not allow the user to search for a venue if the search text input is empty.
+    if (!search) {
+      alert('Please enter a venue name to search.');
+      return;
+    }
+
+    setLoading(true);
+
+    const token = await getAccessToken();
+
+    var config = {
+      method: 'get',
+      url: `/api/venue/search?name=${search}`,
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    await axios(config)
+      .then(function (res) {
+        console.log(res.data);
+        setLoading(false);
+        setVenues(res.data);
+      })
+      .catch(function (error) {
+        setLoading(false);
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    searchVenues();
+  }, []);
+
+  return (
+    // Components venue search functionality
+    <Container className="pt-5 mb-5">
+      <h1 className="title-style">Search for Venues</h1>
+      <Row className="d-flex flex-column flex-md-row vertical-align">
+        <Col className="col-sm-12 col-lg-6">
+          <InputGroup className="p5 mb-3 vertical-align">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Search by venue name</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              aria-label="Default"
+              aria-describedby="inputGroup-sizing-default"
+              onKeyPress={onKeyPress}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
+          </InputGroup>
+        </Col>
+        <Col className="col-sm-12 col-lg-6 mb-3">
+          <BtnComponent name="Search" onClick={handleFormSubmit} />
+        </Col>
+      </Row>
+      <br></br>
+      {/* Venue card components */}
+      <Row>
+        {loading ? (
+          <Col className="col-6 mb-3">
+            <h1 className="title-style">Loading...</h1>
           </Col>
-        </Row>
-        <br></br>
-        {/* Venue card components */}
-        <Row>
-          {this.state.isLoading ? (
+        ) : (
+          venues.map((venue) => (
             <Col className="col-6 mb-3">
-              <h1 className="title-style">Loading...</h1>
+              <VenueCard
+                img={
+                  venue.photo === 'Sorry, no photo available'
+                    ? PlaceholderImage
+                    : venue.photo
+                }
+                name={venue.name}
+                address={venue.address}
+                url={venue.url}
+                username={'wedding team'}
+              />
             </Col>
-          ) : (
-            this.state.venueList.map((venue) => (
-              <Col className="col-6 mb-3">
-                <VenueCard
-                  img={
-                    venue.photo === 'Sorry, no photo available'
-                      ? PlaceholderImage
-                      : venue.photo
-                  }
-                  name={venue.name}
-                  address={venue.address}
-                  url={venue.url}
-                  username={'wedding team'}
-                />
-              </Col>
-            ))
-          )}
-        </Row>
-      </Container>
-    );
-  }
-}
+          ))
+        )}
+      </Row>
+    </Container>
+  );
+};
 
 export default VenuesPageComponent;

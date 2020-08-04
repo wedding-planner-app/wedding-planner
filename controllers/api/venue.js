@@ -26,7 +26,6 @@ router.get('/search', function (req, res) {
     if (error) throw new Error(error);
     // parsing out the response from Google Text search endpoint
     var responseBodyTextSearch = JSON.parse(response.body);
-    console.log(responseBodyTextSearch);
     // for loop to interate through the Google Text search response body
     for (var i = 0; i < responseBodyTextSearch.results.length; i++) {
       // variable to store Text Search response data from Places API
@@ -37,7 +36,7 @@ router.get('/search', function (req, res) {
       // if statement for results with no photo
       var photo = responseBodyTextSearch.results[i].photos;
       if (photo) {
-        placeData.photo = `/public/venue/images/${photo[0].photo_reference}`;
+        placeData.photo = `/images/venue/${photo[0].photo_reference}`;
       } else {
         placeData.photo = 'Sorry, no photo available';
       }
