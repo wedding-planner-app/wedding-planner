@@ -1,7 +1,13 @@
 import React from 'react';
+// import FirstName from '../../components/FirstName';
+// import LastName from '../../components/LastName';
+// import Email from '../../components/Email';
 
 import { Card, Container, Row, Col } from 'react-bootstrap';
+// import user from './user.png';
 import './style.css';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const ProfilePage = () => {

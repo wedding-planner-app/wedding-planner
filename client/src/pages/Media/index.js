@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Row, Button, Modal } from 'react-bootstrap';
-import Table from 'react-bootstrap/Table';
+import { Container, Button, Modal } from 'react-bootstrap';
+// import Table from 'react-bootstrap/Table';
 import MediaTable from '../../components/MediaTable';
 import InputText from '../../components/InputText';
 import './style.css';
@@ -10,20 +10,20 @@ const MediaPage = () => {
   const [editShow, setEditShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
 
-  const mediaListData = [
-    {
-      mediaID: '1234',
-      type: 'video',
-      url: 'testUrl.com',
-      wedding_id: '101112',
-    },
-    {
-      mediaID: '5678',
-      type: 'video2',
-      url: 'testURL.com',
-      wedding_id: '131415',
-    },
-  ];
+  // const mediaListData = [
+  //   {
+  //     mediaID: '1234',
+  //     type: 'video',
+  //     url: 'testUrl.com',
+  //     wedding_id: '101112',
+  //   },
+  //   {
+  //     mediaID: '5678',
+  //     type: 'video2',
+  //     url: 'testURL.com',
+  //     wedding_id: '131415',
+  //   },
+  // ];
 
   return (
     <Container>

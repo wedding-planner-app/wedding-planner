@@ -6,9 +6,7 @@ function InputText(props) {
   return (
     <InputGroup className={props.style}>
       <InputGroup.Prepend>
-        <InputGroup.Text id={props.id}>
-          {props.name}
-        </InputGroup.Text>
+        <InputGroup.Text id={props.id}>{props.name}</InputGroup.Text>
       </InputGroup.Prepend>
       <FormControl
         aria-label="Default"
