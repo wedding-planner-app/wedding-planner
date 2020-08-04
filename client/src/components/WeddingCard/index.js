@@ -39,12 +39,13 @@ const WeddingCard = (props) => {
             Edit Event
           </Button>
 
-          <button
+          <Button
             className="btn btn-light border-style mb-2 m-auto"
             type="button"
+            onClick={props.onClickDelete}
           >
             Delete Event
-          </button>
+          </Button>
         </Row>
       </Card.Body>
       <Card.Footer>

@@ -29,6 +29,24 @@ const EventsPage = () => {
       });
   };
 
+  const handleDeleteEvent = async (id) => {
+    const token = await getAccessTokenSilently();
+    console.log(token);
+    var config = {
+      method: 'delete',
+      url: `/api/weddings/${id}`,
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     loadEventsFromApi();
   }, []);
@@ -55,6 +73,7 @@ const EventsPage = () => {
               time={event.time}
               description={event.description}
               id={event.id}
+              onClickDelete={handleDeleteEvent}
             />
           </Col>
         ))}
