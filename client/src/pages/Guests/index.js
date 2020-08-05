@@ -88,7 +88,7 @@ const GuestsPage = (props) => {
     {
       dataField: 'id',
       text: 'Id',
-      hidden: false, // set to false only for dev
+      hidden: true, // set to false only for dev
     },
     {
       dataField: 'name',
@@ -114,7 +114,7 @@ const GuestsPage = (props) => {
   ];
 
   return (
-    <Container>
+    <Container className="marginCustom mt-5">
       <div className="row">
         {/* Add Guest Button */}
         <Button
