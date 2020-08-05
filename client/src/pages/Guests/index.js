@@ -115,10 +115,10 @@ const GuestsPage = (props) => {
 
   return (
     <Container className="marginCustom mt-5">
-      <div className="row">
+      <div className="row m-auto">
         {/* Add Guest Button */}
         <Button
-          variant="outline-success"
+          variant="outline-primary"
           onClick={() => setAddShow(true)}
         >
           ADD
@@ -171,7 +171,7 @@ const GuestsPage = (props) => {
         </Modal>
         {/* Edit Guest Info Button */}
         <Button
-          variant="outline-primary"
+          variant="outline-secondary"
           onClick={() => setEditShow(true)}
         >
           EDIT
