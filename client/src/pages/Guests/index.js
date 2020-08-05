@@ -1,13 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Button, Modal } from 'react-bootstrap';
 import SearchTable from '../../components/SearchTable';
 import InputText from '../../components/InputText';
+import { textFilter } from 'react-bootstrap-table2-filter';
 import './style.css';
+import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
 
-const GuestsPage = () => {
+const GuestsPage = (props) => {
   const [addShow, setAddShow] = useState(false);
   const [editShow, setEditShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
+
+  const [guests, setGuests] = useState([]);
+
+  const eventId = props.match.params.eventId;
+
+  const { getAccessTokenSilently } = useAuth0();
+
+  const loadGuestsFromAPI = async () => {
+    const token = await getAccessTokenSilently();
+
+    var config = {
+      method: 'get',
+      url: `/api/guests?eventid=${eventId}`,
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    axios(config)
+      .then(function (response) {
+        setGuests(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    loadGuestsFromAPI();
+  }, []);
+
+  const selectRow = {
+    mode: 'radio', // single row selection
+  };
+
+  const columns = [
+    {
+      dataField: 'id',
+      text: 'Id',
+      hidden: true,
+    },
+    {
+      dataField: 'name',
+      text: 'Name  ',
+      filter: textFilter({
+        placeholder: 'Search by name',
+      }),
+      sort: true,
+    },
+    {
+      dataField: 'email',
+      text: 'Email  ',
+      filter: textFilter({
+        placeholder: 'Search by email',
+      }),
+      sort: true,
+    },
+    {
+      dataField: 'phone',
+      text: 'Phone  ',
+      sort: true,
+    },
+  ];
 
   return (
     <Container>
@@ -25,8 +89,7 @@ const GuestsPage = () => {
             <Modal.Title>Add New Guest</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <InputText style="vertical-align" name="First Name" />
-            <InputText style="vertical-align" name="Last Name" />
+            <InputText style="vertical-align" name="Name" />
             <InputText style="vertical-align" name="Email" />
             <InputText style="vertical-align" name="Phone Number" />
           </Modal.Body>
@@ -61,12 +124,7 @@ const GuestsPage = () => {
             <InputText
               style="vertical-align"
               placeholder="existing guest info here"
-              name="First Name"
-            />
-            <InputText
-              style="vertical-align"
-              placeholder="existing guest info here"
-              name="Last Name"
+              name="Name"
             />
             <InputText
               style="vertical-align"
@@ -127,7 +185,12 @@ const GuestsPage = () => {
       </div>
 
       <div>
-        <SearchTable />
+        <SearchTable
+          data={guests}
+          keyField="id"
+          columns={columns}
+          selectRow={selectRow}
+        />
       </div>
     </Container>
   );
