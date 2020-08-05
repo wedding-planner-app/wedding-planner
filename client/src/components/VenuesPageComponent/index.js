@@ -11,6 +11,7 @@ import BtnComponent from '../Button';
 import './style.css';
 import VenueCard from '../VenueCard';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 const VenuesPageComponent = (props) => {
   const getAccessToken = props.getAccessToken;
@@ -65,6 +66,14 @@ const VenuesPageComponent = (props) => {
     searchVenues();
   }, []);
 
+  const saveVenue = async (event) => {
+    event.preventDefault();
+    // getting access token for the site
+    const token = await getAccessToken();
+
+    var data = {};
+  };
+
   return (
     // Components venue search functionality
     <Container className="pt-5 mb-5">
@@ -109,6 +118,7 @@ const VenuesPageComponent = (props) => {
                 address={venue.address}
                 url={venue.url}
                 username={'wedding team'}
+                onClick={saveVenue}
               />
             </Col>
           ))
