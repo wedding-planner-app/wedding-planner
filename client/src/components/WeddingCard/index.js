@@ -30,7 +30,7 @@ const WeddingCard = (props) => {
             {props.time}
           </Card.Text>
         </div>
-        <Row className="d-flex flex-wrap m-auto mt-3">
+        <Row className="d-flex flex-wrap m-auto mt-5">
           <Button
             className="btn btn-light border-style m-auto"
             type="button"
