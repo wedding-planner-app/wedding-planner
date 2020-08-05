@@ -14,6 +14,7 @@
 - [Concept](#concept)
   - [Actions Diagram](#actions-diagram)
   - [Design](#design)
+    - [Architecture](#architecture)
     - [Whiteboards](#whiteboards)
     - [Wireframes](#wireframes)
     - [ER Diagram](#er-diagram)
@@ -54,6 +55,10 @@ This platform will leverage a full stack web application that will allow `planni
 #### Design
 
 Design features basic functionality and style for multiple features.
+
+#### Architecture
+
+<img src="readme\imgs\architecture-diagram.png" width = "600px">
 
 ##### Whiteboards
 
@@ -114,26 +119,26 @@ Design features basic functionality and style for multiple features.
 
 #### MVP
 
-- The user needs to get registered by entering all the details in the registration form.
-- The user can get login by entering unique username and password.
-- The user can create and manage weddings.
-- The user can add venue, guests, media.
-- The user can send email invitations.
-- The guests can RSVP.
-- The user can logout.
+- The user can register and login to the platform using **Auth0**.
+- The user can see his/her **profile**.
+- The user can list, create, edit and delete **wedding events**.
+- The user can **search venues** and assign to wedding event.
+- The user can send **invitations**.
+- The guests can **RSVP**.
+- The user can **logout** .
 
 ---
 
 ## Technology
 
 - Model-View-Controller (**MVC**) framework as an architectural pattern.
-- Node and Express server.
+- Node.
+- Express server.
 - React.js.
 - MySQL database with a Sequelize ORM.
-- AJAX POST-request and AJAX GET-request for retrieving and adding new data.
-- Deploy web app using Heroku (with data).
-- NPM passport package to manage the access to the platform.
-- Added user authentication with Auth0 during log-in.
+- Postgres in production.
+- Deploy web app using Heroku.
+- User authentication and secure API with Auth0.
 
 ---
 
