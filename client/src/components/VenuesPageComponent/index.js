@@ -100,6 +100,11 @@ const VenuesPageComponent = (props) => {
             <Col className="col-6 mb-3">
               <VenueCard
                 img={PlaceholderImage}
+                // img={
+                //   venue.photo === 'Sorry, no photo available'
+                //     ? PlaceholderImage
+                //     : venue.photo
+                // }
                 name={venue.name}
                 address={venue.address}
                 url={venue.url}
