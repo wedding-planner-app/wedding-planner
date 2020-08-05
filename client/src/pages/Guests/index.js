@@ -1,35 +1,124 @@
-import React, { useState } from 'react';
-import { Container, Button, Modal } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import {
+  Container,
+  Button,
+  Modal,
+  InputGroup,
+  FormControl,
+} from 'react-bootstrap';
 import SearchTable from '../../components/SearchTable';
 import InputText from '../../components/InputText';
+import { textFilter } from 'react-bootstrap-table2-filter';
 import './style.css';
+import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
 
-const GuestsPage = () => {
+const GuestsPage = (props) => {
   const [addShow, setAddShow] = useState(false);
   const [editShow, setEditShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
+  const [guests, setGuests] = useState([]);
 
-  // const guestListData = [
-  //   {
-  //     guestNameFirst: 'John',
-  //     guestNameLast: 'Doe',
-  //     guestEmail: 'johndoe@gmail.com',
-  //     guestPhoneNumber: '512-555-5555',
-  //   },
-  //   {
-  //     guestNameFirst: 'Jane',
-  //     guestNameLast: 'Doe',
-  //     guestEmail: 'jandoe@gmail.com',
-  //     guestPhoneNumber: '512-555-6666',
-  //   },
-  // ];
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const eventId = props.match.params.eventId;
+  const { getAccessTokenSilently } = useAuth0();
+
+  const loadGuestsFromAPI = async () => {
+    const token = await getAccessTokenSilently();
+
+    var config = {
+      method: 'get',
+      url: `/api/guests?eventid=${eventId}`,
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    axios(config)
+      .then(function (response) {
+        setGuests(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const handleAddGuest = async (event) => {
+    setAddShow(false);
+    event.preventDefault();
+    const token = await getAccessTokenSilently();
+
+    var qs = require('qs');
+    var data = qs.stringify({
+      name: name,
+      email: email,
+      phone: phone,
+      eventid: eventId,
+    });
+    var config = {
+      method: 'post',
+      url: '/api/guests',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${token}`,
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(response.data);
+        loadGuestsFromAPI();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    loadGuestsFromAPI();
+  }, []);
+
+  const selectRow = {
+    mode: 'radio', // single row selection
+  };
+
+  const columns = [
+    {
+      dataField: 'id',
+      text: 'Id',
+      hidden: true, // set to false only for dev
+    },
+    {
+      dataField: 'name',
+      text: 'Name  ',
+      filter: textFilter({
+        placeholder: 'Search by name',
+      }),
+      sort: true,
+    },
+    {
+      dataField: 'email',
+      text: 'Email  ',
+      filter: textFilter({
+        placeholder: 'Search by email',
+      }),
+      sort: true,
+    },
+    {
+      dataField: 'phone',
+      text: 'Phone  ',
+      sort: true,
+    },
+  ];
 
   return (
-    <Container>
-      <div className="row">
+    <Container className="marginCustom mt-5">
+      <div className="row m-auto">
         {/* Add Guest Button */}
         <Button
-          variant="outline-success"
+          variant="outline-primary"
           onClick={() => setAddShow(true)}
         >
           ADD
@@ -40,13 +129,33 @@ const GuestsPage = () => {
             <Modal.Title>Add New Guest</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <InputText style='vertical-align' name='First Name' />
-            <InputText style='vertical-align' name='Last Name' />
-            <InputText style='vertical-align' name='Email' />
-            <InputText
-              style='vertical-align'
-              name='Phone Number'
-            />
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Name</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </InputGroup>
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Email</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </InputGroup>
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Phone Number</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </InputGroup>
           </Modal.Body>
           <Modal.Footer>
             <Button
@@ -55,17 +164,14 @@ const GuestsPage = () => {
             >
               Close
             </Button>
-            <Button
-              variant="primary"
-              onClick={() => setAddShow(false)}
-            >
-              Save Changes
+            <Button variant="primary" onClick={handleAddGuest}>
+              Add Guest
             </Button>
           </Modal.Footer>
         </Modal>
         {/* Edit Guest Info Button */}
         <Button
-          variant="outline-primary"
+          variant="outline-secondary"
           onClick={() => setEditShow(true)}
         >
           EDIT
@@ -79,12 +185,7 @@ const GuestsPage = () => {
             <InputText
               style="vertical-align"
               placeholder="existing guest info here"
-              name="First Name"
-            />
-            <InputText
-              style="vertical-align"
-              placeholder="existing guest info here"
-              name="Last Name"
+              name="Name"
             />
             <InputText
               style="vertical-align"
@@ -145,7 +246,12 @@ const GuestsPage = () => {
       </div>
 
       <div>
-        <SearchTable />
+        <SearchTable
+          data={guests}
+          keyField="id"
+          columns={columns}
+          selectRow={selectRow}
+        />
       </div>
     </Container>
   );
