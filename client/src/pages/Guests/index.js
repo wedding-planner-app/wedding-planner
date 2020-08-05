@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Button, Modal } from 'react-bootstrap';
+import {
+  Container,
+  Button,
+  Modal,
+  InputGroup,
+  FormControl,
+} from 'react-bootstrap';
 import SearchTable from '../../components/SearchTable';
 import InputText from '../../components/InputText';
 import { textFilter } from 'react-bootstrap-table2-filter';
@@ -11,11 +17,13 @@ const GuestsPage = (props) => {
   const [addShow, setAddShow] = useState(false);
   const [editShow, setEditShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
-
   const [guests, setGuests] = useState([]);
 
-  const eventId = props.match.params.eventId;
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
 
+  const eventId = props.match.params.eventId;
   const { getAccessTokenSilently } = useAuth0();
 
   const loadGuestsFromAPI = async () => {
@@ -36,6 +44,38 @@ const GuestsPage = (props) => {
       });
   };
 
+  const handleAddGuest = async (event) => {
+    setAddShow(false);
+    event.preventDefault();
+    const token = await getAccessTokenSilently();
+
+    var qs = require('qs');
+    var data = qs.stringify({
+      name: name,
+      email: email,
+      phone: phone,
+      eventid: eventId,
+    });
+    var config = {
+      method: 'post',
+      url: '/api/guests',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${token}`,
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(response.data);
+        loadGuestsFromAPI();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     loadGuestsFromAPI();
   }, []);
@@ -48,7 +88,7 @@ const GuestsPage = (props) => {
     {
       dataField: 'id',
       text: 'Id',
-      hidden: true,
+      hidden: false, // set to false only for dev
     },
     {
       dataField: 'name',
@@ -89,9 +129,33 @@ const GuestsPage = (props) => {
             <Modal.Title>Add New Guest</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <InputText style="vertical-align" name="Name" />
-            <InputText style="vertical-align" name="Email" />
-            <InputText style="vertical-align" name="Phone Number" />
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Name</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </InputGroup>
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Email</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </InputGroup>
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Phone Number</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </InputGroup>
           </Modal.Body>
           <Modal.Footer>
             <Button
@@ -100,11 +164,8 @@ const GuestsPage = (props) => {
             >
               Close
             </Button>
-            <Button
-              variant="primary"
-              onClick={() => setAddShow(false)}
-            >
-              Save Changes
+            <Button variant="primary" onClick={handleAddGuest}>
+              Add Guest
             </Button>
           </Modal.Footer>
         </Modal>

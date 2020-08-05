@@ -51,12 +51,14 @@ router.get('/:id', function (req, res) {
 // post a guest **
 router.post('/', function (req, res) {
   //TODOs Validate
+  console.log(req.body);
   db.Guest.create({
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
     WeddingId: req.body.eventid,
   }).then(function (dbCreateGuest) {
+    console.log(dbCreateGuest);
     res.json(dbCreateGuest);
   });
 });
