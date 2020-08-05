@@ -58,7 +58,7 @@ Design features basic functionality and style for multiple features.
 
 #### Architecture
 
-<img src="readme\imgs\architecture-diagram.png" width = "600px">
+<img src="readme\imgs\architecture-diagram.png" width = "800px">
 
 ##### Whiteboards
 
