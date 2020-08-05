@@ -99,11 +99,7 @@ const VenuesPageComponent = (props) => {
           venues.map((venue) => (
             <Col className="col-6 mb-3">
               <VenueCard
-                img={
-                  venue.photo === 'Sorry, no photo available'
-                    ? PlaceholderImage
-                    : venue.photo
-                }
+                img={PlaceholderImage}
                 name={venue.name}
                 address={venue.address}
                 url={venue.url}
