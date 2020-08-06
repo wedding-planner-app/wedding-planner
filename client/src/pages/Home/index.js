@@ -26,7 +26,7 @@ const HomePage = () => {
         <Col className="col-lg-3 col-xs-12 col-md-6 col-12">
           <InfoCard
             title="Venues"
-            summary="Summary here"
+            summary="Find the perfect venue"
             img={venues}
           />
         </Col>
@@ -34,7 +34,7 @@ const HomePage = () => {
           {' '}
           <InfoCard
             title="Invitations"
-            summary="Summary here"
+            summary="Invite your loved ones"
             img={invitations}
           />
         </Col>
@@ -42,7 +42,7 @@ const HomePage = () => {
           {' '}
           <InfoCard
             title="Media"
-            summary="Summary here"
+            summary="Store photos, video, and more"
             img={media}
           />
         </Col>
@@ -50,7 +50,7 @@ const HomePage = () => {
           {' '}
           <InfoCard
             title="Guests"
-            summary="Summary here"
+            summary="Manage guests"
             img={guest}
           />
         </Col>
