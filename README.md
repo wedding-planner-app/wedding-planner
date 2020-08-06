@@ -58,6 +58,8 @@ Design features basic functionality and style for multiple features.
 
 #### Architecture
 
+This project is based on **MVC** (_model-view-control_) **design** that separates bussiness logics, UI design and user interaction.
+
 <img src="readme\imgs\architecture-diagram.png" width = "800px">
 
 ##### Whiteboards
