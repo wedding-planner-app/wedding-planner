@@ -60,7 +60,7 @@ router.post('/', function (req, res) {
   }).then(function (dbCreateGuest) {
     db.Invitation.create({
       GuestId: dbCreateGuest.id,
-      status: 'EXAMPLE STATUS',
+      status: 'No',
     }).then(function (dbCreateInvitation) {
       invitationEmail(req.body.email).catch(console.error);
       res.json(dbCreateInvitation);
