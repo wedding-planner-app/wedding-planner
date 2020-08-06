@@ -30,17 +30,25 @@ const WeddingCard = (props) => {
             {props.time}
           </Card.Text>
         </div>
-        <Row className="d-flex flex-wrap mt-3">
+        <Row className="d-flex flex-wrap m-auto mt-5">
           <Button
-            className="btn btn-light mr-3 border-style mb-2 m-auto"
+            className="btn btn-light border-style m-auto"
             type="button"
-            href={`/events/${props.id}`}
+            href={`/events/${props.id}/guests`}
           >
-            Edit Event
+            Add Guest
           </Button>
-
           <Button
-            className="btn btn-light border-style mb-2 m-auto"
+            className="btn btn-light border-style m-auto"
+            type="button"
+            href={`/events/${props.id}/venue`}
+          >
+            Add Venue
+          </Button>
+        </Row>
+        <Row className="mt-3">
+          <Button
+            className="btn btn-light border-style m-auto"
             type="button"
             onClick={props.onClickDelete}
           >

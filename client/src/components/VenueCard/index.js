@@ -14,6 +14,7 @@ const VenueCard = (props) => {
           <button
             className="btn btn-light mr-3 border-style mb-2 m-auto"
             type="button"
+            onClick={props.onClick}
           >
             Select Venue for Wedding
           </button>

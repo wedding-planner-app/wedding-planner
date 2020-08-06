@@ -8,3 +8,8 @@
 .data-style {
   color: rgb(67, 85, 67);
 }
+
+.custom-margin {
+  margin-top: 10px;
+  color: azure;
+}
