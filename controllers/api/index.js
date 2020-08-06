@@ -23,7 +23,7 @@ const jwtCheck = jwt({
   secret: jwksRsa.expressJwtSecret({
     cache: true,
     rateLimit: true,
-    jwksRequestsPerMinute: 5,
+    jwksRequestsPerMinute: 100,
     jwksUri: `${issuer}.well-known/jwks.json`,
   }),
   audience: audience,
