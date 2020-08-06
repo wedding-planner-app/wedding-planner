@@ -1,6 +1,7 @@
 const router = require('express').Router();
 var db = require('../../models');
 const jwt_decode = require('jwt-decode');
+const invitationEmail = require('../../utils/invitationEmail');
 
 const getEmail = (token) => {
   console.log(token);
@@ -58,8 +59,13 @@ router.post('/', function (req, res) {
     phone: req.body.phone,
     WeddingId: req.body.eventid,
   }).then(function (dbCreateGuest) {
-    console.log(dbCreateGuest);
-    res.json(dbCreateGuest);
+    db.Invitation.create({
+      GuestId: dbCreateGuest.id,
+      status: 'No',
+    }).then(function (dbCreateInvitation) {
+      invitationEmail(req.body.email).catch(console.error);
+      res.json(dbCreateInvitation);
+    });
   });
 });
 

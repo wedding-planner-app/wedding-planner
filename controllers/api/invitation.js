@@ -1,9 +1,30 @@
 const router = require('express').Router();
+const jwt_decode = require('jwt-decode');
 var db = require('../../models');
+
+const getEmail = (token) => {
+  console.log(token);
+  decoded = jwt_decode(token);
+  return decoded[
+    'https://wedding-planner-platform.herokuapp.com/email'
+  ];
+};
 
 // get all invitation information , route => ('api/invitation')
 router.get('/', function (req, res) {
-  db.Invitation.findAll({}).then(function (dbInvitation) {
+  const email = getEmail(req.authorization.token);
+
+  db.Invitation.findAll({
+    where: {
+      GuestId: req.query.eventid,
+    },
+    include: [
+      {
+        model: db.Guest,
+        where: { user_email: email }, // enforces invitations belongs to user email
+      },
+    ],
+  }).then(function (dbInvitation) {
     res.json(dbInvitation);
   });
 });
@@ -12,6 +33,7 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   db.Invitation.create({
     status: req.body.status,
+    GuestId: req.body.eventid,
   }).then(function (dbCreateInvitation) {
     res.json(dbCreateInvitation);
   });
