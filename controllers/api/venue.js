@@ -93,9 +93,9 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   db.Venue.create({
     name: req.body.name,
-    // photo: req.body.photo,
+    photo: req.body.photo,
     address: req.body.address,
-    url: req.body.url,
+    website: req.body.url,
     // street: req.body.street,
     // city: req.body.city,
     // state: req.body.state,
