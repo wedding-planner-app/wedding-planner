@@ -13,7 +13,10 @@ const VenuesPage = (props) => {
   // used to send user to next page on create success
 
   return (
-    <VenuesPageComponent getAccessToken={getAccessTokenSilently} eventId={props.match.params.eventId}/>
+    <VenuesPageComponent
+      getAccessToken={getAccessTokenSilently}
+      eventId={props.match.params.eventId}
+    />
   );
 };
 
