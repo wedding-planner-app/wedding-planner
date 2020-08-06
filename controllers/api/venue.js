@@ -26,20 +26,24 @@ router.get('/search', function (req, res) {
     if (error) throw new Error(error);
     // parsing out the response from Google Text search endpoint
     var responseBodyTextSearch = JSON.parse(response.body);
+    var responseLength = Math.min(
+      6,
+      responseBodyTextSearch.results.length,
+    );
     // for loop to interate through the Google Text search response body
-    for (var i = 0; i < responseBodyTextSearch.results.length; i++) {
+    for (var i = 0; i < responseLength; i++) {
       // variable to store Text Search response data from Places API
       var placeData = {
         name: responseBodyTextSearch.results[i].name,
         address: responseBodyTextSearch.results[i].formatted_address,
       };
       // if statement for results with no photo
-      var photo = responseBodyTextSearch.results[i].photos;
-      if (photo) {
-        placeData.photo = `/images/venue/${photo[0].photo_reference}`;
-      } else {
-        placeData.photo = 'Sorry, no photo available';
-      }
+      // var photo = responseBodyTextSearch.results[i].photos;
+      // if (photo) {
+      //   placeData.photo = `/images/venue/${photo[0].photo_reference}`;
+      // } else {
+      //   placeData.photo = 'Sorry, no photo available';
+      // }
 
       // variable to store place_id for queried venues Google Place Details endpoint
       var placeID = responseBodyTextSearch.results[i].place_id;
@@ -96,10 +100,6 @@ router.post('/', function (req, res) {
     photo: req.body.photo,
     address: req.body.address,
     website: req.body.url,
-    // street: req.body.street,
-    // city: req.body.city,
-    // state: req.body.state,
-    // zipCode: req.body.zipCode,
     WeddingId: req.body.eventId,
   }).then(function (dbCreateVenue) {
     res.json(dbCreateVenue);
