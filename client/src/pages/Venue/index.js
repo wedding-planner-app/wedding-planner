@@ -8,12 +8,12 @@ import './style.css';
 import VenuesPageComponent from '../../components/VenuesPageComponent';
 import { useAuth0 } from '@auth0/auth0-react';
 
-const VenuesPage = () => {
+const VenuesPage = (props) => {
   const { getAccessTokenSilently } = useAuth0();
   // used to send user to next page on create success
 
   return (
-    <VenuesPageComponent getAccessToken={getAccessTokenSilently} eventId={this.props.match.params.eventId}/>
+    <VenuesPageComponent getAccessToken={getAccessTokenSilently} eventId={props.match.params.eventId}/>
   );
 };
 
