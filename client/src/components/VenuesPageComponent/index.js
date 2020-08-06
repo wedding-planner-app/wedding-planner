@@ -70,8 +70,6 @@ const VenuesPageComponent = (props) => {
     event.preventDefault();
     // getting access token for the site
     const token = await getAccessToken();
-
-    var data = {};
   };
 
   return (
@@ -118,7 +116,9 @@ const VenuesPageComponent = (props) => {
                 address={venue.address}
                 url={venue.url}
                 username={'wedding team'}
-                onClick={saveVenue}
+                onClick={() => {
+                  saveVenue(venue.name, venue.address, venue.url);
+                }}
               />
             </Col>
           ))
