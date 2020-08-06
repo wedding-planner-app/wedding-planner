@@ -68,6 +68,7 @@ const VenuesPageComponent = (props) => {
   }, []);
 
   const saveVenue = async (name, address, url) => {
+    alert(`${name} ${address} ${url} ${eventId}`);
     // getting access token for the site
     const token = await getAccessToken();
   };
