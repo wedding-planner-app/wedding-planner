@@ -51,7 +51,7 @@ const NewReservationPage = () => {
 
     axios(config)
       .then(function (response) {
-        setNextUrl(`/events/${response.data.id}/venue`);
+        setNextUrl(`/events/`);
         setEventCreated(true);
       })
       .catch(function (error) {
