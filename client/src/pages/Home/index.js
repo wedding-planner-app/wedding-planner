@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useAuth0 } from '@auth0/auth0-react';
 import CarouselPage from '../../components/Carousel';
 import Message from '../../components/Message';
 import InfoCard from '../../components/InfoCard';
@@ -11,14 +10,6 @@ import invitations from './imgs/invitations.png';
 import './style.css';
 
 const HomePage = () => {
-  const { getAccessTokenSilently } = useAuth0();
-
-  const showToken = async () => {
-    let t = await getAccessTokenSilently();
-    console.log(t);
-  };
-  showToken();
-
   return (
     <Container fluid className="p-0">
       <Row>
