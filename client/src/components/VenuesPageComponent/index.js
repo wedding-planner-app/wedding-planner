@@ -11,7 +11,9 @@ import BtnComponent from '../Button';
 import './style.css';
 import VenueCard from '../VenueCard';
 import axios from 'axios';
+
 import { Redirect } from 'react-router';
+import { urlencoded } from 'express';
 
 const VenuesPageComponent = (props) => {
   const eventId = props.eventId;
@@ -19,6 +21,8 @@ const VenuesPageComponent = (props) => {
   const [venues, setVenues] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('Convention');
+  const [nextUrl, setNextUrl] = useState('');
+  const [venueAdded, setVenueAdded] = useState(false);
 
   // When user hits enter while still in text input focus, trigger venue search
   const onKeyPress = (event) => {
@@ -71,11 +75,37 @@ const VenuesPageComponent = (props) => {
     alert(`${name} ${address} ${url} ${eventId}`);
     // getting access token for the site
     const token = await getAccessToken();
+
+    var data = qs.stringify({
+      name: name,
+      address: address,
+      url: url,
+      eventId: eventId,
+    });
+    var config = {
+      method: 'post',
+      url: '/api/venue',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${token}`,
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        setNextUrl(`/events/`);
+        setVenueAdded(true);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
     // Components venue search functionality
     <Container className="pt-5 mb-5">
+      {venueAdded && <Redirect to={nextUrl} />}
       <h1 className="title-style">Search for Venues</h1>
       <Row className="d-flex flex-column flex-md-row vertical-align">
         <Col className="col-sm-12 col-lg-6">
