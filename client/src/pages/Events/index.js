@@ -11,6 +11,14 @@ const EventsPage = () => {
 
   const { getAccessTokenSilently } = useAuth0();
 
+  //code used to generate the tpken and test on dev
+  // const showToken = async () => {
+  //   let t = await getAccessTokenSilently();
+  //   console.log(t);
+  // };
+
+  // showToken();
+
   const loadEventsFromApi = async () => {
     const token = await getAccessTokenSilently();
     var config = {
@@ -30,7 +38,6 @@ const EventsPage = () => {
 
   const handleDeleteEvent = async (id) => {
     const token = await getAccessTokenSilently();
-    console.log(token);
     var config = {
       method: 'delete',
       url: `/api/weddings/${id}`,

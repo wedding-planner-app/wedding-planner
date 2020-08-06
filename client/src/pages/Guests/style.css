@@ -7,3 +7,7 @@
   flex-direction: row;
   align-items: flex-end;
 }
+
+.marginCustom {
+  margin-bottom: 20% !important;
+}
