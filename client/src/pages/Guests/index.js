@@ -22,6 +22,7 @@ const GuestsPage = (props) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [selectedRow, setSelectedRow] = useState({});
 
   const eventId = props.match.params.eventId;
   const { getAccessTokenSilently } = useAuth0();
@@ -68,7 +69,67 @@ const GuestsPage = (props) => {
 
     axios(config)
       .then(function (response) {
-        console.log(response.data);
+        setName('');
+        setPhone('');
+        setEmail('');
+        loadGuestsFromAPI();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const handleDeleteGuest = async () => {
+    const token = await getAccessTokenSilently();
+
+    setDeleteShow(false);
+
+    let id = selectedRow.id;
+    if (!id) return;
+
+    var config = {
+      method: 'delete',
+      url: `/api/guests/${id}`,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    axios(config)
+      .then(function (response) {
+        setSelectedRow({});
+        loadGuestsFromAPI();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const handleEditGuest = async () => {
+    const token = await getAccessTokenSilently();
+
+    setEditShow(false);
+
+    let id = selectedRow.id;
+    if (!id) return;
+
+    var qs = require('qs');
+    var data = qs.stringify(selectedRow);
+
+    var config = {
+      method: 'put',
+      url: `/api/guests/${id}`,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${token}`,
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        setSelectedRow({ name: '', email: '', phone: '' });
         loadGuestsFromAPI();
       })
       .catch(function (error) {
@@ -82,6 +143,9 @@ const GuestsPage = (props) => {
 
   const selectRow = {
     mode: 'radio', // single row selection
+    onSelect: (row, isSelect, rowIndex, e) => {
+      setSelectedRow(row);
+    },
   };
 
   const columns = [
@@ -182,21 +246,48 @@ const GuestsPage = (props) => {
             <Modal.Title>Edit Guest Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <InputText
-              style="vertical-align"
-              placeholder="existing guest info here"
-              name="Name"
-            />
-            <InputText
-              style="vertical-align"
-              placeholder="existing guest info here"
-              name="Email"
-            />
-            <InputText
-              style="vertical-align"
-              placeholder="existing guest info here"
-              name="Phone Number"
-            />
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Name</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={selectedRow.name}
+                onChange={(e) =>
+                  setSelectedRow({
+                    ...selectedRow,
+                    name: e.target.value,
+                  })
+                }
+              />
+            </InputGroup>
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Email</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={selectedRow.email}
+                onChange={(e) =>
+                  setSelectedRow({
+                    ...selectedRow,
+                    email: e.target.value,
+                  })
+                }
+              />
+            </InputGroup>
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>Phone Number</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                value={selectedRow.phone}
+                onChange={(e) =>
+                  setSelectedRow({
+                    ...selectedRow,
+                    phone: e.target.value,
+                  })
+                }
+              />
+            </InputGroup>
           </Modal.Body>
           <Modal.Footer>
             <Button
@@ -207,7 +298,7 @@ const GuestsPage = (props) => {
             </Button>
             <Button
               variant="primary"
-              onClick={() => setEditShow(false)}
+              onClick={() => handleEditGuest()}
             >
               Save Changes
             </Button>
@@ -223,7 +314,7 @@ const GuestsPage = (props) => {
         {/* Modal alert to delete*/}
         <Modal show={deleteShow} onHide={() => setDeleteShow(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Delete Entry</Modal.Title>
+            <Modal.Title>Delete Guest</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             Are you sure you want to delete this entry?
@@ -237,7 +328,7 @@ const GuestsPage = (props) => {
             </Button>
             <Button
               variant="primary"
-              onClick={() => setDeleteShow(false)}
+              onClick={() => handleDeleteGuest()}
             >
               Yes Delete Entry
             </Button>
