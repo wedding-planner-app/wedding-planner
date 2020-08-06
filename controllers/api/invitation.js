@@ -12,6 +12,8 @@ const getEmail = (token) => {
 
 // get all invitation information , route => ('api/invitation')
 router.get('/', function (req, res) {
+  const email = getEmail(req.authorization.token);
+
   db.Invitation.findAll({
     where: {
       GuestId: req.query.eventid,
