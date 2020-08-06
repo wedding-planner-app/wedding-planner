@@ -14,6 +14,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 
 const VenuesPageComponent = (props) => {
+  const eventId = props.eventId
   const getAccessToken = props.getAccessToken;
   const [venues, setVenues] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -66,7 +67,7 @@ const VenuesPageComponent = (props) => {
     searchVenues();
   }, []);
 
-  const saveVenue = async (event) => {
+  const saveVenue = async (name, address, url) => {
     event.preventDefault();
     // getting access token for the site
     const token = await getAccessToken();
