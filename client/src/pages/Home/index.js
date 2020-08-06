@@ -50,7 +50,7 @@ const HomePage = () => {
           {' '}
           <InfoCard
             title="Guests"
-            summary="Mange guest RSVPs"
+            summary="Manage guests"
             img={guest}
           />
         </Col>
