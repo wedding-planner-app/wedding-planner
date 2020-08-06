@@ -93,14 +93,14 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   db.Venue.create({
     name: req.body.name,
-    photo: req.body.photo,
-    address: req.body.formatted_address,
+    // photo: req.body.photo,
+    address: req.body.address,
     url: req.body.url,
     // street: req.body.street,
     // city: req.body.city,
     // state: req.body.state,
     // zipCode: req.body.zipCode,
-    WeddingId: req.query.eventid,
+    WeddingId: req.body.eventId,
   }).then(function (dbCreateVenue) {
     res.json(dbCreateVenue);
   });
