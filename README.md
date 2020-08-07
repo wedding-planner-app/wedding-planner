@@ -18,6 +18,7 @@
     - [Whiteboards](#whiteboards)
     - [Wireframes](#wireframes)
     - [ER Diagram](#er-diagram)
+    - [APIs Docs](#apis-docs)
   - [MVP](#mvp)
 - [Technology](#technology)
 - [Future Development](#future-development)
@@ -113,7 +114,9 @@ Design features basic functionality and style for multiple features.
 <img src="readme\imgs\schema.png" width = "600px">
 </details>
 
----
+#### APIs Docs
+
+## https://documenter.getpostman.com/view/11452429/T1LHHA3X
 
 ## Developing
 
