@@ -77,11 +77,11 @@ SO THAT I can better plan an awesome wedding
 
 This platform is a full stack web application that will allow a wedding planner to `plan` and `manage` a client’s wedding. Weddings are significant events in people's lives and as such, couples are often willing to spend considerable amount of money to ensure that their weddings are well-organized. The Wedding Planner application allows the user to keep all guests, invitations, venue information, and more in one place.
 
-#### Actions Diagram
+### Actions Diagram
 
 <img src="readme/imgs/uml.png" width = "600px">
 
-#### Design
+### Design
 
 This section addresses the platforms's basic functionality and style/design utilized for the multiple features included thorughout the site.
 
