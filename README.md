@@ -167,11 +167,9 @@ Reference the section below for a list (and brief description) of core node modu
   
 </details>
 
-### Project Technologies
+### Core Project Technologies
 
 Here is a list of all the core technologies / core dependencies used to develop this application.
-
-#### Core Technologies
 
 - Model-View-Controller (**MVC**) framework as an architectural pattern
   <details>
