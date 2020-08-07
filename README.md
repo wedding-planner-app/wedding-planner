@@ -10,15 +10,16 @@
 ### Table of Contents
 
 - [Project Description](#project-description)
+- [Reference Links](#reference-links)
 - [User Stories](#user-stories)
 - [Concept](#concept)
   - [Actions Diagram](#actions-diagram)
   - [Design](#design)
     - [Architecture](#architecture)
+    - [ER Diagram](#er-diagram)
     - [Whiteboards](#whiteboards)
     - [Wireframes](#wireframes)
-    - [ER Diagram](#er-diagram)
-  - [MVP](#mvp)
+  - [Application MVP](#application-mvp)
 - [Technology](#technology)
 - [Future Development](#future-development)
 - [Team Members](#team-members)
@@ -34,11 +35,13 @@
 
 ---
 
-## Important Links
+## Reference Links
 
 Link to Wedding Planner Applications deployed on Heroku - [Wedding Planner Application Live Link](https://wedding-planner-platform.herokuapp.com/)
 
 Link to GitHub repo used for application development - [Wedding Planner Application Repo](https://github.com/wedding-planner-app/wedding-planner)
+
+---
 
 ## User Stories
 
@@ -130,7 +133,11 @@ The entity relationship (ER) diagram below provides a visual representation of h
 
 ---
 
-## Technology
+## Installation and Technology
+
+### Installation Instructions
+
+### Project Technologies
 
 - Model-View-Controller (**MVC**) framework as an architectural pattern
 - Node.js
