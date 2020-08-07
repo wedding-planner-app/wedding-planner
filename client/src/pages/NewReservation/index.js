@@ -60,13 +60,13 @@ const NewReservationPage = () => {
   };
 
   return (
-    <Container className="pt-5 mb-5 fixed-margin fix-width">
+    <Container className="pt-5 mb-5 fixed-margin">
       {eventCreated && <Redirect to={nextUrl} />}
       <h3 className="title-style text-center">
         Create Event Reservation
       </h3>
       <Row className="d-flex flex-wrap flex-column mb-5 p-5 shadow-lg mb-3 card-custom-style">
-        <Col className="col-lg-12 col-mt-5">
+        <Col className="col-sm-12 col-mt-5">
           <InputGroup className="mb-3 vertical-align">
             <InputGroup.Append>
               <InputGroup.Text id="TitleOfWedding">
@@ -81,18 +81,6 @@ const NewReservationPage = () => {
           </InputGroup>
           <InputGroup className="mb-3 vertical-align">
             <InputGroup.Append>
-              <InputGroup.Text id="DescriptionTimeOfWedding">
-                Description
-              </InputGroup.Text>
-            </InputGroup.Append>
-            <FormControl
-              placeholder="Enter Wedding Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </InputGroup>
-          <InputGroup className="mb-3 vertical-align">
-            <InputGroup.Append>
               <InputGroup.Text id="StartTimeOfWedding">
                 Start Time
               </InputGroup.Text>
@@ -103,8 +91,20 @@ const NewReservationPage = () => {
               onChange={(e) => setTime(e.target.value)}
             />
           </InputGroup>
+          <InputGroup className="mb-3 vertical-align">
+            <InputGroup.Append>
+              <InputGroup.Text id="DescriptionTimeOfWedding">
+                Description
+              </InputGroup.Text>
+            </InputGroup.Append>
+            <FormControl
+              placeholder="Enter Wedding Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </InputGroup>
         </Col>
-        <Col className="center col-lg-12">
+        <Col className="center col-sm-12">
           <Calendar
             className="calendar"
             onClickDay={(value, event) => setDate(value)}
