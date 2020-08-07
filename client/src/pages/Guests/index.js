@@ -175,6 +175,11 @@ const GuestsPage = (props) => {
       text: 'Phone  ',
       sort: true,
     },
+    {
+      dataField: 'invitation',
+      text: 'Send Invite',
+      sort: 'true',
+    },
   ];
 
   return (
