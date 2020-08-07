@@ -3,6 +3,7 @@ import {
   Container,
   Row,
   Col,
+  Card,
   InputGroup,
   FormControl,
 } from 'react-bootstrap';
@@ -59,13 +60,13 @@ const NewReservationPage = () => {
   };
 
   return (
-    <Container className="pt-5 mb-5 fixed-margin">
+    <Container className="pt-5 mb-5 fixed-margin fix-width">
       {eventCreated && <Redirect to={nextUrl} />}
-      <br></br>
-      <h3 className="title-style">Reserve A Date for the Wedding</h3>
-      <br></br>
-      <Row className=" d-flex">
-        <Col className="col-lg-6 col-sm-12">
+      <h3 className="title-style text-center">
+        Create Event Reservation
+      </h3>
+      <Row className="d-flex flex-wrap flex-column mb-5 p-5 shadow-lg mb-3 card-custom-style">
+        <Col className="col-lg-12 col-mt-5">
           <InputGroup className="mb-3 vertical-align">
             <InputGroup.Append>
               <InputGroup.Text id="TitleOfWedding">
@@ -73,12 +74,11 @@ const NewReservationPage = () => {
               </InputGroup.Text>
             </InputGroup.Append>
             <FormControl
-              placeholder="Title of your Wedding"
+              placeholder="Enter Wedding Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </InputGroup>
-
           <InputGroup className="mb-3 vertical-align">
             <InputGroup.Append>
               <InputGroup.Text id="DescriptionTimeOfWedding">
@@ -86,12 +86,11 @@ const NewReservationPage = () => {
               </InputGroup.Text>
             </InputGroup.Append>
             <FormControl
-              placeholder="Description of your Wedding"
+              placeholder="Enter Wedding Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </InputGroup>
-
           <InputGroup className="mb-3 vertical-align">
             <InputGroup.Append>
               <InputGroup.Text id="StartTimeOfWedding">
@@ -105,14 +104,14 @@ const NewReservationPage = () => {
             />
           </InputGroup>
         </Col>
-
-        <Col className="center">
+        <Col className="center col-lg-12">
           <Calendar
             className="calendar"
             onClickDay={(value, event) => setDate(value)}
           />
         </Col>
       </Row>
+
       <Row>
         <BtnComponent
           name="Make Reservation"
