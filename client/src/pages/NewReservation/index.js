@@ -76,7 +76,7 @@ const NewReservationPage = () => {
               </InputGroup.Text>
             </InputGroup.Append>
             <FormControl
-              placeholder="Enter Wedding Title"
+              placeholder="Wedding Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -88,7 +88,7 @@ const NewReservationPage = () => {
               </InputGroup.Text>
             </InputGroup.Append>
             <FormControl
-              placeholder="Enter start time of the Wedding"
+              placeholder="Start Time of the Wedding"
               value={time}
               onChange={(e) => setTime(e.target.value)}
             />
@@ -100,7 +100,7 @@ const NewReservationPage = () => {
               </InputGroup.Text>
             </InputGroup.Append>
             <FormControl
-              placeholder="Enter Wedding Description"
+              placeholder="Wedding Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -116,6 +116,7 @@ const NewReservationPage = () => {
 
       <Row>
         <BtnComponent
+          className="create-btn-style"
           name="Make Reservation"
           onClick={saveNewReservation}
         />
