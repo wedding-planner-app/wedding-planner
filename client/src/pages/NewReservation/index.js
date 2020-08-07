@@ -26,7 +26,7 @@ const NewReservationPage = () => {
   // used to send user to next page on create success
   const [eventCreated, setEventCreated] = useState(false);
   const [nextUrl, setNextUrl] = useState('');
-
+  // used to handle errors on the page
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -40,9 +40,21 @@ const NewReservationPage = () => {
 
     const token = await getAccessTokenSilently();
 
+    // set the error back to false when the component refresh
     setShowError(false);
 
+    // validate title
     if (!title) return displayError('Please, enter a valid title');
+
+    // validate description
+    if (!description)
+      return displayError('Please enter a valid description');
+
+    // validate time
+    if (!time) return displayError('Please enter a valid time');
+
+    // validate date
+    if (!date) return displayError('Please enter a valid date');
 
     var data = qs.stringify({
       title: title,
