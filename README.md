@@ -98,18 +98,15 @@ The entity relationship (ER) diagram below provides a visual representation of h
 <img src="readme/imgs/schema.png" width = "600px">
 
 #### APIs Docs
+
+In order to access the API data, we recommend using **Postman**, which is a REST API GUI client that you can download onto your local environment from the [Postman website](https://www.postman.com/).  Please reference this [APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X) for details on the first steps users need to following in order to this applications **APIs**.
+
+When referencing the provided API documentation, consider accessing Postman by clicking on the a _Run_ in _Postman_ button as demonstrated in the photo below.  If you have your API endpoints integrated with Postman, you can export your Postman collections as a widget to embed in an HTML page.
+
 <img src="readme/imgs/postman.png" width = "80px">
-
-Simple **wedding planner APIs** were used to manage user events throughout the application. Please reference this [APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X) for details on the first steps users need to following in order to this applications**APIs**.
-
-Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI client) If you have your API endpoints integrated with Postman, you can export your Postman collections as a widget to embed in an HTML page.
-
-<details>
-<summary> Click to expand</summary>
   
 <img src="readme/imgs/p.png" width = "600px">
-  
-</details>
+
 
 ##### Whiteboards
 
