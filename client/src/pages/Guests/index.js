@@ -13,6 +13,19 @@ import './style.css';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 
+function MyCell({
+  value,
+  columnProps: {
+    rest: { someFunc },
+  },
+}) {
+  return (
+    <a href="#" onClick={someFunc}>
+      {value}
+    </a>
+  );
+}
+
 const GuestsPage = (props) => {
   const [addShow, setAddShow] = useState(false);
   const [editShow, setEditShow] = useState(false);
@@ -178,7 +191,19 @@ const GuestsPage = (props) => {
     {
       dataField: 'invitation',
       text: 'Send Invite',
-      sort: 'true',
+      formatter: (cell, row, rowIndex, formatExtraData) => {
+        return (
+          <Button
+            onClick={(row) => {
+              console.log(row);
+              window.alert('Confirmed!');
+            }}
+          >
+            Invite
+          </Button>
+        );
+      },
+      formatExtraData: name,
     },
   ];
 
