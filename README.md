@@ -108,7 +108,7 @@ When referencing the provided API documentation, consider accessing Postman by c
 <img src="readme/imgs/p.png" width = "600px">
 
 
-##### Whiteboards
+#### Whiteboards
 
 <details>
   <summary>Click to expand!</summary>
@@ -120,7 +120,7 @@ When referencing the provided API documentation, consider accessing Postman by c
   
 </details>
 
-##### Wireframes
+#### Wireframes
 
 <details>
   <summary>Click to expand!</summary>
