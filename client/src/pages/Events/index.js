@@ -12,12 +12,12 @@ const EventsPage = () => {
   const { getAccessTokenSilently } = useAuth0();
 
   //code used to generate the tpken and test on dev
-  const showToken = async () => {
-    let t = await getAccessTokenSilently();
-    console.log(t);
-  };
+  // const showToken = async () => {
+  //   let t = await getAccessTokenSilently();
+  //   console.log(t);
+  // };
 
-  showToken();
+  // showToken();
 
   const loadEventsFromApi = async () => {
     const token = await getAccessTokenSilently();
