@@ -19,13 +19,13 @@
     - [ER Diagram](#er-diagram)
     - [Whiteboards](#whiteboards)
     - [Wireframes](#wireframes)
-  - [Application MVP](#application-mvp)
-- [Technology](#technology)
+- [Application MVP](#application-mvp)
+- [Installation and Technology](#installation-and-technology)
+  - [Installation Instructions](#installation-instructions)
+  - [Core Project Technologies](#core-project-technologies)
+  - [Core Node Dependencies](#core-node-depencencies)
 - [Future Development](#future-development)
 - [Team Members](#team-members)
-- [Project Board](https://github.com/wedding-planner-app/wedding-planner/projects/1)
-- [Github Link](https://github.com/wedding-planner-app/wedding-planner)
-- [Hosted App Url](https://wedding-planner-platform.herokuapp.com/)
 
 ---
 
@@ -39,7 +39,9 @@
 
 Link to Wedding Planner Applications deployed on Heroku - [Wedding Planner Application Live Link](https://wedding-planner-platform.herokuapp.com/)
 
-Link to GitHub repo used for application development - [Wedding Planner Application Repo](https://github.com/wedding-planner-app/wedding-planner)
+Link to GitHub Repo used for application development - [Wedding Planner Application Repo](https://github.com/wedding-planner-app/wedding-planner)
+
+Link to Project Board used for application development - [Project Board](https://github.com/wedding-planner-app/wedding-planner/projects/1)
 
 ---
 
@@ -178,8 +180,8 @@ Here is a list of all the core technologies / core dependencies used to develop 
     <img src="readme/imgs/MVCfolderPattern.png">
   </details>
 
-- `Node.js: "An asynchronous event-driven JavaScript runtime"`
-- `React.js: "JavaScript library for building user interfaces"`
+- `Node.js - An asynchronous event-driven JavaScript runtime`
+- `React.js - A JavaScript library for building user interfaces`
 - `MySQL database with a Sequelize ORM`
 - `Postgres in production`
 - `Deploy web app using Heroku`
@@ -189,18 +191,18 @@ Here is a list of all the core technologies / core dependencies used to develop 
 
 The dependencies listed below are all NPM packages that can be accessed on [the npmjs.com website](https://www.npmjs.com/). The descriptions for each npm package listed below were gathered from [the npmjs.com website](https://www.npmjs.com/).
 
-- `babel-eslint: "Allows the user to lint ALL valid Babel code with the fantastic ESLint"`
-- `dotenv: "A zero-dependency module that loads environment variables from a .env file into process.env"`
-- `express: "Provides small, robust tooling for HTTP servers for solutions for single page applications, web sites, hybrids, or public HTTP APIs"`
-- `express-jwt: "Provides Express middleware for validating JWTs (JSON Web Tokens) through the jsonwebtoken module"`
-- `if-env: "Helps simplify npm scripts"`
-- `jwks-rsa:"A library to retrieve RSA signing keys from a JWKS (JSON Web Key Set) endpoint"`
-- `jwt-decode: "A small browser library that helps decoding JWTs token which are Base64Url encoded"`
+- `babel-eslint - Allows the user to lint ALL valid Babel code with the fantastic ESLint`
+- `dotenv - A zero-dependency module that loads environment variables from a .env file into process.env`
+- `express - Provides small, robust tooling for HTTP servers for solutions for single page applications, web sites, hybrids, or public HTTP APIs`
+- `express-jwt - Provides Express middleware for validating JWTs (JSON Web Tokens) through the jsonwebtoken module`
+- `if-env - Helps simplify npm scripts`
+- `jwks-rsa - A library to retrieve RSA signing keys from a JWKS (JSON Web Key Set) endpoint`
+- `jwt-decode - A small browser library that helps decoding JWTs token which are Base64Url encoded`
 - `morgan:"HTTP request logger middleware for node.js"`
-- `nodemailer: "Send e-mails from Node.js"`
-- `pg: "Non-blocking PostgreSQL client for Node.js"`
-- `react-router-dom: "DOM bindings for React Router"`
-- `sequelize: " A promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server"`
+- `nodemailer - Send e-mails from Node.js`
+- `pg - Non-blocking PostgreSQL client for Node.js`
+- `react-router-dom - DOM bindings for React Router`
+- `sequelize - A promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server`
 
 ---
 
