@@ -118,11 +118,13 @@ Design features basic functionality and style for multiple features.
 
 ##### wedding-planner-api
 
-A simple wedding planner APIs to manage events.
+A simple **wedding planner APIs** to manage events.
 
 <img src="readme\imgs\postman.png" width = "300px">
 
-[APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X)
+Following the _API documentation_ [APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X) section details the first steps users need to start using the **APIs**.
+
+Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI client) If you have your API endpoints integrated with Postman, you can export your Postman collections as a widget to embed in an HTML page.
 
 ## Developing
 
