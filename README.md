@@ -157,6 +157,8 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
   
 </details>
 
+---
+
 ## Application MVP
 
 - The user can register and login to the platform using **Auth0**.
@@ -252,6 +254,8 @@ For `future` development, we would like to incorporate the following feature `en
 - Allow capability to order memorabilia items based on data of the event.
 - Allow wedding planner to import CSV data files.
 - Develop corresponding mobile app.
+
+---
 
 ## Team Members
 
