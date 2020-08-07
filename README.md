@@ -34,6 +34,12 @@
 
 ---
 
+## Important Links
+
+Link to Wedding Planner Applications deployed on Heroku - [Wedding Planner Application Live Link](https://wedding-planner-platform.herokuapp.com/)
+
+Link to GitHub repo used for application development - [Wedding Planner Application Repo](https://github.com/wedding-planner-app/wedding-planner)
+
 ## User Stories
 
 ```
@@ -126,29 +132,31 @@ The entity relationship (ER) diagram below provides a visual representation of h
 
 ## Technology
 
-- Model-View-Controller (**MVC**) framework as an architectural pattern.
-- Node.
-- Express server.
-- React.js.
-- MySQL database with a Sequelize ORM.
-- Postgres in production.
-- Deploy web app using Heroku.
-- User authentication and secure API with Auth0.
+- Model-View-Controller (**MVC**) framework as an architectural pattern
+- Node.js
+- Express server
+- React.js
+- MySQL database with a Sequelize ORM
+- Postgres in production
+- Deploy web app using Heroku
+- User authentication and secure API with Auth0
+- Nodemailer to send wedding invitations
 
 ---
 
 ## Future Development
 
-If time `allows`, we would like to incorporate the feature `enhancements` to our web application:
+For `future` development, we would like to incorporate the following feature `enhancements` into our web application:
 
-- Add actual wedding data such as picture and video.
+- Enhance the overall application's UI.
+- Add actual wedding data, such as picture and video.
 - Generate guests friendly interface with memories of the event.
 - Allow capability to order memorabilia items based on data of the event.
+- Allow wedding planner to import CSV data files.
 - Develop corresponding mobile app.
 
 ## Team Members
 
-- [Frazer Hughes](https://github.com/Frazerhughes)
 - [Krystal Duran](https://github.com/KEDuran)
 - [Stephen Guzman](https://github.com/steveo9219)
 - [Vanessa Taylor](https://github.com/vantaylo)
