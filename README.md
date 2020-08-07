@@ -16,7 +16,7 @@
 
   <div align="center">
   <br>
-  <img src="readme\imgs\logo.png" alt="wedding planner logo" width="400px">
+  <img src="readme/imgs/logo.png" alt="wedding planner logo" width="400px">
   </div>
 
 <br>
@@ -79,7 +79,7 @@ This platform is a full stack web application that will allow a wedding planner 
 
 #### Actions Diagram
 
-<img src="readme\imgs\uml.png" width = "600px">
+<img src="readme/imgs/uml.png" width = "600px">
 
 #### Design
 
@@ -89,19 +89,19 @@ This section addresses the platforms's basic functionality and style/design util
 
 This project is based on **MVC design** (_model-view-control_), which facilitates a better organziation pattern for the code used to develop this web application. The MVC folder pattern helps separate the application's care back-end business logic, front-end UI design, and user interaction. The diagram included below outlines the architecture of this web application.
 
-<img src="readme\imgs\architecture-diagram.png" width = "800px">
+<img src="readme/imgs/architecture-diagram.png" width = "800px">
 
 ##### ER Diagram
 
 The entity relationship (ER) diagram below provides a visual representation of how the data is saved inside the application's back-end database. This diagram also demondtrates the relationship between each database table.
 
-<img src="readme\imgs\schema.png" width = "600px">
+<img src="readme/imgs/schema.png" width = "600px">
 
 #### APIs Docs
 
 A simple **wedding planner APIs** to manage events.
 
-<img src="readme\imgs\postman.png" width = "80px">
+<img src="readme/imgs/postman.png" width = "80px">
 
 Following the [APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X) section details the first steps users need to start using the **APIs**.
 
@@ -109,7 +109,8 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
 
 <details>
 <summary> Click to expand</summary>
-<img src="readme\imgs\p.png" width = "600px">
+<img src="readme/imgs/p.png" width = "600px">
+  
 </details>
 
 ##### Whiteboards
@@ -117,9 +118,10 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
 <details>
   <summary>Click to expand!</summary>
   <p>Image 1</p>
-  <img src="readme\imgs\wb1.png" width = "600px">
+  <img src="readme/imgs/wb1.png" width = "600px">
   <p>Image 2</p>
-  <img src="readme\imgs\wb2.png" width = "600px">
+  <img src="readme/imgs/wb2.png" width = "600px">
+  
 </details>
 
 ##### Wireframes
@@ -127,31 +129,31 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
 <details>
   <summary>Click to expand!</summary>
   <p>Homepage webpage wireframe</p>
-  <img src="readme\imgs\wireframe-homepage.png" width = "600px">
+  <img src="readme/imgs/wireframe-homepage.png" width = "600px">
 
   <p>Login webpage wireframe</p>
-  <img src="readme\imgs\wireframe-login.png" width = "600px">
+  <img src="readme/imgs/wireframe-login.png" width = "600px">
 
   <p>User profile wireframe</p>
-  <img src="readme\imgs\wireframe-profile.png" width = "600px">
+  <img src="readme/imgs/wireframe-profile.png" width = "600px">
 
   <p>Existing events wireframe</p>
-  <img src="readme\imgs\wireframe-existingReservations.png" width = "600px">
+  <img src="readme/imgs/wireframe-existingReservations.png" width = "600px">
 
   <p>Create event reservation wireframe</p>
-  <img src="readme\imgs\wireframe-newReservation.png" width = "600px">
+  <img src="readme/imgs/wireframe-newReservation.png" width = "600px">
 
   <p>Venues wireframe</p>
-  <img src="readme\imgs\wireframe-venues.png" width = "600px">
+  <img src="readme/imgs/wireframe-venues.png" width = "600px">
 
   <p>Guest list webpage wireframe</p>
-  <img src="readme\imgs\wireframe-guestlist.png" width = "600px">
+  <img src="readme/imgs/wireframe-guestlist.png" width = "600px">
 
   <p>FUTURE DEVELOPMENT - Invitation wireframe</p>
-  <img src="readme\imgs\wireframe-invitations.png" width = "600px">
+  <img src="readme/imgs/wireframe-invitations.png" width = "600px">
 
   <p>FUTURE DEVELOPMENT - Media wireframe</p>
-  <img src="readme\imgs\wireframe-media.png" width = "600px">
+  <img src="readme/imgs/wireframe-media.png" width = "600px">
 </details>
 
 ## Application MVP
@@ -207,7 +209,8 @@ Here is a list of all the core technologies / core dependencies used to develop 
   <details>
     <summary>Click to expand!</summary>
     <p>MVC folder pattern for this project</p>
-    <img src="readme/imgs/MVCfolderPattern.png">
+    <img src="readme/imgs/MVCfolderPattern.png">/=
+  
   </details>
 
 - `Node.js - An asynchronous event-driven JavaScript runtime`
