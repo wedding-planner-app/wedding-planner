@@ -1,4 +1,11 @@
 # Wedding Planner
+![npm](https://img.shields.io/npm/v/babel-eslint?label=babel-eslint&logo=NPM)
+![npm](https://img.shields.io/npm/v/dotenv?color=yellow&label=dotenv&logo=NPM)
+![npm](https://img.shields.io/npm/v/express?color=green&label=express&logo=NPM)
+![npm](https://img.shields.io/npm/v/express-jwt?color=red&label=express-jwt&logo=NPM)
+![npm](https://img.shields.io/npm/v/if-env?color=orange&label=if-env&logo=NPM)
+![npm](https://img.shields.io/npm/v/jwks-rsa?color=purple&label=jwks-rsa&logo=NPM)
+
 
   <div align="center">
   <br>
