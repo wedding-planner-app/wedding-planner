@@ -137,8 +137,7 @@ The entity relationship (ER) diagram below provides a visual representation of h
 
 Reference the subsections below for installation instructions and the list of technologies used for the development of this wedding planner application.
 
-#### FYI - Environment Variables
-
+_FYI - Environment Variables:_
 Please note that various environment variables are used in both `client folder` and `root directory` directory of this application, so to test in your local environment, the user will need to indivually generate the following environment variables.
 
 ### Installation Instructions
