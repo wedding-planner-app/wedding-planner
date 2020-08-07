@@ -120,7 +120,7 @@ This project is based on **MVC** (_model-view-control_) **design** that separate
 
 A simple **wedding planner APIs** to manage events.
 
-<img src="readme\imgs\postman.png" width = "300px">
+<img src="readme\imgs\postman.png" width = "80px">
 
 Following the [APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X) section details the first steps users need to start using the **APIs**.
 
@@ -128,7 +128,7 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
 
 <details>
 <summary> Click to expand</summary>
-<img src="readme\imgs\p.png" width = "500px">
+<img src="readme\imgs\p.png" width = "600px">
 </details>
 
 ## Developing
