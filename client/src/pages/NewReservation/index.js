@@ -3,7 +3,6 @@ import {
   Container,
   Row,
   Col,
-  Card,
   InputGroup,
   FormControl,
 } from 'react-bootstrap';
@@ -88,7 +87,7 @@ const NewReservationPage = () => {
               </InputGroup.Text>
             </InputGroup.Append>
             <FormControl
-              placeholder="Start Time of the Wedding"
+              placeholder="Wedd Start Time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
             />
@@ -105,6 +104,9 @@ const NewReservationPage = () => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </InputGroup>
+          <h6 className="title-style text-center ont-weight-bold">
+            Select Date for the Event
+          </h6>
         </Col>
         <Col className="center col-sm-12">
           <Calendar
