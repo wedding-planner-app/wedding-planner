@@ -16,7 +16,7 @@
 
   <div align="center">
   <br>
-  <img src="./readme/imgs/logo.png" alt="wedding planner logo" width="400px">
+  <img src="readme\imgs\logo.png" alt="wedding planner logo" width="400px">
   </div>
 
 <br>
