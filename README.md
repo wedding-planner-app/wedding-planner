@@ -139,9 +139,9 @@ Reference the subsections below for installation instructions and the list of te
 
 #### FYI - Environment Variables
 
-Please note that various environment variables are used in both `client` and `server (back-end)` portion of this application, so to test in your local environment, the user will need to indivually generate the following environment variables.
+Please note that various environment variables are used in both `client folder` and `root directory` directory of this application, so to test in your local environment, the user will need to indivually generate the following environment variables.
 
-### Make Sure to Install
+### Installation Instructions
 
 In order to successfully develop and launch this assignment, the following items must be installed and/or accessible from your working environment (i.e. laptop, computer, etc.).
 
@@ -162,15 +162,31 @@ Reference the section below for a list (and brief description) of core node modu
 
 Here is a list of all the core technologies / core dependencies used to develop this application.
 
+#### Core Technologies
+
 - Model-View-Controller (**MVC**) framework as an architectural pattern
 - Node.js
-- Express server
 - React.js
 - MySQL database with a Sequelize ORM
 - Postgres in production
 - Deploy web app using Heroku
 - User authentication and secure API with Auth0
-- Nodemailer to send wedding invitations
+
+### Core Node Dependencies
+
+- babel-eslint
+- dotenv
+- express
+- express-jwt
+- if-env
+- jwks-rsa
+- jwt-decode
+- morgan
+- nodemailer
+- pg
+- react-router-dom
+- request
+- sequelize
 
 ---
 
