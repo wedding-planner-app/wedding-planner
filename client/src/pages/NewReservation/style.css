@@ -10,3 +10,14 @@
 .fixed-margin {
   margin-bottom: 100px !important;
 }
+.card-custom-style {
+  background-color: #f6f6f6;
+  box-shadow: 0 17px 18px 0 rgba(0, 0, 0, 0.2),
+    0 9px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+  color: #3077a0;
+}
+
+.fix-width {
+  width: 70%;
+}

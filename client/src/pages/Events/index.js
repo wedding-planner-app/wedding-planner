@@ -70,6 +70,7 @@ const EventsPage = () => {
           <Col
             className="col-sm-12 col-md-6 col-lg-4 mb-3"
             id={`wedding-${event.id}`}
+            key={`wedding-${event.id}`}
           >
             <WeddingCard
               img={logo}
