@@ -64,36 +64,34 @@ const NewReservationPage = () => {
       <br></br>
       <h3 className="title-style">Reserve A Date for the Wedding</h3>
       <br></br>
-      <Row>
-        <InputGroup className="mb-3 vertical-align">
-          <InputGroup.Append>
-            <InputGroup.Text id="TitleOfWedding">
-              Title
-            </InputGroup.Text>
-          </InputGroup.Append>
-          <FormControl
-            placeholder="Title of your Wedding"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </InputGroup>
-      </Row>
-      <Row>
-        <InputGroup className="mb-3 vertical-align">
-          <InputGroup.Append>
-            <InputGroup.Text id="DescriptionTimeOfWedding">
-              Description
-            </InputGroup.Text>
-          </InputGroup.Append>
-          <FormControl
-            placeholder="Description of your Wedding"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </InputGroup>
-      </Row>
-      <Row>
-        <Col>
+      <Row className=" d-flex">
+        <Col className="col-lg-6 col-sm-12">
+          <InputGroup className="mb-3 vertical-align">
+            <InputGroup.Append>
+              <InputGroup.Text id="TitleOfWedding">
+                Title
+              </InputGroup.Text>
+            </InputGroup.Append>
+            <FormControl
+              placeholder="Title of your Wedding"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </InputGroup>
+
+          <InputGroup className="mb-3 vertical-align">
+            <InputGroup.Append>
+              <InputGroup.Text id="DescriptionTimeOfWedding">
+                Description
+              </InputGroup.Text>
+            </InputGroup.Append>
+            <FormControl
+              placeholder="Description of your Wedding"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </InputGroup>
+
           <InputGroup className="mb-3 vertical-align">
             <InputGroup.Append>
               <InputGroup.Text id="StartTimeOfWedding">
@@ -107,8 +105,7 @@ const NewReservationPage = () => {
             />
           </InputGroup>
         </Col>
-      </Row>
-      <Row>
+
         <Col className="center">
           <Calendar
             className="calendar"
