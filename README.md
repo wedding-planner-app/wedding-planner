@@ -106,6 +106,7 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
 
 <details>
 <summary> Click to expand</summary>
+  
 <img src="readme/imgs/p.png" width = "600px">
   
 </details>
@@ -114,6 +115,7 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
 
 <details>
   <summary>Click to expand!</summary>
+  
   <p>Image 1</p>
   <img src="readme/imgs/wb1.png" width = "600px">
   <p>Image 2</p>
@@ -125,6 +127,7 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
 
 <details>
   <summary>Click to expand!</summary>
+  
   <p>Homepage webpage wireframe</p>
   <img src="readme/imgs/wireframe-homepage.png" width = "600px">
 
@@ -151,6 +154,7 @@ Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI clien
 
   <p>FUTURE DEVELOPMENT - Media wireframe</p>
   <img src="readme/imgs/wireframe-media.png" width = "600px">
+  
 </details>
 
 ## Application MVP
@@ -184,6 +188,7 @@ Reference the section below for a list (and brief description) of core node modu
 
 <details>
   <summary>Click to expand!</summary>
+  
   <p>Package.json file in Root Directory</p>
   <img src="readme/imgs/packageJsonRoot.png" width = "600px">
   
@@ -193,6 +198,7 @@ Reference the section below for a list (and brief description) of core node modu
 
 <details>
   <summary>Click to expand!</summary>
+  
   <p>Package.json in Client Folder</p>
   <img src="readme/imgs/packageJsonClient.png" width = "600px">
   
