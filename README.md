@@ -165,6 +165,7 @@ Here is a list of all the core technologies / core dependencies used to develop 
 #### Core Technologies
 
 - Model-View-Controller (**MVC**) framework as an architectural pattern
+  - ![MVC Folder Patter](./readme/img/MVCfolderPattern.png)
 - Node.js
 - React.js
 - MySQL database with a Sequelize ORM
