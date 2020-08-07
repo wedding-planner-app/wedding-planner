@@ -152,11 +152,21 @@ Reference the section below for a list (and brief description) of core node modu
 
 #### Package.json file in Root Directory
 
-![Package.json file in Root Directory](./readme/imgs/packageJsonRoot.png)
+<details>
+  <summary>Click to expand!</summary>
+  <p>Package.json file in Root Directory</p>
+  <img src="readme/imgs/packageJsonRoot.png" width = "600px">
+  
+</details>
 
-### Package.json in Client Folder
+#### Package.json in Client Folder
 
-![Package.json file in Client Folder](./readme/imgs/packageJsonClient.png)
+<details>
+  <summary>Click to expand!</summary>
+  <p>Package.json in Client Folder</p>
+  <img src="readme/imgs/packageJsonClient.png" width = "600px">
+  
+</details>
 
 ### Project Technologies
 
