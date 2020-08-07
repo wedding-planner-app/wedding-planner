@@ -3,6 +3,7 @@ import {
   Container,
   Row,
   Col,
+  Card,
   InputGroup,
   FormControl,
 } from 'react-bootstrap';
@@ -10,7 +11,6 @@ import BtnComponent from '../../components/Button';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './style.css';
-// docs for calendar https://github.com/wojtekmaj/react-calendar
 import { useAuth0 } from '@auth0/auth0-react';
 import { Redirect } from 'react-router';
 var axios = require('axios');
@@ -60,65 +60,58 @@ const NewReservationPage = () => {
   };
 
   return (
-    <Container className="pt-5 mb-5 fixed-margin">
+    <Container className="pt-5 mb-5 fixed-margin fix-width">
       {eventCreated && <Redirect to={nextUrl} />}
-      <br></br>
-      <h1 className="title-style">Reserve A Date for the Wedding</h1>
-      <br></br>
-      <Row>
-        <InputGroup className="mb-3 vertical-align">
-          <FormControl
-            placeholder="Title of your Wedding"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <InputGroup.Append>
-            <InputGroup.Text id="TitleOfWedding">
-              Title
-            </InputGroup.Text>
-          </InputGroup.Append>
-        </InputGroup>
-      </Row>
-      <Row>
-        <InputGroup className="mb-3 vertical-align">
-          <FormControl
-            placeholder="Description of your Wedding"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <InputGroup.Append>
-            <InputGroup.Text id="DescriptionTimeOfWedding">
-              Description
-            </InputGroup.Text>
-          </InputGroup.Append>
-        </InputGroup>
-      </Row>
-      <Row>
-        <Col className="center">
+      <h3 className="title-style text-center">
+        Create Event Reservation
+      </h3>
+      <Row className="d-flex flex-wrap flex-column mb-5 p-5 shadow-lg mb-3 card-custom-style">
+        <Col className="col-lg-12 col-mt-5">
+          <InputGroup className="mb-3 vertical-align">
+            <InputGroup.Append>
+              <InputGroup.Text id="TitleOfWedding">
+                Title
+              </InputGroup.Text>
+            </InputGroup.Append>
+            <FormControl
+              placeholder="Enter Wedding Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </InputGroup>
+          <InputGroup className="mb-3 vertical-align">
+            <InputGroup.Append>
+              <InputGroup.Text id="DescriptionTimeOfWedding">
+                Description
+              </InputGroup.Text>
+            </InputGroup.Append>
+            <FormControl
+              placeholder="Enter Wedding Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </InputGroup>
+          <InputGroup className="mb-3 vertical-align">
+            <InputGroup.Append>
+              <InputGroup.Text id="StartTimeOfWedding">
+                Start Time
+              </InputGroup.Text>
+            </InputGroup.Append>
+            <FormControl
+              placeholder="Enter start time of the Wedding"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+            />
+          </InputGroup>
+        </Col>
+        <Col className="center col-lg-12">
           <Calendar
             className="calendar"
             onClickDay={(value, event) => setDate(value)}
           />
         </Col>
       </Row>
-      <br></br>
-      <br></br>
-      <Row>
-        <Col>
-          <InputGroup className="mb-3 vertical-align">
-            <FormControl
-              placeholder="Enter start time of the Wedding"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-            />
-            <InputGroup.Append>
-              <InputGroup.Text id="StartTimeOfWedding">
-                Start Time
-              </InputGroup.Text>
-            </InputGroup.Append>
-          </InputGroup>
-        </Col>
-      </Row>
+
       <Row>
         <BtnComponent
           name="Make Reservation"

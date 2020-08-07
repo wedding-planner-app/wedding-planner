@@ -10,21 +10,6 @@ const MediaPage = () => {
   const [editShow, setEditShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
 
-  // const mediaListData = [
-  //   {
-  //     mediaID: '1234',
-  //     type: 'video',
-  //     url: 'testUrl.com',
-  //     wedding_id: '101112',
-  //   },
-  //   {
-  //     mediaID: '5678',
-  //     type: 'video2',
-  //     url: 'testURL.com',
-  //     wedding_id: '131415',
-  //   },
-  // ];
-
   return (
     <Container>
       <div className="row">
@@ -41,10 +26,10 @@ const MediaPage = () => {
             <Modal.Title>Add New Media</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-              <h5>The media ID is auto-generated for you. </h5>
-            <InputText style="vertical-align" name="File Type" />
-            <InputText style="vertical-align" name="URL Link" />
-            <InputText style="vertical-align" name="Wedding ID" />
+            <h5>The media ID is auto-generated for you. </h5>
+            <InputText name="File Type" />
+            <InputText name="URL Link" />
+            <InputText name="Wedding ID" />
           </Modal.Body>
           <Modal.Footer>
             <Button
@@ -75,22 +60,18 @@ const MediaPage = () => {
           </Modal.Header>
           <Modal.Body>
             <InputText
-              style="vertical-align"
               placeholder="existing info here"
               name="Media ID (locked)"
             />
             <InputText
-              style="vertical-align"
               placeholder="existing info here"
               name="File Type"
             />
             <InputText
-              style="vertical-align"
               placeholder="existing info here"
               name="URL Link"
             />
             <InputText
-              style="vertical-align"
               placeholder="existing info here"
               name="Wedding ID (locked)"
             />

@@ -34,6 +34,7 @@
   - [Design](#design)
     - [Architecture](#architecture)
     - [ER Diagram](#er-diagram)
+    - [APIs Docs](#apis-docs)
     - [Whiteboards](#whiteboards)
     - [Wireframes](#wireframes)
 - [Application MVP](#application-mvp)
@@ -96,6 +97,21 @@ The entity relationship (ER) diagram below provides a visual representation of h
 
 <img src="readme\imgs\schema.png" width = "600px">
 
+#### APIs Docs
+
+A simple **wedding planner APIs** to manage events.
+
+<img src="readme\imgs\postman.png" width = "80px">
+
+Following the [APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X) section details the first steps users need to start using the **APIs**.
+
+Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI client) If you have your API endpoints integrated with Postman, you can export your Postman collections as a widget to embed in an HTML page.
+
+<details>
+<summary> Click to expand</summary>
+<img src="readme\imgs\p.png" width = "600px">
+</details>
+
 ##### Whiteboards
 
 <details>
@@ -136,10 +152,7 @@ The entity relationship (ER) diagram below provides a visual representation of h
 
   <p>FUTURE DEVELOPMENT - Media wireframe</p>
   <img src="readme\imgs\wireframe-media.png" width = "600px">
-  
 </details>
-
----
 
 ## Application MVP
 

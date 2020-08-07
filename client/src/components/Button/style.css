@@ -1,3 +1,7 @@
 .btnColor {
   background-color: #236184;
 }
+
+.margin-top-fixed {
+  margin-top: 19px !important;
+}
