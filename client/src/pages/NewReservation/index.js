@@ -27,10 +27,22 @@ const NewReservationPage = () => {
   const [eventCreated, setEventCreated] = useState(false);
   const [nextUrl, setNextUrl] = useState('');
 
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const displayError = (message) => {
+    setShowError(true);
+    setErrorMessage(message);
+  };
+
   const saveNewReservation = async (event) => {
     event.preventDefault();
 
     const token = await getAccessTokenSilently();
+
+    setShowError(false);
+
+    if (!title) return displayError('Please, enter a valid title');
 
     var data = qs.stringify({
       title: title,
@@ -54,6 +66,8 @@ const NewReservationPage = () => {
         setEventCreated(true);
       })
       .catch(function (error) {
+        setShowError(true);
+        setErrorMessage(error);
         console.log(error);
       });
   };
@@ -62,7 +76,7 @@ const NewReservationPage = () => {
     <Container className="pt-5 mb-5 fixed-margin">
       {eventCreated && <Redirect to={nextUrl} />}
 
-      <Row className="d-flex flex-wrap flex-column mb-5 p-5 shadow-lg mb-3 card-custom-style">
+      <Row className="d-flex flex-wrap flex-column mb-5 p-md-5 shadow-lg mb-3 card-custom-style">
         <h3 className="title-style text-center">
           Create Event Reservation
         </h3>
@@ -114,6 +128,10 @@ const NewReservationPage = () => {
             onClickDay={(value, event) => setDate(value)}
           />
         </Col>
+      </Row>
+
+      <Row className="m-auto">
+        {showError && <h4 className="text-danger">{errorMessage}</h4>}
       </Row>
 
       <Row>
