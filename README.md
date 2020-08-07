@@ -174,8 +174,12 @@ Here is a list of all the core technologies / core dependencies used to develop 
 #### Core Technologies
 
 - Model-View-Controller (**MVC**) framework as an architectural pattern
+<details>
+  <summary>Click to expand!</summary>
+  <p>MVC folder pattern for this project</p>
+  <img src="readme/imgs/MVCfolderPattern.png">
 
-<img src="readme/imgs/MVCfolderPattern.png">
+</details>
 
 - Node.js
 - React.js
