@@ -116,7 +116,13 @@ Design features basic functionality and style for multiple features.
 
 #### APIs Docs
 
-## https://documenter.getpostman.com/view/11452429/T1LHHA3X
+##### wedding-planner-api
+
+A simple wedding planner APIs to manage events.
+
+<img src="readme\imgs\postman.png" width = "300px">
+
+[APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X)
 
 ## Developing
 
