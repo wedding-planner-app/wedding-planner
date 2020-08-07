@@ -10,7 +10,6 @@ import BtnComponent from '../../components/Button';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './style.css';
-// docs for calendar https://github.com/wojtekmaj/react-calendar
 import { useAuth0 } from '@auth0/auth0-react';
 import { Redirect } from 'react-router';
 var axios = require('axios');
@@ -63,35 +62,51 @@ const NewReservationPage = () => {
     <Container className="pt-5 mb-5 fixed-margin">
       {eventCreated && <Redirect to={nextUrl} />}
       <br></br>
-      <h1 className="title-style">Reserve A Date for the Wedding</h1>
+      <h3 className="title-style">Reserve A Date for the Wedding</h3>
       <br></br>
       <Row>
         <InputGroup className="mb-3 vertical-align">
-          <FormControl
-            placeholder="Title of your Wedding"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
           <InputGroup.Append>
             <InputGroup.Text id="TitleOfWedding">
               Title
             </InputGroup.Text>
           </InputGroup.Append>
+          <FormControl
+            placeholder="Title of your Wedding"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </InputGroup>
       </Row>
       <Row>
         <InputGroup className="mb-3 vertical-align">
-          <FormControl
-            placeholder="Description of your Wedding"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
           <InputGroup.Append>
             <InputGroup.Text id="DescriptionTimeOfWedding">
               Description
             </InputGroup.Text>
           </InputGroup.Append>
+          <FormControl
+            placeholder="Description of your Wedding"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
         </InputGroup>
+      </Row>
+      <Row>
+        <Col>
+          <InputGroup className="mb-3 vertical-align">
+            <InputGroup.Append>
+              <InputGroup.Text id="StartTimeOfWedding">
+                Start Time
+              </InputGroup.Text>
+            </InputGroup.Append>
+            <FormControl
+              placeholder="Enter start time of the Wedding"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+            />
+          </InputGroup>
+        </Col>
       </Row>
       <Row>
         <Col className="center">
@@ -99,24 +114,6 @@ const NewReservationPage = () => {
             className="calendar"
             onClickDay={(value, event) => setDate(value)}
           />
-        </Col>
-      </Row>
-      <br></br>
-      <br></br>
-      <Row>
-        <Col>
-          <InputGroup className="mb-3 vertical-align">
-            <FormControl
-              placeholder="Enter start time of the Wedding"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-            />
-            <InputGroup.Append>
-              <InputGroup.Text id="StartTimeOfWedding">
-                Start Time
-              </InputGroup.Text>
-            </InputGroup.Append>
-          </InputGroup>
         </Col>
       </Row>
       <Row>
