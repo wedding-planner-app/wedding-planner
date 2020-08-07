@@ -14,9 +14,12 @@
 ![npm](https://img.shields.io/npm/v/request?color=9cf&label=request&logo=npm)
 ![npm](https://img.shields.io/npm/v/sequelize?color=yellow&label=sequelize&logo=npm)
 
-  <p align="center">
-  <img src="readme/imgs/logo.png" alt="wedding planner logo" width="400px">
-  </p>
+
+<p align="center">
+ <img src="readme/imgs/logo.png" alt="wedding planner logo" width="400px">
+</p>
+
+---
 
 ### Table of Contents
 
