@@ -18,8 +18,6 @@
   <img src="readme/imgs/logo.png" alt="wedding planner logo" width="400px">
   </p>
 
-<br>
-
 ### Table of Contents
 
 - [Project Description](#project-description)
