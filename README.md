@@ -126,6 +126,10 @@ Following the _API documentation_ [APIs Documentation](https://documenter.getpos
 
 Consider including a _Run_ in _Postman_ button. (Postman is a REST API GUI client) If you have your API endpoints integrated with Postman, you can export your Postman collections as a widget to embed in an HTML page.
 
+<summary> Click to expand</summary>
+<img src="readme\imgs\p.png" width = "500px">
+</details>
+
 ## Developing
 
 #### MVP
