@@ -1,11 +1,18 @@
 # Wedding Planner
+
 ![npm](https://img.shields.io/npm/v/babel-eslint?label=babel-eslint&logo=NPM)
 ![npm](https://img.shields.io/npm/v/dotenv?color=yellow&label=dotenv&logo=NPM)
 ![npm](https://img.shields.io/npm/v/express?color=green&label=express&logo=NPM)
 ![npm](https://img.shields.io/npm/v/express-jwt?color=red&label=express-jwt&logo=NPM)
 ![npm](https://img.shields.io/npm/v/if-env?color=orange&label=if-env&logo=NPM)
 ![npm](https://img.shields.io/npm/v/jwks-rsa?color=purple&label=jwks-rsa&logo=NPM)
-
+![npm](https://img.shields.io/npm/v/jwt-decode?color=pink&label=jwt-decode&logo=NPM)
+![npm](https://img.shields.io/npm/v/morgan?color=lime&label=morgan&logo=NPM)
+![npm](https://img.shields.io/npm/v/nodemailer?color=plum&label=nodemailer&logo=NPM)
+![npm](https://img.shields.io/npm/v/pg?color=maroon&label=pg&logo=NPM)
+![npm](https://img.shields.io/npm/v/react-router-dom?color=yellowgreen&label=react-router-dom&logo=npm)
+![npm](https://img.shields.io/npm/v/request?color=9cf&label=request&logo=npm)
+![npm](https://img.shields.io/npm/v/sequelize?color=yellow&label=sequelize&logo=npm)
 
   <div align="center">
   <br>
