@@ -174,12 +174,11 @@ Here is a list of all the core technologies / core dependencies used to develop 
 #### Core Technologies
 
 - Model-View-Controller (**MVC**) framework as an architectural pattern
-<details>
-  <summary>Click to expand!</summary>
-  <p>MVC folder pattern for this project</p>
-  <img src="readme/imgs/MVCfolderPattern.png">
-
-</details>
+  <details>
+    <summary>Click to expand!</summary>
+    <p>MVC folder pattern for this project</p>
+    <img src="readme/imgs/MVCfolderPattern.png">
+  </details>
 
 - Node.js
 - React.js
@@ -190,8 +189,12 @@ Here is a list of all the core technologies / core dependencies used to develop 
 
 ### Core Node Dependencies
 
-- babel-eslint
-- dotenv
+The dependencies listed below are all NPM packages that can be accessed on [the npmjs.com website](https://www.npmjs.com/).
+
+The descriptions for each npm package listed below are referenced from [the npmjs.com website](https://www.npmjs.com/).
+
+- `babel-eslint: "Allows the user to lint ALL valid Babel code with the fantastic ESLint"`
+- `dotenv: "A zero-dependency module that loads environment variables from a .env file into process.env"`
 - express
 - express-jwt
 - if-env
