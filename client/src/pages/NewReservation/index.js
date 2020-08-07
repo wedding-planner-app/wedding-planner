@@ -62,10 +62,12 @@ const NewReservationPage = () => {
   return (
     <Container className="pt-5 mb-5 fixed-margin">
       {eventCreated && <Redirect to={nextUrl} />}
-      <h3 className="title-style text-center">
-        Create Event Reservation
-      </h3>
+
       <Row className="d-flex flex-wrap flex-column mb-5 p-5 shadow-lg mb-3 card-custom-style">
+        <h3 className="title-style text-center">
+          Create Event Reservation
+        </h3>
+        <hr></hr>
         <Col className="col-sm-12 col-mt-5">
           <InputGroup className="mb-3 vertical-align">
             <InputGroup.Append>
