@@ -135,7 +135,19 @@ The entity relationship (ER) diagram below provides a visual representation of h
 
 ## Installation and Technology
 
-### Installation Instructions
+Reference the subsections below for installation instructions and the list of technologies used for the development of this wedding planner application.
+
+### FYI - Environment Variables
+
+Please note that various environment variables are used in both `client` and `server (back-end)` portion of this application, so to test in your local environment, the user will need to indivually generate the following environment variables.
+
+### Make Sure to Install
+
+In order to successfully develop and launch this assignment, the following items must be installed and/or accessible from your working environment (i.e. laptop, computer, etc.).
+
+- **Node.js** - Make sure Node.js is installed in your machine. If Node.js is not installed on your machine, [click here](https://nodejs.org/en/) to download the application.
+- **Node Modules** - This project used various `node modules`, which are listed in the package.json files listed in both the `client` and `server (back-end)` portions of this application. To install all node modules used for this projecy, please run `npm install` in your terminal to install all required node modules.
+  - Please reference the section below for a list (and brief description) of core node modules and technologies used to develop this application.
 
 ### Project Technologies
 
