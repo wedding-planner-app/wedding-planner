@@ -13,23 +13,11 @@ import './style.css';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 
-function MyCell({
-  value,
-  columnProps: {
-    rest: { someFunc },
-  },
-}) {
-  return (
-    <a href="#" onClick={someFunc}>
-      {value}
-    </a>
-  );
-}
-
 const GuestsPage = (props) => {
   const [addShow, setAddShow] = useState(false);
   const [editShow, setEditShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
+  const [inviteShow, setInviteShow] = useState(false);
   const [guests, setGuests] = useState([]);
 
   const [name, setName] = useState('');
@@ -119,6 +107,32 @@ const GuestsPage = (props) => {
       });
   };
 
+  const handleInviteGuest = async (email) => {
+    const token = await getAccessTokenSilently();
+
+    setInviteShow(false);
+
+    if (!email) return false;
+
+    var config = {
+      method: 'get',
+      url: `/api/invitation/send/${email}`,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    axios(config)
+      .then(function (response) {
+        setSelectedRow({});
+        loadGuestsFromAPI();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   const handleEditGuest = async () => {
     const token = await getAccessTokenSilently();
 
@@ -187,23 +201,6 @@ const GuestsPage = (props) => {
       dataField: 'phone',
       text: 'Phone  ',
       sort: true,
-    },
-    {
-      dataField: 'invitation',
-      text: 'Send Invite',
-      formatter: (cell, row, rowIndex, formatExtraData) => {
-        return (
-          <Button
-            onClick={(row) => {
-              console.log(row);
-              window.alert('Confirmed!');
-            }}
-          >
-            Invite
-          </Button>
-        );
-      },
-      formatExtraData: name,
     },
   ];
 
@@ -331,6 +328,38 @@ const GuestsPage = (props) => {
               onClick={() => handleEditGuest()}
             >
               Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+        {/* Invite Guest Button */}
+        <Button
+          variant="outline-primary"
+          onClick={() => setInviteShow(true)}
+        >
+          INVITE
+        </Button>{' '}
+        {/* Modal alert to invite*/}
+        <Modal show={inviteShow} onHide={() => setInviteShow(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Invite Guest</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Are you sure you want to invite {selectedRow.name}?
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              onClick={() => setInviteShow(false)}
+            >
+              Do Not Invite
+            </Button>
+            <Button
+              variant="primary"
+              onClick={async () => {
+                await handleInviteGuest(selectedRow.email);
+              }}
+            >
+              Yes Invite Guest
             </Button>
           </Modal.Footer>
         </Modal>
