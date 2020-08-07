@@ -5,3 +5,9 @@
 .margin-top-fixed {
   margin-top: 19px !important;
 }
+
+.create-btn-style:hover {
+  color: #236184 !important;
+  background-color: aliceblue;
+  border: #236184 2px solid;
+}
