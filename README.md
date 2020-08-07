@@ -171,25 +171,25 @@ Reference the section below for a list (and brief description) of core node modu
 
 Here is a list of all the core technologies / core dependencies used to develop this application.
 
-- Model-View-Controller (**MVC**) framework as an architectural pattern
+- `Model-View-Controller (**MVC**) framework as an architectural pattern`
   <details>
     <summary>Click to expand!</summary>
     <p>MVC folder pattern for this project</p>
     <img src="readme/imgs/MVCfolderPattern.png">
   </details>
 
-- Node.js
-- React.js
-- MySQL database with a Sequelize ORM
-- Postgres in production
-- Deploy web app using Heroku
-- User authentication and secure API with Auth0
+- `Node.js: "An asynchronous event-driven JavaScript runtime"`
+- `React.js: "JavaScript library for building user interfaces"`
+- `MySQL database with a Sequelize ORM`
+- `Postgres in production`
+- `Deploy web app using Heroku`
+- `User authentication and secure API with Auth0`
 
 ### Core Node Dependencies
 
 The dependencies listed below are all NPM packages that can be accessed on [the npmjs.com website](https://www.npmjs.com/). The descriptions for each npm package listed below were gathered from [the npmjs.com website](https://www.npmjs.com/).
 
-- `**babel-eslint**: "Allows the user to lint ALL valid Babel code with the fantastic ESLint"`
+- `babel-eslint: "Allows the user to lint ALL valid Babel code with the fantastic ESLint"`
 - `dotenv: "A zero-dependency module that loads environment variables from a .env file into process.env"`
 - `express: "Provides small, robust tooling for HTTP servers for solutions for single page applications, web sites, hybrids, or public HTTP APIs"`
 - `express-jwt: "Provides Express middleware for validating JWTs (JSON Web Tokens) through the jsonwebtoken module"`
