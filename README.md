@@ -88,9 +88,6 @@ The entity relationship (ER) diagram below provides a visual representation of h
   <p>Login webpage wireframe</p>
   <img src="readme\imgs\wireframe-login.png" width = "600px">
 
-  <p>Signup webpage wireframe</p>
-  <img src="readme\imgs\wireframe-signup.png" width = "600px">
-
   <p>User profile wireframe</p>
   <img src="readme\imgs\wireframe-profile.png" width = "600px">
 
@@ -106,10 +103,10 @@ The entity relationship (ER) diagram below provides a visual representation of h
   <p>Guest list webpage wireframe</p>
   <img src="readme\imgs\wireframe-guestlist.png" width = "600px">
 
-  <p>Invitation wireframe</p>
+  <p>FUTURE DEVELOPMENT - Invitation wireframe</p>
   <img src="readme\imgs\wireframe-invitations.png" width = "600px">
 
-  <p>Media wireframe</p>
+  <p>FUTURE DEVELOPMENT - Media wireframe</p>
   <img src="readme\imgs\wireframe-media.png" width = "600px">
   
 </details>
