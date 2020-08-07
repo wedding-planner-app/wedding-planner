@@ -67,7 +67,7 @@ const NewReservationPage = () => {
           Create Event Reservation
         </h3>
         <hr></hr>
-        <Col className="col-sm-12 col-mt-5">
+        <Col className="col-sm-12">
           <InputGroup className="mb-3 vertical-align">
             <InputGroup.Append>
               <InputGroup.Text id="TitleOfWedding">
@@ -87,7 +87,7 @@ const NewReservationPage = () => {
               </InputGroup.Text>
             </InputGroup.Append>
             <FormControl
-              placeholder="Wedd Start Time"
+              placeholder="Wedding Start Time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
             />
