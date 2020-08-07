@@ -113,16 +113,13 @@ The entity relationship (ER) diagram below provides a visual representation of h
 
 ---
 
-## Developing
-
-#### MVP
+## Application MVP
 
 - The user can register and login to the platform using **Auth0**.
 - The user can see his/her **profile**.
-- The user can list, create, edit and delete **wedding events**.
+- The user can list, create, edit, and delete **wedding events**.
 - The user can **search venues** and assign to wedding event.
 - The user can send **invitations**.
-- The guests can **RSVP**.
 - The user can **logout** .
 
 ---
