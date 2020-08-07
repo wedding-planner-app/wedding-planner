@@ -9,7 +9,7 @@
 
 ### Table of Contents
 
-- [Value Proposal](#value-proposal)
+- [Project Description](#project-description)
 - [User Stories](#user-stories)
 - [Concept](#concept)
   - [Actions Diagram](#actions-diagram)
@@ -28,7 +28,7 @@
 
 ---
 
-## Value Proposal
+## Project Description
 
 **Summer weddings** are in full swing!! To help make wedding planning easier, we would like to develop a _wedding planner web application_ that will help any wedding planner easily plan and organize all the details surrounding the big day. This proposed application will allow users to create a profile under which they can create **one** or **more** wedding plans.
 
@@ -54,13 +54,19 @@ This platform will leverage a full stack web application that will allow `planni
 
 #### Design
 
-Design features basic functionality and style for multiple features.
+This section addresses the platforms's basic functionality and style/design utilized for the multiple features included thorughout the site.
 
 #### Architecture
 
-This project is based on **MVC** (_model-view-control_) **design** that separates bussiness logics, UI design and user interaction.
+This project is based on **MVC design** (_model-view-control_) which facilitates a better orhganziation pattern for the code used to develop this web application. The MVC folder pattern helps separate the application's care back-end business logic, front-end UI design, and user interaction. The diagram included below outlines the architecture of this web application.
 
 <img src="readme\imgs\architecture-diagram.png" width = "800px">
+
+##### ER Diagram
+
+The entity relationship (ER) diagram below provides a visual representation of how the data is saved inside the application's back-end database. This diagram also include demosntrates the relations between each database table.
+
+<img src="readme\imgs\schema.png" width = "600px">
 
 ##### Whiteboards
 
@@ -106,13 +112,6 @@ This project is based on **MVC** (_model-view-control_) **design** that separate
   <p>Media wireframe</p>
   <img src="readme\imgs\wireframe-media.png" width = "600px">
   
-</details>
-
-##### ER Diagram
-
-<details>
-<summary>Click to expand!</summary>
-<img src="readme\imgs\schema.png" width = "600px">
 </details>
 
 ---
