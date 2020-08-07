@@ -189,9 +189,7 @@ Here is a list of all the core technologies / core dependencies used to develop 
 
 ### Core Node Dependencies
 
-The dependencies listed below are all NPM packages that can be accessed on [the npmjs.com website](https://www.npmjs.com/).
-
-The descriptions for each npm package listed below are referenced from [the npmjs.com website](https://www.npmjs.com/).
+The dependencies listed below are all NPM packages that can be accessed on [the npmjs.com website](https://www.npmjs.com/). The descriptions for each npm package listed below are referenced from [the npmjs.com website](https://www.npmjs.com/).
 
 - `babel-eslint: "Allows the user to lint ALL valid Babel code with the fantastic ESLint"`
 - `dotenv: "A zero-dependency module that loads environment variables from a .env file into process.env"`
