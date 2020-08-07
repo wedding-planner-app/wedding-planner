@@ -7,7 +7,6 @@ import {
   FormControl,
 } from 'react-bootstrap';
 import SearchTable from '../../components/SearchTable';
-import InputText from '../../components/InputText';
 import { textFilter } from 'react-bootstrap-table2-filter';
 import './style.css';
 import axios from 'axios';

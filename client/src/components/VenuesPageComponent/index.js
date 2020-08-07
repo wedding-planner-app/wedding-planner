@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   InputGroup,
   FormControl,
@@ -56,7 +56,6 @@ const VenuesPageComponent = (props) => {
 
     await axios(config)
       .then(function (res) {
-        console.log(res.data);
         setLoading(false);
         setVenues(res.data);
       })
@@ -133,8 +132,12 @@ const VenuesPageComponent = (props) => {
             <h1 className="title-style">Loading...</h1>
           </Col>
         ) : (
-          venues.map((venue) => (
-            <Col className="col-6 mb-3">
+          venues.map((venue, i) => (
+            <Col
+              className="col-6 mb-3"
+              key={`venue-${i}`}
+              id={`venue-${i}`}
+            >
               <VenueCard
                 img={PlaceholderImage}
                 // img={
