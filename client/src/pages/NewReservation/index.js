@@ -141,11 +141,13 @@ const NewReservationPage = () => {
           />
         </Col>
       </Row>
-
-      <Row className="m-auto">
-        {showError && <h4 className="text-danger">{errorMessage}</h4>}
+      <Row className="text-center">
+        <Col className="col-sm-12">
+          {showError && (
+            <h5 className="text-danger">{errorMessage}</h5>
+          )}{' '}
+        </Col>
       </Row>
-
       <Row>
         <BtnComponent
           className="create-btn-style"
