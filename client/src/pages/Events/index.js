@@ -11,14 +11,6 @@ const EventsPage = () => {
 
   const { getAccessTokenSilently } = useAuth0();
 
-  //code used to generate the token when need to be tested :dev
-  // const showToken = async () => {
-  //   let t = await getAccessTokenSilently();
-  //   console.log(t);
-  // };
-
-  // showToken();
-
   const loadEventsFromApi = async () => {
     // token used to secure the APIs call
     const token = await getAccessTokenSilently();
