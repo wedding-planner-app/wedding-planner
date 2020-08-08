@@ -354,7 +354,7 @@ const GuestsPage = (props) => {
         </Modal>
         {/* Invite Guest Button */}
         <Button
-          variant="outline-primary"
+          variant="outline-info"
           onClick={() => setInviteShow(true)}
         >
           INVITE
