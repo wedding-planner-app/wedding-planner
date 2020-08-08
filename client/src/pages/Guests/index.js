@@ -5,6 +5,8 @@ import {
   Modal,
   InputGroup,
   FormControl,
+  Row,
+  Col,
 } from 'react-bootstrap';
 import SearchTable from '../../components/SearchTable';
 import { textFilter } from 'react-bootstrap-table2-filter';
@@ -218,222 +220,238 @@ const GuestsPage = (props) => {
 
   return (
     <Container className="marginCustom mt-5">
-      <div className="row m-auto">
-        {/* Add Guest Button */}
-        <Button
-          variant="outline-primary"
-          onClick={() => setAddShow(true)}
-        >
-          ADD
-        </Button>{' '}
-        {/* Modal alert to add */}
-        <Modal show={addShow} onHide={() => setAddShow(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Add New Guest</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text>Name</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </InputGroup>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text>Email</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </InputGroup>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text>Phone Number</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </InputGroup>
-          </Modal.Body>
-          <Modal.Footer>
-            {showError && (
-              <h6 className="text-danger mr-auto">{errorMessage}</h6>
-            )}
+      <Row className="shadow-lg mb-3 card-custom-style d-flex flex-wrap p-lg-5 p-sm-1">
+        <Col>
+          <h3 className="title-style mb-5">Manage Guests</h3>
+        </Col>
+        <Col>
+          <div className="row m-auto">
+            {/* Add Guest Button */}
             <Button
-              variant="secondary"
-              onClick={() => setAddShow(false)}
+              variant="outline-primary"
+              onClick={() => setAddShow(true)}
             >
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleAddGuest}>
-              Add Guest
-            </Button>
-          </Modal.Footer>
-        </Modal>
-        {/* Edit Guest Info Button */}
-        <Button
-          variant="outline-secondary"
-          onClick={() => setEditShow(true)}
-        >
-          EDIT
-        </Button>{' '}
-        {/* Modal alert to edit */}
-        <Modal show={editShow} onHide={() => setEditShow(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Edit Guest Information</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text>Name</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                value={selectedRow.name}
-                onChange={(e) =>
-                  setSelectedRow({
-                    ...selectedRow,
-                    name: e.target.value,
-                  })
-                }
-              />
-            </InputGroup>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text>Email</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                value={selectedRow.email}
-                onChange={(e) =>
-                  setSelectedRow({
-                    ...selectedRow,
-                    email: e.target.value,
-                  })
-                }
-              />
-            </InputGroup>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text>Phone Number</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                value={selectedRow.phone}
-                onChange={(e) =>
-                  setSelectedRow({
-                    ...selectedRow,
-                    phone: e.target.value,
-                  })
-                }
-              />
-            </InputGroup>
-            <h6
-              className="text-danger mt-3 text-center"
-              hidden={selectedRow.id}
-            >
-              'Edit failed: Please select a guest (Try again)',
-            </h6>
-          </Modal.Body>
-          <Modal.Footer>
+              ADD
+            </Button>{' '}
+            {/* Modal alert to add */}
+            <Modal show={addShow} onHide={() => setAddShow(false)}>
+              <Modal.Header closeButton>
+                <Modal.Title>Add New Guest</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>Name</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </InputGroup>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>Email</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </InputGroup>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>Phone Number</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                </InputGroup>
+              </Modal.Body>
+              <Modal.Footer>
+                {showError && (
+                  <h6 className="text-danger mr-auto">
+                    {errorMessage}
+                  </h6>
+                )}
+                <Button
+                  variant="secondary"
+                  onClick={() => setAddShow(false)}
+                >
+                  Close
+                </Button>
+                <Button variant="primary" onClick={handleAddGuest}>
+                  Add Guest
+                </Button>
+              </Modal.Footer>
+            </Modal>
+            {/* Edit Guest Info Button */}
             <Button
-              variant="secondary"
-              onClick={() => setEditShow(false)}
+              variant="outline-secondary"
+              onClick={() => setEditShow(true)}
             >
-              Close
-            </Button>
+              EDIT
+            </Button>{' '}
+            {/* Modal alert to edit */}
+            <Modal show={editShow} onHide={() => setEditShow(false)}>
+              <Modal.Header closeButton>
+                <Modal.Title>Edit Guest Information</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>Name</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    value={selectedRow.name}
+                    onChange={(e) =>
+                      setSelectedRow({
+                        ...selectedRow,
+                        name: e.target.value,
+                      })
+                    }
+                  />
+                </InputGroup>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>Email</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    value={selectedRow.email}
+                    onChange={(e) =>
+                      setSelectedRow({
+                        ...selectedRow,
+                        email: e.target.value,
+                      })
+                    }
+                  />
+                </InputGroup>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>Phone Number</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    value={selectedRow.phone}
+                    onChange={(e) =>
+                      setSelectedRow({
+                        ...selectedRow,
+                        phone: e.target.value,
+                      })
+                    }
+                  />
+                </InputGroup>
+                <h6
+                  className="text-danger mt-3 text-center"
+                  hidden={selectedRow.id}
+                >
+                  'Edit failed: Please select a guest (Try again)',
+                </h6>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  variant="secondary"
+                  onClick={() => setEditShow(false)}
+                >
+                  Close
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={() => handleEditGuest()}
+                >
+                  Save Changes
+                </Button>
+              </Modal.Footer>
+            </Modal>
+            {/* Invite Guest Button */}
             <Button
-              variant="primary"
-              onClick={() => handleEditGuest()}
+              variant="outline-info"
+              onClick={() => setInviteShow(true)}
             >
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-        {/* Invite Guest Button */}
-        <Button
-          variant="outline-info"
-          onClick={() => setInviteShow(true)}
-        >
-          INVITE
-        </Button>{' '}
-        {/* Modal alert to invite*/}
-        <Modal show={inviteShow} onHide={() => setInviteShow(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Invite Guest</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            Are you sure you want to invite {selectedRow.name}?
-          </Modal.Body>
-          <Modal.Footer>
+              INVITE
+            </Button>{' '}
+            {/* Modal alert to invite*/}
+            <Modal
+              show={inviteShow}
+              onHide={() => setInviteShow(false)}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Invite Guest</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                Are you sure you want to invite {selectedRow.name}?
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  variant="secondary"
+                  onClick={() => setInviteShow(false)}
+                >
+                  Do Not Invite
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={async () => {
+                    await handleInviteGuest(selectedRow.email);
+                  }}
+                >
+                  Yes Invite Guest
+                </Button>
+              </Modal.Footer>
+            </Modal>
+            {/* Delete Guest Button */}
             <Button
-              variant="secondary"
-              onClick={() => setInviteShow(false)}
+              variant="outline-danger"
+              onClick={() => setDeleteShow(true)}
             >
-              Do Not Invite
-            </Button>
-            <Button
-              variant="primary"
-              onClick={async () => {
-                await handleInviteGuest(selectedRow.email);
-              }}
+              REMOVE
+            </Button>{' '}
+            {/* Modal alert to delete*/}
+            <Modal
+              show={deleteShow}
+              onHide={() => setDeleteShow(false)}
             >
-              Yes Invite Guest
-            </Button>
-          </Modal.Footer>
-        </Modal>
-        {/* Delete Guest Button */}
-        <Button
-          variant="outline-danger"
-          onClick={() => setDeleteShow(true)}
-        >
-          REMOVE
-        </Button>{' '}
-        {/* Modal alert to delete*/}
-        <Modal show={deleteShow} onHide={() => setDeleteShow(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Delete Guest</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <h6
-              className="text-danger mt-3 text-center"
-              hidden={selectedRow.id}
-            >
-              'Delete failed: Please select a guest to delete (Try
-              again)',
-            </h6>
-            <h6 hidden={!selectedRow.id}>
-              {' '}
-              Are you sure you want to delete this entry?{' '}
-            </h6>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button
-              variant="secondary"
-              onClick={() => setDeleteShow(false)}
-            >
-              Do Not Delete
-            </Button>
-            <Button
-              variant="primary"
-              onClick={() => handleDeleteGuest()}
-            >
-              Yes Delete Entry
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
-
-      <div>
-        <SearchTable
-          data={guests}
-          keyField="id"
-          columns={columns}
-          selectRow={selectRow}
-        />
-      </div>
+              <Modal.Header closeButton>
+                <Modal.Title>Delete Guest</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <h6
+                  className="text-danger mt-3 text-center"
+                  hidden={selectedRow.id}
+                >
+                  'Delete failed: Please select a guest to delete (Try
+                  again)',
+                </h6>
+                <h6 hidden={!selectedRow.id}>
+                  {' '}
+                  Are you sure you want to delete this entry?{' '}
+                </h6>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  variant="secondary"
+                  onClick={() => setDeleteShow(false)}
+                >
+                  Do Not Delete
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={() => handleDeleteGuest()}
+                >
+                  Yes Delete Entry
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
+        </Col>
+        <Col className="col-sm-12">
+          <div>
+            <SearchTable
+              data={guests}
+              keyField="id"
+              columns={columns}
+              selectRow={selectRow}
+            />
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 };
