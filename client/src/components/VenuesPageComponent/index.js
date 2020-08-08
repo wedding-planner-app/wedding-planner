@@ -126,7 +126,7 @@ const VenuesPageComponent = (props) => {
       </Row>
       <br></br>
       {/* Venue card components */}
-      <Row>
+      <div className="d-sm-block d-md-flex flex-md-wrap justify-content-start my-3">
         {loading ? (
           <Col className="col-6 mb-3">
             <h4 className="title-style">Loading...</h4>
@@ -134,7 +134,7 @@ const VenuesPageComponent = (props) => {
         ) : (
           venues.map((venue, i) => (
             <Col
-              className="col-6 mb-3"
+              className="col-md-6 col-sm-12 mb-3"
               key={`venue-${i}`}
               id={`venue-${i}`}
             >
@@ -156,7 +156,7 @@ const VenuesPageComponent = (props) => {
             </Col>
           ))
         )}
-      </Row>
+      </div>
     </Container>
   );
 };
