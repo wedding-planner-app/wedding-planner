@@ -104,7 +104,7 @@ const VenuesPageComponent = (props) => {
     // Components venue search functionality
     <Container className="pt-5 mb-5">
       {venueAdded && <Redirect to={nextUrl} />}
-      <h1 className="title-style">Search for Venues</h1>
+      <h3 className="title-style mb-5">Search for Venues</h3>
       <Row className="d-flex flex-column flex-md-row vertical-align">
         <Col className="col-sm-12 col-lg-6">
           <InputGroup className="p5 mb-3 vertical-align">
@@ -129,7 +129,7 @@ const VenuesPageComponent = (props) => {
       <Row>
         {loading ? (
           <Col className="col-6 mb-3">
-            <h1 className="title-style">Loading...</h1>
+            <h4 className="title-style">Loading...</h4>
           </Col>
         ) : (
           venues.map((venue, i) => (
