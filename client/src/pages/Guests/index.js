@@ -18,14 +18,21 @@ const GuestsPage = (props) => {
   const [deleteShow, setDeleteShow] = useState(false);
   const [inviteShow, setInviteShow] = useState(false);
   const [guests, setGuests] = useState([]);
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [selectedRow, setSelectedRow] = useState({});
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const eventId = props.match.params.eventId;
   const { getAccessTokenSilently } = useAuth0();
+
+  const displayError = (message) => {
+    setShowError(true);
+    setErrorMessage(message);
+    setAddShow(true);
+  };
 
   const loadGuestsFromAPI = async () => {
     const token = await getAccessTokenSilently();
@@ -47,7 +54,13 @@ const GuestsPage = (props) => {
 
   const handleAddGuest = async (event) => {
     setAddShow(false);
+
+    setShowError(false);
+
+    if (!name) return displayError('Please enter a valid name');
+
     event.preventDefault();
+
     const token = await getAccessTokenSilently();
 
     var qs = require('qs');
@@ -74,9 +87,7 @@ const GuestsPage = (props) => {
         setEmail('');
         loadGuestsFromAPI();
       })
-      .catch(function (error) {
-        console.log(error);
-      });
+      .catch(function (error) {});
   };
 
   const handleDeleteGuest = async () => {
@@ -248,6 +259,9 @@ const GuestsPage = (props) => {
             </InputGroup>
           </Modal.Body>
           <Modal.Footer>
+            {showError && (
+              <h6 className="text-danger">{errorMessage}</h6>
+            )}
             <Button
               variant="secondary"
               onClick={() => setAddShow(false)}
