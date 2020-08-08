@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const jwt_decode = require('jwt-decode');
+const invitationEmail = require('../../utils/invitationEmail');
 var db = require('../../models');
 
 const getEmail = (token) => {
@@ -26,6 +27,12 @@ router.get('/', function (req, res) {
     ],
   }).then(function (dbInvitation) {
     res.json(dbInvitation);
+  });
+});
+
+router.get('/send/:email', function (req, res) {
+  invitationEmail(req.params.email).then(function () {
+    res.status(200).send();
   });
 });
 

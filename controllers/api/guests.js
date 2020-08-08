@@ -63,7 +63,6 @@ router.post('/', function (req, res) {
       GuestId: dbCreateGuest.id,
       status: 'No',
     }).then(function (dbCreateInvitation) {
-      invitationEmail(req.body.email).catch(console.error);
       res.json(dbCreateInvitation);
     });
   });
