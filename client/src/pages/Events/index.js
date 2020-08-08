@@ -58,10 +58,10 @@ const EventsPage = () => {
         </Row>
       )}
 
-      <Row className="d-flex flex-wrap justify-content-start my-3">
+      <div className="d-sm-block d-md-flex flex-md-wrap justify-content-start my-3">
         {events.map((event) => (
           <Col
-            className="col-sm-12 col-md-6 col-lg-4 mb-3"
+            className="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3"
             id={`wedding-${event.id}`}
             key={`wedding-${event.id}`}
           >
@@ -79,7 +79,7 @@ const EventsPage = () => {
             />
           </Col>
         ))}
-      </Row>
+      </div>
 
       <Row className="custom-margin my-5">
         <Btn name="Create New Event" href="/events/new" />
