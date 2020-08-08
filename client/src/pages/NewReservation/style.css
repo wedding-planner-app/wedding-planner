@@ -16,6 +16,7 @@
     0 9px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 25px;
   color: #3077a0;
+  border: #3077a0 1px solid;
 }
 
 .fix-width {

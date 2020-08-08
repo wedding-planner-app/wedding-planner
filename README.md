@@ -14,7 +14,6 @@
 ![npm](https://img.shields.io/npm/v/request?color=9cf&label=request&logo=npm)
 ![npm](https://img.shields.io/npm/v/sequelize?color=yellow&label=sequelize&logo=npm)
 
-
 <p align="center">
  <img src="readme/imgs/logo.png" alt="wedding planner logo" width="400px">
 </p>
@@ -99,14 +98,13 @@ The entity relationship (ER) diagram below provides a visual representation of h
 
 #### APIs Docs
 
-In order to access the API data, we recommend using **Postman**, which is a REST API GUI client that you can download onto your local environment from the [Postman website](https://www.postman.com/).  Please reference this [APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X) for details on the first steps users need to following in order to this applications **APIs**.
+In order to access the API data, we recommend using **Postman**, which is a REST API GUI client that you can download onto your local environment from the [Postman website](https://www.postman.com/). Please reference this [APIs Documentation](https://documenter.getpostman.com/view/11452429/T1LHHA3X) for details on the first steps users need to following in order to this applications **APIs**.
 
-When referencing the provided API documentation, consider accessing Postman by clicking on the a _Run_ in _Postman_ button as demonstrated in the photo below.  If you have your API endpoints integrated with Postman, you can export your Postman collections as a widget to embed in an HTML page.
+When referencing the provided API documentation, consider accessing Postman by clicking on the a _Run_ in _Postman_ button as demonstrated in the photo below. If you have your API endpoints integrated with Postman, you can export your Postman collections as a widget to embed in an HTML page.
 
 <img src="readme/imgs/postman.png" width = "80px">
   
 <img src="readme/imgs/p.png" width = "600px">
-
 
 #### Whiteboards
 
@@ -158,7 +156,7 @@ When referencing the provided API documentation, consider accessing Postman by c
 
 ## Application MVP
 
-- The user can register and login to the platform using **Auth0**.
+- The user can **register** and **login** to the platform using **Auth0**.
 - The user can see his/her **profile**.
 - The user can list, create, edit, and delete **wedding events**.
 - The user can **search venues** and assign to wedding event.
@@ -212,7 +210,7 @@ Here is a list of all the core technologies / core dependencies used to develop 
     <summary>Click to expand!</summary>
     <p>MVC folder pattern for this project</p>
     <img src="readme/imgs/MVCfolderPattern.png">/=
-  
+
   </details>
 
 - `Node.js - An asynchronous event-driven JavaScript runtime`
