@@ -262,7 +262,7 @@ const GuestsPage = (props) => {
           </Modal.Body>
           <Modal.Footer>
             {showError && (
-              <h6 className="text-danger">{errorMessage}</h6>
+              <h6 className="text-danger mr-auto">{errorMessage}</h6>
             )}
             <Button
               variant="secondary"
@@ -330,6 +330,12 @@ const GuestsPage = (props) => {
                 }
               />
             </InputGroup>
+            <h6
+              className="text-danger mt-3 text-center"
+              hidden={selectedRow.id}
+            >
+              'Edit failed: Please select a guest (Try again)',
+            </h6>
           </Modal.Body>
           <Modal.Footer>
             <Button
