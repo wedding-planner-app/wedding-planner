@@ -58,6 +58,8 @@ const GuestsPage = (props) => {
     setShowError(false);
 
     if (!name) return displayError('Please enter a valid name');
+    if (!email) return displayError('Please enter a valid email');
+    if (!phone) return displayError('Please enter a valid phone');
 
     event.preventDefault();
 
