@@ -397,7 +397,17 @@ const GuestsPage = (props) => {
             <Modal.Title>Delete Guest</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            Are you sure you want to delete this entry?
+            <h6
+              className="text-danger mt-3 text-center"
+              hidden={selectedRow.id}
+            >
+              'Delete failed: Please select a guest to delete (Try
+              again)',
+            </h6>
+            <h6 hidden={!selectedRow.id}>
+              {' '}
+              Are you sure you want to delete this entry?{' '}
+            </h6>
           </Modal.Body>
           <Modal.Footer>
             <Button
