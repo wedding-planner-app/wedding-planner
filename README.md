@@ -86,13 +86,13 @@ This section addresses the platforms's basic functionality and style/design util
 
 #### Architecture
 
-This project is based on **MVC design** (_model-view-control_), which facilitates a better organziation pattern for the code used to develop this web application. The MVC folder pattern helps separate the application's care back-end business logic, front-end UI design, and user interaction. The diagram included below outlines the architecture of this web application.
+This project is based on **MVC design** (_model-view-control_), which facilitates a better organization pattern for the code used to develop this web application. The MVC folder pattern helps separate the application's care back-end business logic, front-end UI design, and user interaction. The diagram included below outlines the architecture of this web application.
 
 <img src="readme/imgs/architecture-diagram.png" width = "800px">
 
 ##### ER Diagram
 
-The entity relationship (ER) diagram below provides a visual representation of how the data is saved inside the application's back-end database. This diagram also demondtrates the relationship between each database table.
+The entity relationship (ER) diagram below provides a visual representation of how the data is saved inside the application's back-end database. This diagram also demonstrates the relationship between each database table.
 
 <img src="readme/imgs/schema.png" width = "600px">
 
