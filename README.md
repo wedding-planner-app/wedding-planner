@@ -160,6 +160,7 @@ When referencing the provided API documentation, consider accessing Postman by c
 - The user can see his/her **profile**.
 - The user can list, create, edit, and delete **wedding events**.
 - The user can **search venues** and assign to wedding event.
+- The user can list, create, edit, delete and search by (_name, email_) **guests**.
 - The user can send **invitations**.
 - The user can **logout** .
 
